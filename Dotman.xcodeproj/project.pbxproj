@@ -1,0 +1,901 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DDB0AF2E1AD17A3B0035F2FA /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0AF2B1AD17A3B0035F2FA /* FBShimmeringLayer.m */; };
+		DDB0AF2F1AD17A3B0035F2FA /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0AF2D1AD17A3B0035F2FA /* FBShimmeringView.m */; };
+		DDB0AF501AD17A700035F2FA /* YALSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0AF341AD17A700035F2FA /* YALSpringAnimation.m */; };
+		DDB0AF511AD17A700035F2FA /* CAAnimation+YALTabBarViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0AF391AD17A700035F2FA /* CAAnimation+YALTabBarViewAnimations.m */; };
+		DDB0AF521AD17A700035F2FA /* CATransaction+TransactionWithAnimationsAndCompletion.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0AF3D1AD17A700035F2FA /* CATransaction+TransactionWithAnimationsAndCompletion.m */; };
+		DDB0AF531AD17A700035F2FA /* YALAnimatingTabBarConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0AF401AD17A700035F2FA /* YALAnimatingTabBarConstants.m */; };
+		DDB0AF541AD17A700035F2FA /* YALFoldingTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0AF441AD17A700035F2FA /* YALFoldingTabBarController.m */; };
+		DDB0AF551AD17A700035F2FA /* YALTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0AF481AD17A700035F2FA /* YALTabBarItem.m */; };
+		DDB0AF561AD17A700035F2FA /* YALFoldingTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0AF4F1AD17A700035F2FA /* YALFoldingTabBar.m */; };
+		DDB28D3A1AD1246B006FB0F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB28D391AD1246B006FB0F9 /* main.m */; };
+		DDB28D481AD1246B006FB0F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDB28D461AD1246B006FB0F9 /* LaunchScreen.xib */; };
+		DDB28D541AD1246B006FB0F9 /* DotmanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB28D531AD1246B006FB0F9 /* DotmanTests.m */; };
+		DDB28D651AD126A6006FB0F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB28D641AD126A6006FB0F9 /* AppDelegate.m */; };
+		DDB28D911AD12BA8006FB0F9 /* Code Pro LC.otf in Resources */ = {isa = PBXBuildFile; fileRef = DDB28D8F1AD12BA8006FB0F9 /* Code Pro LC.otf */; };
+		DDB28DA31AD12E85006FB0F9 /* YALFirstTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB28D981AD12E85006FB0F9 /* YALFirstTestViewController.m */; };
+		DDB28DA41AD12E85006FB0F9 /* YALFourthTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB28D9B1AD12E85006FB0F9 /* YALFourthTestViewController.m */; };
+		DDB28DA51AD12E85006FB0F9 /* YALSecondTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB28D9E1AD12E85006FB0F9 /* YALSecondTestViewController.m */; };
+		DDB28DA61AD12E85006FB0F9 /* YALChatDemoList.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDB28DA01AD12E85006FB0F9 /* YALChatDemoList.plist */; };
+		DDB28DA71AD12E85006FB0F9 /* YALThirdTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB28DA21AD12E85006FB0F9 /* YALThirdTestViewController.m */; };
+		DDB28DAB1AD12EA8006FB0F9 /* YALChatDemoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB28DAA1AD12EA8006FB0F9 /* YALChatDemoCollectionViewCell.m */; };
+		DDB28DAF1AD131FC006FB0F9 /* DMIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB28DAE1AD131FC006FB0F9 /* DMIntroViewController.m */; };
+		DDB67FC21AD2327000503EA5 /* SevenSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FC11AD2327000503EA5 /* SevenSwitch.m */; };
+		DDB67FD31AD23E2C00503EA5 /* DMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FCF1AD23E2C00503EA5 /* DMSettingViewController.m */; };
+		DDB67FD41AD23E2C00503EA5 /* DMSettingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FD21AD23E2C00503EA5 /* DMSettingBaseCell.m */; };
+		DDB67FD71AD23E9400503EA5 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FD61AD23E9400503EA5 /* UIImage+Additions.m */; };
+		DDB67FD91AD241BD00503EA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB67FD81AD241BD00503EA5 /* Images.xcassets */; };
+		DDB67FDA1AD2704300503EA5 /* Proxima Nova.otf in Resources */ = {isa = PBXBuildFile; fileRef = DDB28D901AD12BA8006FB0F9 /* Proxima Nova.otf */; };
+		DDB67FDF1AD2782B00503EA5 /* DMPlayNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FDE1AD2782B00503EA5 /* DMPlayNameCell.m */; };
+		DDB67FE21AD2789400503EA5 /* DMSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FE11AD2789400503EA5 /* DMSwitchCell.m */; };
+		DDB67FE71AD27A0A00503EA5 /* DMSettingHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FE61AD27A0A00503EA5 /* DMSettingHandler.m */; };
+		DDB67FEC1AD2C15600503EA5 /* DMDropDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FEB1AD2C15600503EA5 /* DMDropDownCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDB28D4E1AD1246B006FB0F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDB28D2C1AD1246B006FB0F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDB28D331AD1246B006FB0F9;
+			remoteInfo = Dotman;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DDB0AF291AD17A3B0035F2FA /* FBShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmering.h; sourceTree = "<group>"; };
+		DDB0AF2A1AD17A3B0035F2FA /* FBShimmeringLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringLayer.h; sourceTree = "<group>"; };
+		DDB0AF2B1AD17A3B0035F2FA /* FBShimmeringLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringLayer.m; sourceTree = "<group>"; };
+		DDB0AF2C1AD17A3B0035F2FA /* FBShimmeringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringView.h; sourceTree = "<group>"; };
+		DDB0AF2D1AD17A3B0035F2FA /* FBShimmeringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringView.m; sourceTree = "<group>"; };
+		DDB0AF331AD17A700035F2FA /* YALSpringAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALSpringAnimation.h; sourceTree = "<group>"; };
+		DDB0AF341AD17A700035F2FA /* YALSpringAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALSpringAnimation.m; sourceTree = "<group>"; };
+		DDB0AF381AD17A700035F2FA /* CAAnimation+YALTabBarViewAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+YALTabBarViewAnimations.h"; sourceTree = "<group>"; };
+		DDB0AF391AD17A700035F2FA /* CAAnimation+YALTabBarViewAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+YALTabBarViewAnimations.m"; sourceTree = "<group>"; };
+		DDB0AF3C1AD17A700035F2FA /* CATransaction+TransactionWithAnimationsAndCompletion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATransaction+TransactionWithAnimationsAndCompletion.h"; sourceTree = "<group>"; };
+		DDB0AF3D1AD17A700035F2FA /* CATransaction+TransactionWithAnimationsAndCompletion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATransaction+TransactionWithAnimationsAndCompletion.m"; sourceTree = "<group>"; };
+		DDB0AF3F1AD17A700035F2FA /* YALAnimatingTabBarConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALAnimatingTabBarConstants.h; sourceTree = "<group>"; };
+		DDB0AF401AD17A700035F2FA /* YALAnimatingTabBarConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALAnimatingTabBarConstants.m; sourceTree = "<group>"; };
+		DDB0AF431AD17A700035F2FA /* YALFoldingTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALFoldingTabBarController.h; sourceTree = "<group>"; };
+		DDB0AF441AD17A700035F2FA /* YALFoldingTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALFoldingTabBarController.m; sourceTree = "<group>"; };
+		DDB0AF471AD17A700035F2FA /* YALTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALTabBarItem.h; sourceTree = "<group>"; };
+		DDB0AF481AD17A700035F2FA /* YALTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALTabBarItem.m; sourceTree = "<group>"; };
+		DDB0AF4B1AD17A700035F2FA /* YALTabBarInteracting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALTabBarInteracting.h; sourceTree = "<group>"; };
+		DDB0AF4E1AD17A700035F2FA /* YALFoldingTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALFoldingTabBar.h; sourceTree = "<group>"; };
+		DDB0AF4F1AD17A700035F2FA /* YALFoldingTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALFoldingTabBar.m; sourceTree = "<group>"; };
+		DDB28D341AD1246B006FB0F9 /* Dotman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dotman.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDB28D381AD1246B006FB0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDB28D391AD1246B006FB0F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DDB28D471AD1246B006FB0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DDB28D4D1AD1246B006FB0F9 /* DotmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DotmanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDB28D521AD1246B006FB0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDB28D531AD1246B006FB0F9 /* DotmanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DotmanTests.m; sourceTree = "<group>"; };
+		DDB28D631AD126A6006FB0F9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DDB28D641AD126A6006FB0F9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DDB28D8F1AD12BA8006FB0F9 /* Code Pro LC.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Code Pro LC.otf"; sourceTree = "<group>"; };
+		DDB28D901AD12BA8006FB0F9 /* Proxima Nova.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova.otf"; sourceTree = "<group>"; };
+		DDB28D941AD12C8A006FB0F9 /* Dotman-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dotman-Prefix.pch"; sourceTree = "<group>"; };
+		DDB28D971AD12E85006FB0F9 /* YALFirstTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALFirstTestViewController.h; sourceTree = "<group>"; };
+		DDB28D981AD12E85006FB0F9 /* YALFirstTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALFirstTestViewController.m; sourceTree = "<group>"; };
+		DDB28D9A1AD12E85006FB0F9 /* YALFourthTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALFourthTestViewController.h; sourceTree = "<group>"; };
+		DDB28D9B1AD12E85006FB0F9 /* YALFourthTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALFourthTestViewController.m; sourceTree = "<group>"; };
+		DDB28D9D1AD12E85006FB0F9 /* YALSecondTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALSecondTestViewController.h; sourceTree = "<group>"; };
+		DDB28D9E1AD12E85006FB0F9 /* YALSecondTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALSecondTestViewController.m; sourceTree = "<group>"; };
+		DDB28DA01AD12E85006FB0F9 /* YALChatDemoList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = YALChatDemoList.plist; sourceTree = "<group>"; };
+		DDB28DA11AD12E85006FB0F9 /* YALThirdTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALThirdTestViewController.h; sourceTree = "<group>"; };
+		DDB28DA21AD12E85006FB0F9 /* YALThirdTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALThirdTestViewController.m; sourceTree = "<group>"; };
+		DDB28DA91AD12EA8006FB0F9 /* YALChatDemoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALChatDemoCollectionViewCell.h; sourceTree = "<group>"; };
+		DDB28DAA1AD12EA8006FB0F9 /* YALChatDemoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALChatDemoCollectionViewCell.m; sourceTree = "<group>"; };
+		DDB28DAD1AD131FC006FB0F9 /* DMIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMIntroViewController.h; sourceTree = "<group>"; };
+		DDB28DAE1AD131FC006FB0F9 /* DMIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMIntroViewController.m; sourceTree = "<group>"; };
+		DDB28DB31AD1381F006FB0F9 /* DMConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMConstants.h; sourceTree = "<group>"; };
+		DDB28DB41AD1382C006FB0F9 /* DMMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMMacros.h; sourceTree = "<group>"; };
+		DDB67FC01AD2327000503EA5 /* SevenSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevenSwitch.h; sourceTree = "<group>"; };
+		DDB67FC11AD2327000503EA5 /* SevenSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenSwitch.m; sourceTree = "<group>"; };
+		DDB67FCE1AD23E2C00503EA5 /* DMSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSettingViewController.h; sourceTree = "<group>"; };
+		DDB67FCF1AD23E2C00503EA5 /* DMSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSettingViewController.m; sourceTree = "<group>"; };
+		DDB67FD11AD23E2C00503EA5 /* DMSettingBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSettingBaseCell.h; sourceTree = "<group>"; };
+		DDB67FD21AD23E2C00503EA5 /* DMSettingBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSettingBaseCell.m; sourceTree = "<group>"; };
+		DDB67FD51AD23E9400503EA5 /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
+		DDB67FD61AD23E9400503EA5 /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		DDB67FD81AD241BD00503EA5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DDB67FDD1AD2782B00503EA5 /* DMPlayNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMPlayNameCell.h; sourceTree = "<group>"; };
+		DDB67FDE1AD2782B00503EA5 /* DMPlayNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMPlayNameCell.m; sourceTree = "<group>"; };
+		DDB67FE01AD2789400503EA5 /* DMSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSwitchCell.h; sourceTree = "<group>"; };
+		DDB67FE11AD2789400503EA5 /* DMSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSwitchCell.m; sourceTree = "<group>"; };
+		DDB67FE51AD27A0A00503EA5 /* DMSettingHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSettingHandler.h; sourceTree = "<group>"; };
+		DDB67FE61AD27A0A00503EA5 /* DMSettingHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSettingHandler.m; sourceTree = "<group>"; };
+		DDB67FEA1AD2C15600503EA5 /* DMDropDownCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDropDownCell.h; sourceTree = "<group>"; };
+		DDB67FEB1AD2C15600503EA5 /* DMDropDownCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDropDownCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDB28D311AD1246B006FB0F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDB28D4A1AD1246B006FB0F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DDB0AF261AD179F20035F2FA /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				DDB67FBF1AD2327000503EA5 /* SevenSwitch */,
+				DDB0AF301AD17A700035F2FA /* FoldingTabBar */,
+				DDB0AF271AD17A3B0035F2FA /* FBShimmering */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		DDB0AF271AD17A3B0035F2FA /* FBShimmering */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF291AD17A3B0035F2FA /* FBShimmering.h */,
+				DDB0AF2A1AD17A3B0035F2FA /* FBShimmeringLayer.h */,
+				DDB0AF2B1AD17A3B0035F2FA /* FBShimmeringLayer.m */,
+				DDB0AF2C1AD17A3B0035F2FA /* FBShimmeringView.h */,
+				DDB0AF2D1AD17A3B0035F2FA /* FBShimmeringView.m */,
+			);
+			path = FBShimmering;
+			sourceTree = "<group>";
+		};
+		DDB0AF301AD17A700035F2FA /* FoldingTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF311AD17A700035F2FA /* Animation */,
+				DDB0AF351AD17A700035F2FA /* Category */,
+				DDB0AF3E1AD17A700035F2FA /* Constants */,
+				DDB0AF411AD17A700035F2FA /* Controller */,
+				DDB0AF451AD17A700035F2FA /* Model */,
+				DDB0AF491AD17A700035F2FA /* Protocol */,
+				DDB0AF4C1AD17A700035F2FA /* View */,
+			);
+			path = FoldingTabBar;
+			sourceTree = "<group>";
+		};
+		DDB0AF311AD17A700035F2FA /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF321AD17A700035F2FA /* YALSpringAnimation */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		DDB0AF321AD17A700035F2FA /* YALSpringAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF331AD17A700035F2FA /* YALSpringAnimation.h */,
+				DDB0AF341AD17A700035F2FA /* YALSpringAnimation.m */,
+			);
+			path = YALSpringAnimation;
+			sourceTree = "<group>";
+		};
+		DDB0AF351AD17A700035F2FA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF361AD17A700035F2FA /* CAAnimation */,
+				DDB0AF3A1AD17A700035F2FA /* CATransaction */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		DDB0AF361AD17A700035F2FA /* CAAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF371AD17A700035F2FA /* CAAnimation+YALTabBarViewAnimations */,
+			);
+			path = CAAnimation;
+			sourceTree = "<group>";
+		};
+		DDB0AF371AD17A700035F2FA /* CAAnimation+YALTabBarViewAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF381AD17A700035F2FA /* CAAnimation+YALTabBarViewAnimations.h */,
+				DDB0AF391AD17A700035F2FA /* CAAnimation+YALTabBarViewAnimations.m */,
+			);
+			path = "CAAnimation+YALTabBarViewAnimations";
+			sourceTree = "<group>";
+		};
+		DDB0AF3A1AD17A700035F2FA /* CATransaction */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF3B1AD17A700035F2FA /* CATransaction+TransactionWithAnimationsAndCompletion */,
+			);
+			path = CATransaction;
+			sourceTree = "<group>";
+		};
+		DDB0AF3B1AD17A700035F2FA /* CATransaction+TransactionWithAnimationsAndCompletion */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF3C1AD17A700035F2FA /* CATransaction+TransactionWithAnimationsAndCompletion.h */,
+				DDB0AF3D1AD17A700035F2FA /* CATransaction+TransactionWithAnimationsAndCompletion.m */,
+			);
+			path = "CATransaction+TransactionWithAnimationsAndCompletion";
+			sourceTree = "<group>";
+		};
+		DDB0AF3E1AD17A700035F2FA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF3F1AD17A700035F2FA /* YALAnimatingTabBarConstants.h */,
+				DDB0AF401AD17A700035F2FA /* YALAnimatingTabBarConstants.m */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		DDB0AF411AD17A700035F2FA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF421AD17A700035F2FA /* FoldingTabBarController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DDB0AF421AD17A700035F2FA /* FoldingTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF431AD17A700035F2FA /* YALFoldingTabBarController.h */,
+				DDB0AF441AD17A700035F2FA /* YALFoldingTabBarController.m */,
+			);
+			path = FoldingTabBarController;
+			sourceTree = "<group>";
+		};
+		DDB0AF451AD17A700035F2FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF461AD17A700035F2FA /* TabBarItem */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DDB0AF461AD17A700035F2FA /* TabBarItem */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF471AD17A700035F2FA /* YALTabBarItem.h */,
+				DDB0AF481AD17A700035F2FA /* YALTabBarItem.m */,
+			);
+			path = TabBarItem;
+			sourceTree = "<group>";
+		};
+		DDB0AF491AD17A700035F2FA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF4A1AD17A700035F2FA /* TabBarInteracting */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		DDB0AF4A1AD17A700035F2FA /* TabBarInteracting */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF4B1AD17A700035F2FA /* YALTabBarInteracting.h */,
+			);
+			path = TabBarInteracting;
+			sourceTree = "<group>";
+		};
+		DDB0AF4C1AD17A700035F2FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF4D1AD17A700035F2FA /* FoldingTabBar */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DDB0AF4D1AD17A700035F2FA /* FoldingTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0AF4E1AD17A700035F2FA /* YALFoldingTabBar.h */,
+				DDB0AF4F1AD17A700035F2FA /* YALFoldingTabBar.m */,
+			);
+			path = FoldingTabBar;
+			sourceTree = "<group>";
+		};
+		DDB28D2B1AD1246B006FB0F9 = {
+			isa = PBXGroup;
+			children = (
+				DDB28D361AD1246B006FB0F9 /* Dotman */,
+				DDB28D501AD1246B006FB0F9 /* DotmanTests */,
+				DDB28D351AD1246B006FB0F9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDB28D351AD1246B006FB0F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28D341AD1246B006FB0F9 /* Dotman.app */,
+				DDB28D4D1AD1246B006FB0F9 /* DotmanTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDB28D361AD1246B006FB0F9 /* Dotman */ = {
+			isa = PBXGroup;
+			children = (
+				DDB67FCB1AD23DF400503EA5 /* Sections */,
+				DDB67FB71AD22A9500503EA5 /* Generals */,
+				DDB0AF261AD179F20035F2FA /* Vendors */,
+				DDB28D8C1AD127EB006FB0F9 /* Resources */,
+				DDB28D621AD126A6006FB0F9 /* AppDelegate */,
+				DDB28D611AD12624006FB0F9 /* Macros */,
+				DDB28D5E1AD12612006FB0F9 /* Models */,
+				DDB28D5F1AD12612006FB0F9 /* ViewControllers */,
+				DDB28D601AD12612006FB0F9 /* Views */,
+				DDB28D461AD1246B006FB0F9 /* LaunchScreen.xib */,
+				DDB67FD81AD241BD00503EA5 /* Images.xcassets */,
+				DDB28D371AD1246B006FB0F9 /* Supporting Files */,
+			);
+			path = Dotman;
+			sourceTree = "<group>";
+		};
+		DDB28D371AD1246B006FB0F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28D381AD1246B006FB0F9 /* Info.plist */,
+				DDB28D391AD1246B006FB0F9 /* main.m */,
+				DDB28D941AD12C8A006FB0F9 /* Dotman-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DDB28D501AD1246B006FB0F9 /* DotmanTests */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28D531AD1246B006FB0F9 /* DotmanTests.m */,
+				DDB28D511AD1246B006FB0F9 /* Supporting Files */,
+			);
+			path = DotmanTests;
+			sourceTree = "<group>";
+		};
+		DDB28D511AD1246B006FB0F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28D521AD1246B006FB0F9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DDB28D5E1AD12612006FB0F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DDB28D5F1AD12612006FB0F9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28DAC1AD13191006FB0F9 /* DMIntroViewController */,
+				DDB28D961AD12E85006FB0F9 /* YALFirstTestViewController */,
+				DDB28D991AD12E85006FB0F9 /* YALFouthTestViewController */,
+				DDB28D9C1AD12E85006FB0F9 /* YALSecondTestViewController */,
+				DDB28D9F1AD12E85006FB0F9 /* YALThirdTestViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DDB28D601AD12612006FB0F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28DA81AD12EA8006FB0F9 /* ChatDemoCollectionViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DDB28D611AD12624006FB0F9 /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28DB31AD1381F006FB0F9 /* DMConstants.h */,
+				DDB28DB41AD1382C006FB0F9 /* DMMacros.h */,
+			);
+			path = Macros;
+			sourceTree = "<group>";
+		};
+		DDB28D621AD126A6006FB0F9 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28D631AD126A6006FB0F9 /* AppDelegate.h */,
+				DDB28D641AD126A6006FB0F9 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		DDB28D8C1AD127EB006FB0F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28D8D1AD127EB006FB0F9 /* Fonts */,
+				DDB28D8E1AD127EB006FB0F9 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DDB28D8D1AD127EB006FB0F9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28D8F1AD12BA8006FB0F9 /* Code Pro LC.otf */,
+				DDB28D901AD12BA8006FB0F9 /* Proxima Nova.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DDB28D8E1AD127EB006FB0F9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		DDB28D961AD12E85006FB0F9 /* YALFirstTestViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28D971AD12E85006FB0F9 /* YALFirstTestViewController.h */,
+				DDB28D981AD12E85006FB0F9 /* YALFirstTestViewController.m */,
+			);
+			path = YALFirstTestViewController;
+			sourceTree = "<group>";
+		};
+		DDB28D991AD12E85006FB0F9 /* YALFouthTestViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28D9A1AD12E85006FB0F9 /* YALFourthTestViewController.h */,
+				DDB28D9B1AD12E85006FB0F9 /* YALFourthTestViewController.m */,
+			);
+			path = YALFouthTestViewController;
+			sourceTree = "<group>";
+		};
+		DDB28D9C1AD12E85006FB0F9 /* YALSecondTestViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28D9D1AD12E85006FB0F9 /* YALSecondTestViewController.h */,
+				DDB28D9E1AD12E85006FB0F9 /* YALSecondTestViewController.m */,
+			);
+			path = YALSecondTestViewController;
+			sourceTree = "<group>";
+		};
+		DDB28D9F1AD12E85006FB0F9 /* YALThirdTestViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28DA01AD12E85006FB0F9 /* YALChatDemoList.plist */,
+				DDB28DA11AD12E85006FB0F9 /* YALThirdTestViewController.h */,
+				DDB28DA21AD12E85006FB0F9 /* YALThirdTestViewController.m */,
+			);
+			path = YALThirdTestViewController;
+			sourceTree = "<group>";
+		};
+		DDB28DA81AD12EA8006FB0F9 /* ChatDemoCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28DA91AD12EA8006FB0F9 /* YALChatDemoCollectionViewCell.h */,
+				DDB28DAA1AD12EA8006FB0F9 /* YALChatDemoCollectionViewCell.m */,
+			);
+			path = ChatDemoCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		DDB28DAC1AD13191006FB0F9 /* DMIntroViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DDB28DAD1AD131FC006FB0F9 /* DMIntroViewController.h */,
+				DDB28DAE1AD131FC006FB0F9 /* DMIntroViewController.m */,
+			);
+			path = DMIntroViewController;
+			sourceTree = "<group>";
+		};
+		DDB67FB71AD22A9500503EA5 /* Generals */ = {
+			isa = PBXGroup;
+			children = (
+				DDB67FC91AD23D8100503EA5 /* Categories */,
+			);
+			path = Generals;
+			sourceTree = "<group>";
+		};
+		DDB67FBF1AD2327000503EA5 /* SevenSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				DDB67FC01AD2327000503EA5 /* SevenSwitch.h */,
+				DDB67FC11AD2327000503EA5 /* SevenSwitch.m */,
+			);
+			path = SevenSwitch;
+			sourceTree = "<group>";
+		};
+		DDB67FC91AD23D8100503EA5 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DDB67FD51AD23E9400503EA5 /* UIImage+Additions.h */,
+				DDB67FD61AD23E9400503EA5 /* UIImage+Additions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		DDB67FCB1AD23DF400503EA5 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				DDB67FCC1AD23E2C00503EA5 /* Setting */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		DDB67FCC1AD23E2C00503EA5 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				DDB67FE31AD279CE00503EA5 /* Handler */,
+				DDB67FCD1AD23E2C00503EA5 /* Controllers */,
+				DDB67FD01AD23E2C00503EA5 /* Views */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		DDB67FCD1AD23E2C00503EA5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DDB67FCE1AD23E2C00503EA5 /* DMSettingViewController.h */,
+				DDB67FCF1AD23E2C00503EA5 /* DMSettingViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DDB67FD01AD23E2C00503EA5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DDB67FD11AD23E2C00503EA5 /* DMSettingBaseCell.h */,
+				DDB67FD21AD23E2C00503EA5 /* DMSettingBaseCell.m */,
+				DDB67FDD1AD2782B00503EA5 /* DMPlayNameCell.h */,
+				DDB67FDE1AD2782B00503EA5 /* DMPlayNameCell.m */,
+				DDB67FE01AD2789400503EA5 /* DMSwitchCell.h */,
+				DDB67FE11AD2789400503EA5 /* DMSwitchCell.m */,
+				DDB67FEA1AD2C15600503EA5 /* DMDropDownCell.h */,
+				DDB67FEB1AD2C15600503EA5 /* DMDropDownCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DDB67FE31AD279CE00503EA5 /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				DDB67FE51AD27A0A00503EA5 /* DMSettingHandler.h */,
+				DDB67FE61AD27A0A00503EA5 /* DMSettingHandler.m */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDB28D331AD1246B006FB0F9 /* Dotman */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDB28D571AD1246B006FB0F9 /* Build configuration list for PBXNativeTarget "Dotman" */;
+			buildPhases = (
+				DDB28D301AD1246B006FB0F9 /* Sources */,
+				DDB28D311AD1246B006FB0F9 /* Frameworks */,
+				DDB28D321AD1246B006FB0F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dotman;
+			productName = Dotman;
+			productReference = DDB28D341AD1246B006FB0F9 /* Dotman.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DDB28D4C1AD1246B006FB0F9 /* DotmanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDB28D5A1AD1246B006FB0F9 /* Build configuration list for PBXNativeTarget "DotmanTests" */;
+			buildPhases = (
+				DDB28D491AD1246B006FB0F9 /* Sources */,
+				DDB28D4A1AD1246B006FB0F9 /* Frameworks */,
+				DDB28D4B1AD1246B006FB0F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDB28D4F1AD1246B006FB0F9 /* PBXTargetDependency */,
+			);
+			name = DotmanTests;
+			productName = DotmanTests;
+			productReference = DDB28D4D1AD1246B006FB0F9 /* DotmanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDB28D2C1AD1246B006FB0F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = YingshanDeng;
+				TargetAttributes = {
+					DDB28D331AD1246B006FB0F9 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					DDB28D4C1AD1246B006FB0F9 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = DDB28D331AD1246B006FB0F9;
+					};
+				};
+			};
+			buildConfigurationList = DDB28D2F1AD1246B006FB0F9 /* Build configuration list for PBXProject "Dotman" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DDB28D2B1AD1246B006FB0F9;
+			productRefGroup = DDB28D351AD1246B006FB0F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDB28D331AD1246B006FB0F9 /* Dotman */,
+				DDB28D4C1AD1246B006FB0F9 /* DotmanTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDB28D321AD1246B006FB0F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDB67FDA1AD2704300503EA5 /* Proxima Nova.otf in Resources */,
+				DDB28D911AD12BA8006FB0F9 /* Code Pro LC.otf in Resources */,
+				DDB67FD91AD241BD00503EA5 /* Images.xcassets in Resources */,
+				DDB28DA61AD12E85006FB0F9 /* YALChatDemoList.plist in Resources */,
+				DDB28D481AD1246B006FB0F9 /* LaunchScreen.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDB28D4B1AD1246B006FB0F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDB28D301AD1246B006FB0F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDB0AF541AD17A700035F2FA /* YALFoldingTabBarController.m in Sources */,
+				DDB67FEC1AD2C15600503EA5 /* DMDropDownCell.m in Sources */,
+				DDB28DAB1AD12EA8006FB0F9 /* YALChatDemoCollectionViewCell.m in Sources */,
+				DDB28D3A1AD1246B006FB0F9 /* main.m in Sources */,
+				DDB67FDF1AD2782B00503EA5 /* DMPlayNameCell.m in Sources */,
+				DDB28DAF1AD131FC006FB0F9 /* DMIntroViewController.m in Sources */,
+				DDB0AF501AD17A700035F2FA /* YALSpringAnimation.m in Sources */,
+				DDB67FE21AD2789400503EA5 /* DMSwitchCell.m in Sources */,
+				DDB0AF2F1AD17A3B0035F2FA /* FBShimmeringView.m in Sources */,
+				DDB0AF2E1AD17A3B0035F2FA /* FBShimmeringLayer.m in Sources */,
+				DDB0AF561AD17A700035F2FA /* YALFoldingTabBar.m in Sources */,
+				DDB28DA31AD12E85006FB0F9 /* YALFirstTestViewController.m in Sources */,
+				DDB67FC21AD2327000503EA5 /* SevenSwitch.m in Sources */,
+				DDB0AF511AD17A700035F2FA /* CAAnimation+YALTabBarViewAnimations.m in Sources */,
+				DDB28DA51AD12E85006FB0F9 /* YALSecondTestViewController.m in Sources */,
+				DDB28DA71AD12E85006FB0F9 /* YALThirdTestViewController.m in Sources */,
+				DDB67FD71AD23E9400503EA5 /* UIImage+Additions.m in Sources */,
+				DDB67FD41AD23E2C00503EA5 /* DMSettingBaseCell.m in Sources */,
+				DDB0AF551AD17A700035F2FA /* YALTabBarItem.m in Sources */,
+				DDB67FE71AD27A0A00503EA5 /* DMSettingHandler.m in Sources */,
+				DDB28D651AD126A6006FB0F9 /* AppDelegate.m in Sources */,
+				DDB0AF521AD17A700035F2FA /* CATransaction+TransactionWithAnimationsAndCompletion.m in Sources */,
+				DDB0AF531AD17A700035F2FA /* YALAnimatingTabBarConstants.m in Sources */,
+				DDB28DA41AD12E85006FB0F9 /* YALFourthTestViewController.m in Sources */,
+				DDB67FD31AD23E2C00503EA5 /* DMSettingViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDB28D491AD1246B006FB0F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDB28D541AD1246B006FB0F9 /* DotmanTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDB28D4F1AD1246B006FB0F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDB28D331AD1246B006FB0F9 /* Dotman */;
+			targetProxy = DDB28D4E1AD1246B006FB0F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DDB28D461AD1246B006FB0F9 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDB28D471AD1246B006FB0F9 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDB28D551AD1246B006FB0F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DDB28D561AD1246B006FB0F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDB28D581AD1246B006FB0F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "Dotman/Dotman-Prefix.pch";
+				INFOPLIST_FILE = Dotman/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DDB28D591AD1246B006FB0F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "Dotman/Dotman-Prefix.pch";
+				INFOPLIST_FILE = Dotman/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DDB28D5B1AD1246B006FB0F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DotmanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dotman.app/Dotman";
+			};
+			name = Debug;
+		};
+		DDB28D5C1AD1246B006FB0F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DotmanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dotman.app/Dotman";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDB28D2F1AD1246B006FB0F9 /* Build configuration list for PBXProject "Dotman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDB28D551AD1246B006FB0F9 /* Debug */,
+				DDB28D561AD1246B006FB0F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDB28D571AD1246B006FB0F9 /* Build configuration list for PBXNativeTarget "Dotman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDB28D581AD1246B006FB0F9 /* Debug */,
+				DDB28D591AD1246B006FB0F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDB28D5A1AD1246B006FB0F9 /* Build configuration list for PBXNativeTarget "DotmanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDB28D5B1AD1246B006FB0F9 /* Debug */,
+				DDB28D5C1AD1246B006FB0F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDB28D2C1AD1246B006FB0F9 /* Project object */;
+}
