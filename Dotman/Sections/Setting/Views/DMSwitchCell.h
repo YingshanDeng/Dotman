@@ -8,8 +8,19 @@
 
 #import "DMSettingBaseCell.h"
 
+@protocol DMSwitchCellDelegate;
+
 @interface DMSwitchCell : DMSettingBaseCell
 
 @property (nonatomic, assign) BOOL switcherOn;
+
+@property (nonatomic, weak) id<DMSwitchCellDelegate> delegate;
+
+@end
+
+
+@protocol DMSwitchCellDelegate <NSObject>
+
+- (void)switherCell:(DMSwitchCell *)cell switchValueChange:(BOOL)isOn;
 
 @end

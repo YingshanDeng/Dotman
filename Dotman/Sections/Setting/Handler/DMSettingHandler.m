@@ -13,10 +13,11 @@
 #define DMSettingHandler_Persistentce_Plist_Name    @"DM-Setting-File.plist"
 
 
-NSString * const DMSettingHandler_Persistence_PlayerName_Key   = @"DM-PlayerName";
-NSString * const DMSettingHandler_Persistence_SoundEffect_Key  = @"DM-SoundEffect";
-NSString * const DMSettingHandler_Persistence_Shock_Effect_Key = @"DM-ShockEffect";
-
+NSString * const DMSettingHandler_Persistence_PlayerName_Key    = @"DM-PlayerName";
+NSString * const DMSettingHandler_Persistence_SoundEffect_Key   = @"DM-SoundEffect";
+NSString * const DMSettingHandler_Persistence_VibrateEffect_Key = @"DM-VibrateEffect";
+NSString * const DMSettingHandler_Persistence_Dots_Color_Key    = @"DM-DotsColor";
+NSString * const DMSettingHandler_Persistence_Theme_Color_Key   = @"DM-ThemeColor";
 
 
 @implementation DMSettingHandler
@@ -90,9 +91,11 @@ NSString * const DMSettingHandler_Persistence_Shock_Effect_Key = @"DM-ShockEffec
         [fileManager createFileAtPath:settingPlistPath contents:nil attributes:nil];
         
         // default
-        NSDictionary *defaultSettingDic = @{DMSettingHandler_Persistence_PlayerName_Key : @"Jack",
-                                         DMSettingHandler_Persistence_SoundEffect_Key : @(YES),
-                                         DMSettingHandler_Persistence_Shock_Effect_Key : @(YES)};
+        NSDictionary *defaultSettingDic = @{DMSettingHandler_Persistence_PlayerName_Key : @"Default",
+                                            DMSettingHandler_Persistence_SoundEffect_Key : @(YES),
+                                            DMSettingHandler_Persistence_VibrateEffect_Key : @(YES),
+                                            /*DMSettingHandler_Persistence_Dots_Color_Key : @"",
+                                            DMSettingHandler_Persistence_Theme_Color_Key : @""*/};
         [defaultSettingDic writeToFile:settingPlistPath atomically:YES];
     }
 }

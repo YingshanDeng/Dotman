@@ -8,10 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-
+// 玩家昵称
 extern NSString * const DMSettingHandler_Persistence_PlayerName_Key;
+// 音效
 extern NSString * const DMSettingHandler_Persistence_SoundEffect_Key;
-extern NSString * const DMSettingHandler_Persistence_Shock_Effect_Key;
+// 震动效果
+extern NSString * const DMSettingHandler_Persistence_VibrateEffect_Key;
+// Dots 颜色
+extern NSString * const DMSettingHandler_Persistence_Dots_Color_Key;
+// 游戏背景颜色
+extern NSString * const DMSettingHandler_Persistence_Theme_Color_Key;
 
 
 /**

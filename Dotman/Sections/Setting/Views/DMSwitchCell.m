@@ -68,13 +68,9 @@
 
 - (void)switcherValueChanged:(SevenSwitch *)switcher
 {
-    if (switcher.isOn)
+    if (self.delegate && [self.delegate respondsToSelector:@selector(switherCell:switchValueChange:)])
     {
-        NSLog(@"on");
-    }
-    else
-    {
-        NSLog(@"not on");
+        [self.delegate switherCell:self switchValueChange:switcher.on];
     }
 }
 

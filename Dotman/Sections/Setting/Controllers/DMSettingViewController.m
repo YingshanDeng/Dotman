@@ -12,25 +12,33 @@
 #import "DMSwitchCell.h"
 #import "DMPlayNameCell.h"
 #import "DMDropDownCell.h"
-
 #import "AppDelegate.h"
 
+#define DMSettingViewControllerCellMarkKey @"DMSettingViewControllerCellMarkKey"
+typedef NS_ENUM(NSInteger, DMSettingViewControllerCellMarkType)
+{
+    DMSettingViewControllerCellMarkPlayerNameType,
+    DMSettingViewControllerCellMarkSoundEffectType,
+    DMSettingViewControllerCellMarkVibrateEffectType,
+    DMSettingViewControllerCellMarkDotsColorType,
+    DMSettingViewControllerCellMarkThemeColorType
+};
 
-#define DMSettingViewController_Cell_DropDownViewEnable_Key @"DropDownViewEnable"
-#define DMSettingViewController_Cell_HasDropDownView_Key    @"HasDropDownView"
 
-
-
-@interface DMSettingViewController () <UITableViewDelegate, UITableViewDataSource, DMPlayNameCellDelegate>
+@interface DMSettingViewController () <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate, DMPlayNameCellDelegate, DMSwitchCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
 /**
- *  对于cell下弹视图，每一个cell都用一个字典进行标记 
- *  @{@"DropDownViewEnable" : @(YES), @"HasDropDownView" : @(YES)}
- *  这个数组用于保存这些字典数据
+ *  设置页面的数据
+ */
+@property (nonatomic, strong) NSDictionary *settingDic;
+
+/**
+ *  Cell 类型标记: 为每一个cell设置一个dic,用于标识cell类型
  */
 @property (nonatomic, strong) NSMutableArray *cellMarkArray;
+
 
 @end
 
@@ -42,7 +50,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = DMTabBarViewController_TabBarView_BackgroundColor;
     
-    
+    [self setupSettingData];
     [self setupNavigationItemTitle];
     [self setupTableView];
 }
@@ -60,12 +68,56 @@
     [self animateVisibleCells];
 }
 
+
 #pragma mark -
 // 加载设置页面的数据
 - (void)setupSettingData
 {
+    DMSettingHandler *handler = [DMSettingHandler defaultSettingHandle];
+    self.settingDic = [handler readSettingDictionaryData]; // 设置数据
     
+    NSMutableArray *tmpMtbArr = [NSMutableArray arrayWithCapacity:self.settingDic.count];
+    for (NSString *key in self.settingDic.allKeys)
+    {
+        if ([key isEqualToString:DMSettingHandler_Persistence_PlayerName_Key])
+        {
+            [tmpMtbArr addObject:@{DMSettingViewControllerCellMarkKey : @(DMSettingViewControllerCellMarkPlayerNameType)}];
+        }
+        else if ([key isEqualToString:DMSettingHandler_Persistence_SoundEffect_Key])
+        {
+            [tmpMtbArr addObject:@{DMSettingViewControllerCellMarkKey : @(DMSettingViewControllerCellMarkSoundEffectType)}];
+        }
+        else if ([key isEqualToString:DMSettingHandler_Persistence_VibrateEffect_Key])
+        {
+            [tmpMtbArr addObject:@{DMSettingViewControllerCellMarkKey : @(DMSettingViewControllerCellMarkVibrateEffectType)}];
+        }
+        else if ([key isEqualToString:DMSettingHandler_Persistence_Dots_Color_Key])
+        {
+            [tmpMtbArr addObject:@{DMSettingViewControllerCellMarkKey : @(DMSettingViewControllerCellMarkDotsColorType)}];
+        }
+        else if ([key isEqualToString:DMSettingHandler_Persistence_Theme_Color_Key])
+        {
+            [tmpMtbArr addObject:@{DMSettingViewControllerCellMarkKey : @(DMSettingViewControllerCellMarkDotsColorType)}];
+        }
+    }
+    // sort array
+    NSArray *sortedArr = [tmpMtbArr sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSInteger index1 = [[obj1 objectForKey:DMSettingViewControllerCellMarkKey] integerValue];
+        NSInteger index2 = [[obj2 objectForKey:DMSettingViewControllerCellMarkKey] integerValue];
+        if (index1 == index2)
+        {
+            return NSOrderedSame;
+        }
+        else if (index1 > index2)
+        {
+            return NSOrderedDescending;
+        }
+        else
+            return NSOrderedAscending;
+    }];
+    self.cellMarkArray = [sortedArr mutableCopy];
 }
+
 
 - (void)setupNavigationItemTitle
 {
@@ -143,41 +195,7 @@
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-/*
-    NSIndexPath *path = nil;
-
-    if ([[self.dataArray[indexPath.row] objectForKey:@"Cell"] isEqualToString:@"MainCell"]) {
-        path = [NSIndexPath indexPathForItem:(indexPath.row+1) inSection:indexPath.section];
-    }else{
-        path = indexPath;
-    }
-    
-    if ([[self.dataArray[indexPath.row] objectForKey:@"isAttached"] boolValue]) {
-        // 关闭附加cell
-        NSDictionary * dic = @{@"Cell": @"MainCell",@"isAttached":@(NO)};
-        self.dataArray[(path.row-1)] = dic;
-        [self.dataArray removeObjectAtIndex:path.row];
-        
-        [self.tableView beginUpdates];
-        [self.tableView deleteRowsAtIndexPaths:@[path]  withRowAnimation:UITableViewRowAnimationTop];
-        [self.tableView endUpdates];
-        
-    }else{
-        // 打开附加cell
-        NSDictionary * dic = @{@"Cell": @"MainCell",@"isAttached":@(YES)};
-        self.dataArray[(path.row-1)] = dic;
-        NSDictionary * addDic = @{@"Cell": @"AttachedCell",@"isAttached":@(YES)};
-        [self.dataArray insertObject:addDic atIndex:path.row];
-        
-        
-        [self.tableView beginUpdates];
-        [self.tableView insertRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationTop];
-        [self.tableView endUpdates];
-        
-    }
-*/
-    
+    return;
 }
 
 #pragma mark - UITableViewDataSource
@@ -188,108 +206,100 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 14;
+    return [self.cellMarkArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"CellIdentifier";
-    DMPlayNameCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell)
+    DMSettingViewControllerCellMarkType curCellMarkType = [[[self.cellMarkArray objectAtIndex:indexPath.row] objectForKey:DMSettingViewControllerCellMarkKey] integerValue] ;
+    if (curCellMarkType == DMSettingViewControllerCellMarkPlayerNameType)
     {
-        cell = [[DMPlayNameCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        DMPlayNameCell *cell = [[DMPlayNameCell alloc] init];
+        cell.delegate = self;
+        [cell setTag:DMSettingViewControllerCellMarkPlayerNameType];
+        [cell setCellIndicatorShow:NO];
+        cell.promptString = @"Player Name:";
+        cell.playerNameString = [self.settingDic objectForKey:DMSettingHandler_Persistence_PlayerName_Key];
+        return cell;
     }
-    
-    //TODO: cell 重用问题啊！！
-//    if (indexPath.row % 2 == 0)
-//    {
-//        cell.switcherOn = NO;
-//        cell.promptString = @"PlayerNasdfadfame";
-//    }
-//    else
-//    {
-//        cell.switcherOn = YES;
-//        cell.promptString = @"Player";
-//    }
-
-    cell.promptString = @"Player Name : ";
-    cell.playerNameString = @"Objcer";
-    [cell setCellIndicatorShow:NO];
-    
-
-    return cell;
-    
-    /*
-    if ([[self.dataArray[indexPath.row] objectForKey:@"Cell"] isEqualToString:@"MainCell"])
+    else if (curCellMarkType == DMSettingViewControllerCellMarkSoundEffectType)
     {
-        
-        static NSString *CellIdentifier = @"MainCell";
-        
-        MainCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        
-        
-        if (cell == nil) {
-            cell = [[MainCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            
-            cell.selectionStyle = UITableViewCellSelectionStyleGray;
-        }
-        cell.Headerphoto.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",indexPath.row%4+1]];
-        
+        DMSwitchCell *cell = [[DMSwitchCell alloc] init];
+        cell.delegate = self;
+        [cell setTag:DMSettingViewControllerCellMarkSoundEffectType];
+        [cell setCellIndicatorShow:NO];
+        cell.promptString = @"Sound Effect :";
+        cell.switcherOn = [[self.settingDic objectForKey:DMSettingHandler_Persistence_SoundEffect_Key] boolValue];
         return cell;
-        
-    }else if([[self.dataArray[indexPath.row] objectForKey:@"Cell"] isEqualToString:@"AttachedCell"]){
-        
-        static NSString *CellIdentifier = @"AttachedCell";
-        
-        AttachedCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        
-        
-        if (cell == nil) {
-            cell = [[AttachedCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        }
-        
+    }
+    else if (curCellMarkType == DMSettingViewControllerCellMarkVibrateEffectType)
+    {
+        DMSwitchCell *cell = [[DMSwitchCell alloc] init];
+        cell.delegate = self;
+        [cell setTag:DMSettingViewControllerCellMarkVibrateEffectType];
+        [cell setCellIndicatorShow:NO];
+        cell.promptString = @"Vibrate Effect :";
+        cell.switcherOn = [[self.settingDic objectForKey:DMSettingHandler_Persistence_VibrateEffect_Key] boolValue];
         return cell;
-        
-    }*/
+    }
+
+    return nil;
+
 }
 
 #pragma mark - DMPlayNameCellDelegate
 - (void)didPressedPlayNameCellEditBtn:(DMPlayNameCell *)cell
 {
-//    NSIndexPath *path = nil;
-//    
-//    if ([[self.dataArray[indexPath.row] objectForKey:@"Cell"] isEqualToString:@"MainCell"]) {
-//        path = [NSIndexPath indexPathForItem:(indexPath.row+1) inSection:indexPath.section];
-//    }else{
-//        path = indexPath;
-//    }
-//    
-//    if ([[self.dataArray[indexPath.row] objectForKey:@"isAttached"] boolValue]) {
-//        // 关闭附加cell
-//        NSDictionary * dic = @{@"Cell": @"MainCell",@"isAttached":@(NO)};
-//        self.dataArray[(path.row-1)] = dic;
-//        [self.dataArray removeObjectAtIndex:path.row];
-//        
-//        [self.tableView beginUpdates];
-//        [self.tableView deleteRowsAtIndexPaths:@[path]  withRowAnimation:UITableViewRowAnimationTop];
-//        [self.tableView endUpdates];
-//        
-//    }else{
-//        // 打开附加cell
-//        NSDictionary * dic = @{@"Cell": @"MainCell",@"isAttached":@(YES)};
-//        self.dataArray[(path.row-1)] = dic;
-//        NSDictionary * addDic = @{@"Cell": @"AttachedCell",@"isAttached":@(YES)};
-//        [self.dataArray insertObject:addDic atIndex:path.row];
-//        
-//        
-//        [self.tableView beginUpdates];
-//        [self.tableView insertRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationTop];
-//        [self.tableView endUpdates];
-//        
-//    }
+    if (cell == nil)
+    {
+        return;
+    }
+    //TODO: 直接弹出一个 alert view 算了，哎！
+    
+    UIAlertView *inputAlertView = [[UIAlertView alloc] initWithTitle:@"Modify Player Name" message:@"Please input your custom player name" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Done", nil];
+    [inputAlertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [inputAlertView show];
+    
+    //TODO: 暂时未实现
+    /*
+    NSIndexPath *curCellPath = [self.tableView indexPathForCell:cell];
+    NSIndexPath *dropCellPath = [NSIndexPath indexPathForRow:(curCellPath.row + 1) inSection:curCellPath.section];
+    [self.cellMarkArray addObject:@{DMSettingViewController_Cell_DropDownViewEnable_Key : @(NO),
+                                    DMSettingViewController_Cell_HasDropDownView_Key : @(NO)}];
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:@[dropCellPath] withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView endUpdates];
+    */
+}
+#pragma mark - DMSwitchCellDelegate
+- (void)switherCell:(DMSwitchCell *)cell switchValueChange:(BOOL)isOn
+{
+    NSInteger tag = cell.tag;
+    if (tag == DMSettingViewControllerCellMarkSoundEffectType)
+    {
+        [[DMSettingHandler defaultSettingHandle] persistObject:@(isOn) forKey:DMSettingHandler_Persistence_SoundEffect_Key];
+    }
+    else if (tag == DMSettingViewControllerCellMarkVibrateEffectType)
+    {
+        [[DMSettingHandler defaultSettingHandle] persistObject:@(isOn) forKey:DMSettingHandler_Persistence_VibrateEffect_Key];
+    }
 }
 
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *buttonTitle = [alertView buttonTitleAtIndex:buttonIndex];
+    if ([buttonTitle isEqualToString:@"Done"])
+    {
+        NSString *nameStr = [[alertView textFieldAtIndex:0] text];
+        if (nameStr && ![nameStr isEqualToString:@""])
+        {
+            [[DMSettingHandler defaultSettingHandle] persistObject:nameStr forKey:DMSettingHandler_Persistence_PlayerName_Key];
+            
+            DMPlayNameCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            cell.playerNameString = nameStr;
+        }
+    }
+}
 
 @end

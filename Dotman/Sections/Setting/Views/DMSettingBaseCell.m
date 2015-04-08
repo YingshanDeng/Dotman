@@ -34,7 +34,7 @@
     {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self setupPromptLabel];
-        [self setupCellIndication];
+//        [self setupCellIndication];
     }
     return self;
 }
@@ -46,7 +46,8 @@
     {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self setupPromptLabel];
-        [self setupCellIndication];
+        //TODO: 有问题：无法通过yes，no设置
+//        [self setupCellIndication];
     }
     return self;
 }
