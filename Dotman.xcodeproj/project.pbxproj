@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD7333E91AD55C130047980D /* RQShineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7333E81AD55C130047980D /* RQShineLabel.m */; };
+		DD7333ED1AD563200047980D /* DMIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7333EC1AD563200047980D /* DMIntroViewController.m */; };
 		DDB0AF2E1AD17A3B0035F2FA /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0AF2B1AD17A3B0035F2FA /* FBShimmeringLayer.m */; };
 		DDB0AF2F1AD17A3B0035F2FA /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0AF2D1AD17A3B0035F2FA /* FBShimmeringView.m */; };
 		DDB0AF501AD17A700035F2FA /* YALSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0AF341AD17A700035F2FA /* YALSpringAnimation.m */; };
@@ -27,7 +29,6 @@
 		DDB28DA61AD12E85006FB0F9 /* YALChatDemoList.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDB28DA01AD12E85006FB0F9 /* YALChatDemoList.plist */; };
 		DDB28DA71AD12E85006FB0F9 /* YALThirdTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB28DA21AD12E85006FB0F9 /* YALThirdTestViewController.m */; };
 		DDB28DAB1AD12EA8006FB0F9 /* YALChatDemoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB28DAA1AD12EA8006FB0F9 /* YALChatDemoCollectionViewCell.m */; };
-		DDB28DAF1AD131FC006FB0F9 /* DMIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB28DAE1AD131FC006FB0F9 /* DMIntroViewController.m */; };
 		DDB67FC21AD2327000503EA5 /* SevenSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FC11AD2327000503EA5 /* SevenSwitch.m */; };
 		DDB67FD31AD23E2C00503EA5 /* DMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FCF1AD23E2C00503EA5 /* DMSettingViewController.m */; };
 		DDB67FD41AD23E2C00503EA5 /* DMSettingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FD21AD23E2C00503EA5 /* DMSettingBaseCell.m */; };
@@ -51,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD7333E71AD55C130047980D /* RQShineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RQShineLabel.h; sourceTree = "<group>"; };
+		DD7333E81AD55C130047980D /* RQShineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RQShineLabel.m; sourceTree = "<group>"; };
+		DD7333EB1AD563200047980D /* DMIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMIntroViewController.h; sourceTree = "<group>"; };
+		DD7333EC1AD563200047980D /* DMIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMIntroViewController.m; sourceTree = "<group>"; };
 		DDB0AF291AD17A3B0035F2FA /* FBShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmering.h; sourceTree = "<group>"; };
 		DDB0AF2A1AD17A3B0035F2FA /* FBShimmeringLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringLayer.h; sourceTree = "<group>"; };
 		DDB0AF2B1AD17A3B0035F2FA /* FBShimmeringLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringLayer.m; sourceTree = "<group>"; };
@@ -94,8 +99,6 @@
 		DDB28DA21AD12E85006FB0F9 /* YALThirdTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALThirdTestViewController.m; sourceTree = "<group>"; };
 		DDB28DA91AD12EA8006FB0F9 /* YALChatDemoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALChatDemoCollectionViewCell.h; sourceTree = "<group>"; };
 		DDB28DAA1AD12EA8006FB0F9 /* YALChatDemoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALChatDemoCollectionViewCell.m; sourceTree = "<group>"; };
-		DDB28DAD1AD131FC006FB0F9 /* DMIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMIntroViewController.h; sourceTree = "<group>"; };
-		DDB28DAE1AD131FC006FB0F9 /* DMIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMIntroViewController.m; sourceTree = "<group>"; };
 		DDB28DB31AD1381F006FB0F9 /* DMConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMConstants.h; sourceTree = "<group>"; };
 		DDB28DB41AD1382C006FB0F9 /* DMMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMMacros.h; sourceTree = "<group>"; };
 		DDB67FC01AD2327000503EA5 /* SevenSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevenSwitch.h; sourceTree = "<group>"; };
@@ -135,9 +138,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD7333E61AD55BC60047980D /* RQShineLabel */ = {
+			isa = PBXGroup;
+			children = (
+				DD7333E71AD55C130047980D /* RQShineLabel.h */,
+				DD7333E81AD55C130047980D /* RQShineLabel.m */,
+			);
+			path = RQShineLabel;
+			sourceTree = "<group>";
+		};
+		DD7333EA1AD562F90047980D /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				DD7333EB1AD563200047980D /* DMIntroViewController.h */,
+				DD7333EC1AD563200047980D /* DMIntroViewController.m */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
 		DDB0AF261AD179F20035F2FA /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				DD7333E61AD55BC60047980D /* RQShineLabel */,
 				DDB67FBF1AD2327000503EA5 /* SevenSwitch */,
 				DDB0AF301AD17A700035F2FA /* FoldingTabBar */,
 				DDB0AF271AD17A3B0035F2FA /* FBShimmering */,
@@ -381,7 +403,6 @@
 		DDB28D5F1AD12612006FB0F9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				DDB28DAC1AD13191006FB0F9 /* DMIntroViewController */,
 				DDB28D961AD12E85006FB0F9 /* YALFirstTestViewController */,
 				DDB28D991AD12E85006FB0F9 /* YALFouthTestViewController */,
 				DDB28D9C1AD12E85006FB0F9 /* YALSecondTestViewController */,
@@ -487,15 +508,6 @@
 			path = ChatDemoCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		DDB28DAC1AD13191006FB0F9 /* DMIntroViewController */ = {
-			isa = PBXGroup;
-			children = (
-				DDB28DAD1AD131FC006FB0F9 /* DMIntroViewController.h */,
-				DDB28DAE1AD131FC006FB0F9 /* DMIntroViewController.m */,
-			);
-			path = DMIntroViewController;
-			sourceTree = "<group>";
-		};
 		DDB67FB71AD22A9500503EA5 /* Generals */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,6 +537,7 @@
 		DDB67FCB1AD23DF400503EA5 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				DD7333EA1AD562F90047980D /* Intro */,
 				DDB67FCC1AD23E2C00503EA5 /* Setting */,
 			);
 			path = Sections;
@@ -680,7 +693,6 @@
 				DDB28DAB1AD12EA8006FB0F9 /* YALChatDemoCollectionViewCell.m in Sources */,
 				DDB28D3A1AD1246B006FB0F9 /* main.m in Sources */,
 				DDB67FDF1AD2782B00503EA5 /* DMPlayNameCell.m in Sources */,
-				DDB28DAF1AD131FC006FB0F9 /* DMIntroViewController.m in Sources */,
 				DDB0AF501AD17A700035F2FA /* YALSpringAnimation.m in Sources */,
 				DDB67FE21AD2789400503EA5 /* DMSwitchCell.m in Sources */,
 				DDB0AF2F1AD17A3B0035F2FA /* FBShimmeringView.m in Sources */,
@@ -696,7 +708,9 @@
 				DDB0AF551AD17A700035F2FA /* YALTabBarItem.m in Sources */,
 				DDB67FE71AD27A0A00503EA5 /* DMSettingHandler.m in Sources */,
 				DDB28D651AD126A6006FB0F9 /* AppDelegate.m in Sources */,
+				DD7333E91AD55C130047980D /* RQShineLabel.m in Sources */,
 				DDB0AF521AD17A700035F2FA /* CATransaction+TransactionWithAnimationsAndCompletion.m in Sources */,
+				DD7333ED1AD563200047980D /* DMIntroViewController.m in Sources */,
 				DDB0AF531AD17A700035F2FA /* YALAnimatingTabBarConstants.m in Sources */,
 				DDB28DA41AD12E85006FB0F9 /* YALFourthTestViewController.m in Sources */,
 				DDB67FD31AD23E2C00503EA5 /* DMSettingViewController.m in Sources */,

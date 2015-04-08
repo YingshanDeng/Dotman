@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  下弹cell
+ */
+
+//TODO: 目前未用到
 @interface DMDropDownCell : UITableViewCell
 
 @end
