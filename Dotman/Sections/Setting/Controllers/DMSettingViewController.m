@@ -14,7 +14,12 @@
 #import "DMDropDownCell.h"
 #import "AppDelegate.h"
 
-#define DMSettingViewControllerCellMarkKey @"DMSettingViewControllerCellMarkKey"
+// 设置页面标题
+NSString * const DM_Setting_ViewController_Title    = @"Setting";
+// cell Mark Key 用于标记当前cell显示的内容
+NSString * const DMSettingViewControllerCellMarkKey = @"DMSettingViewControllerCellMarkKey";
+
+// 标识cell显示的内容
 typedef NS_ENUM(NSInteger, DMSettingViewControllerCellMarkType)
 {
     DMSettingViewControllerCellMarkPlayerNameType,
@@ -38,7 +43,6 @@ typedef NS_ENUM(NSInteger, DMSettingViewControllerCellMarkType)
  *  Cell 类型标记: 为每一个cell设置一个dic,用于标识cell类型
  */
 @property (nonatomic, strong) NSMutableArray *cellMarkArray;
-
 
 @end
 
@@ -296,7 +300,7 @@ typedef NS_ENUM(NSInteger, DMSettingViewControllerCellMarkType)
         {
             [[DMSettingHandler defaultSettingHandle] persistObject:nameStr forKey:DMSettingHandler_Persistence_PlayerName_Key];
             
-            DMPlayNameCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            DMPlayNameCell *cell = (DMPlayNameCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
             cell.playerNameString = nameStr;
         }
     }

@@ -9,6 +9,23 @@
 /* Begin PBXBuildFile section */
 		DD7333E91AD55C130047980D /* RQShineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7333E81AD55C130047980D /* RQShineLabel.m */; };
 		DD7333ED1AD563200047980D /* DMIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7333EC1AD563200047980D /* DMIntroViewController.m */; };
+		DD7333FD1AD563C50047980D /* 1.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD7333F01AD563C50047980D /* 1.caf */; };
+		DD7333FE1AD563C50047980D /* 10.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD7333F11AD563C50047980D /* 10.caf */; };
+		DD7333FF1AD563C50047980D /* 11.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD7333F21AD563C50047980D /* 11.caf */; };
+		DD7334001AD563C50047980D /* 12.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD7333F31AD563C50047980D /* 12.caf */; };
+		DD7334011AD563C50047980D /* 13.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD7333F41AD563C50047980D /* 13.caf */; };
+		DD7334021AD563C50047980D /* 2.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD7333F51AD563C50047980D /* 2.caf */; };
+		DD7334031AD563C50047980D /* 3.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD7333F61AD563C50047980D /* 3.caf */; };
+		DD7334041AD563C50047980D /* 4.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD7333F71AD563C50047980D /* 4.caf */; };
+		DD7334051AD563C50047980D /* 5.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD7333F81AD563C50047980D /* 5.caf */; };
+		DD7334061AD563C50047980D /* 6.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD7333F91AD563C50047980D /* 6.caf */; };
+		DD7334071AD563C50047980D /* 7.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD7333FA1AD563C50047980D /* 7.caf */; };
+		DD7334081AD563C50047980D /* 8.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD7333FB1AD563C50047980D /* 8.caf */; };
+		DD7334091AD563C50047980D /* 9.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD7333FC1AD563C50047980D /* 9.caf */; };
+		DD73340D1AD563FC0047980D /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD73340C1AD563FC0047980D /* SoundManager.m */; };
+		DD7334131AD565240047980D /* DMRoundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7334121AD565240047980D /* DMRoundNode.m */; };
+		DD7334161AD5656D0047980D /* DMDotSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7334151AD5656D0047980D /* DMDotSprite.m */; };
+		DD7334191AD566760047980D /* DMGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7334181AD566760047980D /* DMGameView.m */; };
 		DDB0AF2E1AD17A3B0035F2FA /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0AF2B1AD17A3B0035F2FA /* FBShimmeringLayer.m */; };
 		DDB0AF2F1AD17A3B0035F2FA /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0AF2D1AD17A3B0035F2FA /* FBShimmeringView.m */; };
 		DDB0AF501AD17A700035F2FA /* YALSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB0AF341AD17A700035F2FA /* YALSpringAnimation.m */; };
@@ -56,6 +73,27 @@
 		DD7333E81AD55C130047980D /* RQShineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RQShineLabel.m; sourceTree = "<group>"; };
 		DD7333EB1AD563200047980D /* DMIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMIntroViewController.h; sourceTree = "<group>"; };
 		DD7333EC1AD563200047980D /* DMIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMIntroViewController.m; sourceTree = "<group>"; };
+		DD7333F01AD563C50047980D /* 1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.caf; sourceTree = "<group>"; };
+		DD7333F11AD563C50047980D /* 10.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 10.caf; sourceTree = "<group>"; };
+		DD7333F21AD563C50047980D /* 11.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 11.caf; sourceTree = "<group>"; };
+		DD7333F31AD563C50047980D /* 12.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 12.caf; sourceTree = "<group>"; };
+		DD7333F41AD563C50047980D /* 13.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 13.caf; sourceTree = "<group>"; };
+		DD7333F51AD563C50047980D /* 2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.caf; sourceTree = "<group>"; };
+		DD7333F61AD563C50047980D /* 3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3.caf; sourceTree = "<group>"; };
+		DD7333F71AD563C50047980D /* 4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 4.caf; sourceTree = "<group>"; };
+		DD7333F81AD563C50047980D /* 5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 5.caf; sourceTree = "<group>"; };
+		DD7333F91AD563C50047980D /* 6.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 6.caf; sourceTree = "<group>"; };
+		DD7333FA1AD563C50047980D /* 7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 7.caf; sourceTree = "<group>"; };
+		DD7333FB1AD563C50047980D /* 8.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8.caf; sourceTree = "<group>"; };
+		DD7333FC1AD563C50047980D /* 9.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 9.caf; sourceTree = "<group>"; };
+		DD73340B1AD563FC0047980D /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		DD73340C1AD563FC0047980D /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
+		DD7334111AD565240047980D /* DMRoundNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMRoundNode.h; sourceTree = "<group>"; };
+		DD7334121AD565240047980D /* DMRoundNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMRoundNode.m; sourceTree = "<group>"; };
+		DD7334141AD5656D0047980D /* DMDotSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDotSprite.h; sourceTree = "<group>"; };
+		DD7334151AD5656D0047980D /* DMDotSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDotSprite.m; sourceTree = "<group>"; };
+		DD7334171AD566760047980D /* DMGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGameView.h; sourceTree = "<group>"; };
+		DD7334181AD566760047980D /* DMGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGameView.m; sourceTree = "<group>"; };
 		DDB0AF291AD17A3B0035F2FA /* FBShimmering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmering.h; sourceTree = "<group>"; };
 		DDB0AF2A1AD17A3B0035F2FA /* FBShimmeringLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringLayer.h; sourceTree = "<group>"; };
 		DDB0AF2B1AD17A3B0035F2FA /* FBShimmeringLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringLayer.m; sourceTree = "<group>"; };
@@ -156,9 +194,68 @@
 			path = Intro;
 			sourceTree = "<group>";
 		};
+		DD7333EF1AD563C50047980D /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				DD7333F01AD563C50047980D /* 1.caf */,
+				DD7333F11AD563C50047980D /* 10.caf */,
+				DD7333F21AD563C50047980D /* 11.caf */,
+				DD7333F31AD563C50047980D /* 12.caf */,
+				DD7333F41AD563C50047980D /* 13.caf */,
+				DD7333F51AD563C50047980D /* 2.caf */,
+				DD7333F61AD563C50047980D /* 3.caf */,
+				DD7333F71AD563C50047980D /* 4.caf */,
+				DD7333F81AD563C50047980D /* 5.caf */,
+				DD7333F91AD563C50047980D /* 6.caf */,
+				DD7333FA1AD563C50047980D /* 7.caf */,
+				DD7333FB1AD563C50047980D /* 8.caf */,
+				DD7333FC1AD563C50047980D /* 9.caf */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		DD73340A1AD563DE0047980D /* SoundManager */ = {
+			isa = PBXGroup;
+			children = (
+				DD73340B1AD563FC0047980D /* SoundManager.h */,
+				DD73340C1AD563FC0047980D /* SoundManager.m */,
+			);
+			path = SoundManager;
+			sourceTree = "<group>";
+		};
+		DD73340E1AD5648A0047980D /* GameLogic */ = {
+			isa = PBXGroup;
+			children = (
+				DD73340F1AD565000047980D /* DotView */,
+				DD7334101AD565000047980D /* GameView */,
+			);
+			path = GameLogic;
+			sourceTree = "<group>";
+		};
+		DD73340F1AD565000047980D /* DotView */ = {
+			isa = PBXGroup;
+			children = (
+				DD7334111AD565240047980D /* DMRoundNode.h */,
+				DD7334121AD565240047980D /* DMRoundNode.m */,
+				DD7334141AD5656D0047980D /* DMDotSprite.h */,
+				DD7334151AD5656D0047980D /* DMDotSprite.m */,
+			);
+			path = DotView;
+			sourceTree = "<group>";
+		};
+		DD7334101AD565000047980D /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				DD7334171AD566760047980D /* DMGameView.h */,
+				DD7334181AD566760047980D /* DMGameView.m */,
+			);
+			path = GameView;
+			sourceTree = "<group>";
+		};
 		DDB0AF261AD179F20035F2FA /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				DD73340A1AD563DE0047980D /* SoundManager */,
 				DD7333E61AD55BC60047980D /* RQShineLabel */,
 				DDB67FBF1AD2327000503EA5 /* SevenSwitch */,
 				DDB0AF301AD17A700035F2FA /* FoldingTabBar */,
@@ -440,6 +537,7 @@
 		DDB28D8C1AD127EB006FB0F9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DD7333EF1AD563C50047980D /* Sounds */,
 				DDB28D8D1AD127EB006FB0F9 /* Fonts */,
 				DDB28D8E1AD127EB006FB0F9 /* Images */,
 			);
@@ -511,6 +609,7 @@
 		DDB67FB71AD22A9500503EA5 /* Generals */ = {
 			isa = PBXGroup;
 			children = (
+				DD73340E1AD5648A0047980D /* GameLogic */,
 				DDB67FC91AD23D8100503EA5 /* Categories */,
 			);
 			path = Generals;
@@ -666,9 +765,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD7334031AD563C50047980D /* 3.caf in Resources */,
+				DD7334021AD563C50047980D /* 2.caf in Resources */,
+				DD7334081AD563C50047980D /* 8.caf in Resources */,
+				DD7334051AD563C50047980D /* 5.caf in Resources */,
+				DD7334011AD563C50047980D /* 13.caf in Resources */,
+				DD7334071AD563C50047980D /* 7.caf in Resources */,
+				DD7334091AD563C50047980D /* 9.caf in Resources */,
+				DD7333FF1AD563C50047980D /* 11.caf in Resources */,
+				DD7333FD1AD563C50047980D /* 1.caf in Resources */,
 				DDB67FDA1AD2704300503EA5 /* Proxima Nova.otf in Resources */,
 				DDB28D911AD12BA8006FB0F9 /* Code Pro LC.otf in Resources */,
+				DD7334001AD563C50047980D /* 12.caf in Resources */,
+				DD7333FE1AD563C50047980D /* 10.caf in Resources */,
+				DD7334041AD563C50047980D /* 4.caf in Resources */,
 				DDB67FD91AD241BD00503EA5 /* Images.xcassets in Resources */,
+				DD7334061AD563C50047980D /* 6.caf in Resources */,
 				DDB28DA61AD12E85006FB0F9 /* YALChatDemoList.plist in Resources */,
 				DDB28D481AD1246B006FB0F9 /* LaunchScreen.xib in Resources */,
 			);
@@ -703,6 +815,9 @@
 				DDB0AF511AD17A700035F2FA /* CAAnimation+YALTabBarViewAnimations.m in Sources */,
 				DDB28DA51AD12E85006FB0F9 /* YALSecondTestViewController.m in Sources */,
 				DDB28DA71AD12E85006FB0F9 /* YALThirdTestViewController.m in Sources */,
+				DD7334131AD565240047980D /* DMRoundNode.m in Sources */,
+				DD73340D1AD563FC0047980D /* SoundManager.m in Sources */,
+				DD7334191AD566760047980D /* DMGameView.m in Sources */,
 				DDB67FD71AD23E9400503EA5 /* UIImage+Additions.m in Sources */,
 				DDB67FD41AD23E2C00503EA5 /* DMSettingBaseCell.m in Sources */,
 				DDB0AF551AD17A700035F2FA /* YALTabBarItem.m in Sources */,
@@ -711,6 +826,7 @@
 				DD7333E91AD55C130047980D /* RQShineLabel.m in Sources */,
 				DDB0AF521AD17A700035F2FA /* CATransaction+TransactionWithAnimationsAndCompletion.m in Sources */,
 				DD7333ED1AD563200047980D /* DMIntroViewController.m in Sources */,
+				DD7334161AD5656D0047980D /* DMDotSprite.m in Sources */,
 				DDB0AF531AD17A700035F2FA /* YALAnimatingTabBarConstants.m in Sources */,
 				DDB28DA41AD12E85006FB0F9 /* YALFourthTestViewController.m in Sources */,
 				DDB67FD31AD23E2C00503EA5 /* DMSettingViewController.m in Sources */,

@@ -8,16 +8,16 @@
 
 #import "DMSettingHandler.h"
 
-
-#define DMSettingHandler_Persistentce_Document_Name @"DM-Setting"
-#define DMSettingHandler_Persistentce_Plist_Name    @"DM-Setting-File.plist"
-
-
 NSString * const DMSettingHandler_Persistence_PlayerName_Key    = @"DM-PlayerName";
 NSString * const DMSettingHandler_Persistence_SoundEffect_Key   = @"DM-SoundEffect";
 NSString * const DMSettingHandler_Persistence_VibrateEffect_Key = @"DM-VibrateEffect";
 NSString * const DMSettingHandler_Persistence_Dots_Color_Key    = @"DM-DotsColor";
 NSString * const DMSettingHandler_Persistence_Theme_Color_Key   = @"DM-ThemeColor";
+
+// 持久化数据存储目录
+NSString * const DMSettingHandler_Persistentce_Document_Name    = @"DM-Setting";
+// 持久化数据保存文件
+NSString * const DMSettingHandler_Persistentce_Plist_Name       = @"DM-Setting-File.plist";
 
 
 @implementation DMSettingHandler

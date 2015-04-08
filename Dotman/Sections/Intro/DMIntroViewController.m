@@ -11,8 +11,10 @@
 #import "RQShineLabel.h"
 
 
-#define DMIntroViewController_Welcome_String @"Welcome to Dotman"
-#define DMIntroViewController_Tip_String     @"Colorful World Colorful Game"
+// 欢迎 label 文字
+NSString * const DMIntroViewController_Welcome_String = @"Welcome to Dotman";
+// 提示 label 文字
+NSString * const DMIntroViewController_Tip_String     = @"Colorful World Colorful Game";
 
 @interface DMIntroViewController ()
 
@@ -46,7 +48,7 @@
     
     
     //TODO: 添加 dots
-    
+   
     
     // "Colorful World Colorful Game"
     _shimmeringView = [[FBShimmeringView alloc] init];
