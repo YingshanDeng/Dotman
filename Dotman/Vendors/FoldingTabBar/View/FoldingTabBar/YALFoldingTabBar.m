@@ -40,9 +40,9 @@ typedef NS_ENUM(NSUInteger, YALAnimatingState) {
 @property (nonatomic, strong) NSArray *leftButtonsArray;
 @property (nonatomic, strong) NSArray *rightButtonsArray;
 
-//extra buttons 'tabBarItems' for each 'tabBarItem'
-@property (nonatomic, strong) UIButton *extraLeftButton;
-@property (nonatomic, strong) UIButton *extraRightButton;
+////extra buttons 'tabBarItems' for each 'tabBarItem'
+//@property (nonatomic, strong) UIButton *extraLeftButton;
+//@property (nonatomic, strong) UIButton *extraRightButton;
 
 //model representation of tabBarItems. also contains info for extraBarItems: image, color, etc
 @property (nonatomic, strong) NSDictionary *leftTabBarItems;

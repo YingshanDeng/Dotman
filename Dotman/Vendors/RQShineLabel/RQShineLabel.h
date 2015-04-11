@@ -44,4 +44,5 @@
 - (void)fadeOut;
 - (void)fadeOutWithCompletion:(void (^)())completion;
 
+
 @end

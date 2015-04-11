@@ -62,4 +62,8 @@ typedef NS_ENUM(NSUInteger, YALTabBarState ) {
 @property (nonatomic, assign) CGFloat extraTabBarItemHeight;
 @property (nonatomic, assign) CGFloat offsetForExtraTabBarItems;
 
+//extra buttons 'tabBarItems' for each 'tabBarItem'
+@property (nonatomic, strong) UIButton *extraLeftButton;
+@property (nonatomic, strong) UIButton *extraRightButton;
+
 @end

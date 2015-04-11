@@ -65,7 +65,7 @@
 {
   // Defaults
   _shineDuration   = 2.5;
-  _fadeoutDuration = 2.5;
+  _fadeoutDuration = 0.5;
   _autoStart       = NO;
   _fadedOut        = YES;
   self.textColor  = [UIColor whiteColor];
@@ -146,7 +146,7 @@
 - (void)startAnimationWithDuration:(CFTimeInterval)duration
 {
   self.beginTime = CACurrentMediaTime();
-  self.endTime = self.beginTime + self.shineDuration;
+  self.endTime = self.beginTime + duration;
   self.displaylink.paused = NO;
 }
 

@@ -34,41 +34,8 @@ NSString * const DMIntroViewController_Tip_String     = @"Colorful World Colorfu
 {
     [super viewDidLoad];
     [self.view setBackgroundColor:DMTabBarViewController_TabBarView_BackgroundColor];
-
-    // "Welcome to Dotman"
-    _welcomeLabel = [[RQShineLabel alloc] initWithFrame:self.view.bounds];
-    _welcomeLabel.text = DMIntroViewController_Welcome_String;
-    _welcomeLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:60.0];
-    _welcomeLabel.textColor = [UIColor whiteColor];
-    _welcomeLabel.textAlignment = NSTextAlignmentCenter;
-    _welcomeLabel.backgroundColor = [UIColor clearColor];
-    _welcomeLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    _welcomeLabel.numberOfLines = 0;
-    [self.view addSubview:_welcomeLabel];
-    
-    
-    //TODO: 添加 dots
-   
-    
-    // "Colorful World Colorful Game"
-    _shimmeringView = [[FBShimmeringView alloc] init];
-    _shimmeringView.shimmering = YES;
-    _shimmeringView.shimmeringBeginFadeDuration = 2.5f;
-    _shimmeringView.shimmeringOpacity = .3f;
-    [self.view addSubview:_shimmeringView];
-    
-    _colorfulLabel = [[UILabel alloc] initWithFrame:_shimmeringView.bounds];
-    _colorfulLabel.text = DMIntroViewController_Tip_String;
-    _colorfulLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:25.0];
-    _colorfulLabel.textColor = [UIColor whiteColor];
-    _colorfulLabel.textAlignment = NSTextAlignmentCenter;
-    _colorfulLabel.backgroundColor = [UIColor clearColor];
-    _colorfulLabel.adjustsFontSizeToFitWidth = YES;
-    _shimmeringView.contentView = _colorfulLabel;
-    
-
-    
 }
+
 
 // 设置位置
 - (void)viewWillLayoutSubviews
@@ -90,7 +57,13 @@ NSString * const DMIntroViewController_Tip_String     = @"Colorful World Colorfu
 {
     [super viewWillAppear:animated];
     
+    [self setupWelcomeLabel];
     
+    
+    //TODO: 添加 dots
+    
+    
+    [self setupShimmeringView];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -99,6 +72,51 @@ NSString * const DMIntroViewController_Tip_String     = @"Colorful World Colorfu
     [_welcomeLabel shineWithCompletion:^{
         
     }];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    [_welcomeLabel removeFromSuperview];
+    _welcomeLabel = nil;
+    [_colorfulLabel removeFromSuperview];
+    _colorfulLabel = nil;
+}
+
+#pragma mark - 
+- (void)setupWelcomeLabel
+{
+    // "Welcome to Dotman"
+    _welcomeLabel = [[RQShineLabel alloc] initWithFrame:self.view.bounds];
+    _welcomeLabel.text = DMIntroViewController_Welcome_String;
+    _welcomeLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:60.0];
+    _welcomeLabel.fadeoutDuration = 0.5f;
+    _welcomeLabel.textColor = [UIColor whiteColor];
+    _welcomeLabel.textAlignment = NSTextAlignmentCenter;
+    _welcomeLabel.backgroundColor = [UIColor clearColor];
+    _welcomeLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    _welcomeLabel.numberOfLines = 0;
+    [self.view addSubview:_welcomeLabel];
+}
+
+- (void)setupShimmeringView
+{
+    // "Colorful World Colorful Game"
+    _shimmeringView = [[FBShimmeringView alloc] init];
+    _shimmeringView.shimmering = YES;
+    _shimmeringView.shimmeringBeginFadeDuration = 2.5f;
+    _shimmeringView.shimmeringOpacity = .3f;
+    [self.view addSubview:_shimmeringView];
+    
+    _colorfulLabel = [[UILabel alloc] initWithFrame:_shimmeringView.bounds];
+    _colorfulLabel.text = DMIntroViewController_Tip_String;
+    _colorfulLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:25.0];
+    _colorfulLabel.textColor = [UIColor whiteColor];
+    _colorfulLabel.textAlignment = NSTextAlignmentCenter;
+    _colorfulLabel.backgroundColor = [UIColor clearColor];
+    _colorfulLabel.adjustsFontSizeToFitWidth = YES;
+    _shimmeringView.contentView = _colorfulLabel;
 }
 
 #pragma mark - 

@@ -173,10 +173,12 @@
  *  注：通过下面这个方法可以对 TabBar 中的 VC 进行切换
  */
 - (void)itemInTabBarViewPressed:(YALFoldingTabBar *)tabBarView atIndex:(NSUInteger)index {
-    self.selectedViewController = [self.viewControllers objectAtIndex:index];
-}
 
-//TODO: 添加方法，对切换过程的VC进行重置
+    UINavigationController *navi = (UINavigationController *)[self.viewControllers objectAtIndex:index];
+    [navi popToRootViewControllerAnimated:NO];
+    self.selectedViewController = navi;
+//    self.selectedViewController = [self.viewControllers objectAtIndex:index];
+}
 
 
 @end

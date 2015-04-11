@@ -56,13 +56,14 @@ typedef NS_ENUM(NSInteger, DMSettingViewControllerCellMarkType)
     
     [self setupSettingData];
     [self setupNavigationItemTitle];
-    [self setupTableView];
 }
 
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self setupTableView];
     [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
 }
 
@@ -72,6 +73,13 @@ typedef NS_ENUM(NSInteger, DMSettingViewControllerCellMarkType)
     [self animateVisibleCells];
 }
 
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self.tableView removeFromSuperview];
+    self.tableView = nil;
+}
 
 #pragma mark -
 // 加载设置页面的数据
@@ -164,7 +172,6 @@ typedef NS_ENUM(NSInteger, DMSettingViewControllerCellMarkType)
 - (void)animateVisibleCells
 {
     [self prepareVisibleCellsForAnimation];
-    
     for (int index = 0; index < [self.tableView.visibleCells count]; index ++)
     {
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];

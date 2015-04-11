@@ -11,11 +11,8 @@
 
 #import "DMIntroViewController.h"
 #import "DMSettingViewController.h"
-
-#import "YALSecondTestViewController.h"
-#import "YALThirdTestViewController.h"
-#import "YALFourthTestViewController.h"
-
+#import "DMSoloViewController.h"
+#import "DMBattleViewController.h"
 
 @interface AppDelegate ()
 
@@ -29,17 +26,21 @@
     
     self.tabBarViewController = [[YALFoldingTabBarController alloc] init];
     
-    DMIntroViewController *vc1 = [[DMIntroViewController alloc] init];
-    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc1];
-    [navi setNavigationBarHidden:YES];
+    DMIntroViewController *introVC = [[DMIntroViewController alloc] init];
+    UINavigationController *navi_1 = [[UINavigationController alloc] initWithRootViewController:introVC];
+    [navi_1 setNavigationBarHidden:YES];
 
-    YALSecondTestViewController *vc2 = [[YALSecondTestViewController alloc] init];
-    YALThirdTestViewController *vc3 = [[YALThirdTestViewController alloc] init];
+    DMSoloViewController *soloVC = [[DMSoloViewController alloc] init];
+    UINavigationController *navi_2 = [[UINavigationController alloc] initWithRootViewController:soloVC];
     
-    DMSettingViewController *vc4 = [[DMSettingViewController alloc] init];
-    UINavigationController *navi4 = [[UINavigationController alloc] initWithRootViewController:vc4];
+    DMBattleViewController *battleVC = [[DMBattleViewController alloc] init];
+    UINavigationController *navi_3 = [[UINavigationController alloc] initWithRootViewController:battleVC];
 
-    [self.tabBarViewController setViewControllers:@[navi, vc2, vc3, navi4]];
+    
+    DMSettingViewController *settingVC = [[DMSettingViewController alloc] init];
+    UINavigationController *navi_4 = [[UINavigationController alloc] initWithRootViewController:settingVC];
+
+    [self.tabBarViewController setViewControllers:@[navi_1, navi_2, navi_3, navi_4]];
 
     [self setupFoldingTabBarController];
 
@@ -82,7 +83,7 @@
                                                      rightItemImage:nil];
     
     YALTabBarItem *item2 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"profile_icon"]
-                                                      leftItemImage:[UIImage imageNamed:@"edit_icon"]
+                                                      leftItemImage:[UIImage imageNamed:nil]
                                                      rightItemImage:nil];
     
     self.tabBarViewController.leftBarItems = @[item1, item2];
