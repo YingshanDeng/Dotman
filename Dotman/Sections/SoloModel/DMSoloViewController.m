@@ -92,7 +92,6 @@ typedef NS_ENUM(NSInteger, DMSoloGameType)
     [super viewDidDisappear:animated];
     
     [self.menuBtn collapseSphereMenu];
-    ç
     [self.haloLayer removeFromSuperlayer];
 }
 
