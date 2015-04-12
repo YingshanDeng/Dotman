@@ -57,6 +57,20 @@ NSString * const DMSettingHandler_Persistentce_Plist_Name       = @"DM-Setting-F
     [curDic writeToFile:filePath atomically:YES];
 }
 
+- (BOOL)supportSoundEffect
+{
+    NSDictionary *settingDic = [self readSettingDictionaryData];
+    BOOL flag = [[settingDic objectForKey:DMSettingHandler_Persistence_SoundEffect_Key] boolValue];
+    return flag;
+}
+
+- (BOOL)supportVibrateEffect
+{
+    NSDictionary *settingDic = [self readSettingDictionaryData];
+    BOOL flag = [[settingDic objectForKey:DMSettingHandler_Persistence_VibrateEffect_Key] boolValue];
+    return flag;
+}
+
 #pragma mark -
 /**
  *  生成 plist 文件

@@ -25,11 +25,15 @@ extern NSString * const DMSettingHandler_Persistence_Theme_Color_Key;
  */
 @interface DMSettingHandler : NSObject
 
-
+/**
+ *  单例类方法
+ *
+ *  @return 单例对象
+ */
 + (id)defaultSettingHandle;
 
 /**
- *  读取数据
+ *  读取所有setting数据
  *
  *  @return 字典数据
  */
@@ -42,5 +46,19 @@ extern NSString * const DMSettingHandler_Persistence_Theme_Color_Key;
  *  @param key 键值
  */
 - (void)persistObject:(id)obj forKey:(NSString *)key;
+
+/**
+ *  是否支持声音效果
+ *
+ *  @return 布尔值
+ */
+- (BOOL)supportSoundEffect;
+
+/**
+ *  是否支持震动效果
+ *
+ *  @return 布尔值
+ */
+- (BOOL)supportVibrateEffect;
 
 @end

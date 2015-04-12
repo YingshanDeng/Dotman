@@ -44,6 +44,11 @@
 		DDB28D651AD126A6006FB0F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB28D641AD126A6006FB0F9 /* AppDelegate.m */; };
 		DDB28D911AD12BA8006FB0F9 /* Code Pro LC.otf in Resources */ = {isa = PBXBuildFile; fileRef = DDB28D8F1AD12BA8006FB0F9 /* Code Pro LC.otf */; };
 		DDB350B21AD91B9E00B34D98 /* DMTimingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB350B11AD91B9E00B34D98 /* DMTimingViewController.m */; };
+		DDB350B61AD91D7600B34D98 /* DMMovingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB350B51AD91D7600B34D98 /* DMMovingViewController.m */; };
+		DDB350B91AD91D8C00B34D98 /* DMInfiniteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB350B81AD91D8C00B34D98 /* DMInfiniteViewController.m */; };
+		DDB350BF1AD9227A00B34D98 /* ASPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB350BC1AD9227A00B34D98 /* ASPopUpView.m */; };
+		DDB350C01AD9227A00B34D98 /* ASProgressPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB350BE1AD9227A00B34D98 /* ASProgressPopUpView.m */; };
+		DDB350C41AD955B800B34D98 /* DMWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB350C31AD955B800B34D98 /* DMWaveView.m */; };
 		DDB67FC21AD2327000503EA5 /* SevenSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FC11AD2327000503EA5 /* SevenSwitch.m */; };
 		DDB67FD31AD23E2C00503EA5 /* DMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FCF1AD23E2C00503EA5 /* DMSettingViewController.m */; };
 		DDB67FD41AD23E2C00503EA5 /* DMSettingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FD21AD23E2C00503EA5 /* DMSettingBaseCell.m */; };
@@ -132,8 +137,18 @@
 		DDB28D941AD12C8A006FB0F9 /* Dotman-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dotman-Prefix.pch"; sourceTree = "<group>"; };
 		DDB28DB31AD1381F006FB0F9 /* DMConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMConstants.h; sourceTree = "<group>"; };
 		DDB28DB41AD1382C006FB0F9 /* DMMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMMacros.h; sourceTree = "<group>"; };
-		DDB350B01AD91B9E00B34D98 /* DMTimingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTimingViewController.h; sourceTree = "<group>"; };
-		DDB350B11AD91B9E00B34D98 /* DMTimingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTimingViewController.m; sourceTree = "<group>"; };
+		DDB350B01AD91B9E00B34D98 /* DMTimingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMTimingViewController.h; path = ../DMTimingViewController.h; sourceTree = "<group>"; };
+		DDB350B11AD91B9E00B34D98 /* DMTimingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMTimingViewController.m; path = ../DMTimingViewController.m; sourceTree = "<group>"; };
+		DDB350B41AD91D7600B34D98 /* DMMovingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMMovingViewController.h; path = ../DMMovingViewController.h; sourceTree = "<group>"; };
+		DDB350B51AD91D7600B34D98 /* DMMovingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMMovingViewController.m; path = ../DMMovingViewController.m; sourceTree = "<group>"; };
+		DDB350B71AD91D8C00B34D98 /* DMInfiniteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMInfiniteViewController.h; path = ../DMInfiniteViewController.h; sourceTree = "<group>"; };
+		DDB350B81AD91D8C00B34D98 /* DMInfiniteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMInfiniteViewController.m; path = ../DMInfiniteViewController.m; sourceTree = "<group>"; };
+		DDB350BB1AD9227A00B34D98 /* ASPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPopUpView.h; sourceTree = "<group>"; };
+		DDB350BC1AD9227A00B34D98 /* ASPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPopUpView.m; sourceTree = "<group>"; };
+		DDB350BD1AD9227A00B34D98 /* ASProgressPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASProgressPopUpView.h; sourceTree = "<group>"; };
+		DDB350BE1AD9227A00B34D98 /* ASProgressPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASProgressPopUpView.m; sourceTree = "<group>"; };
+		DDB350C21AD955B800B34D98 /* DMWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMWaveView.h; sourceTree = "<group>"; };
+		DDB350C31AD955B800B34D98 /* DMWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMWaveView.m; sourceTree = "<group>"; };
 		DDB67FC01AD2327000503EA5 /* SevenSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevenSwitch.h; sourceTree = "<group>"; };
 		DDB67FC11AD2327000503EA5 /* SevenSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenSwitch.m; sourceTree = "<group>"; };
 		DDB67FCE1AD23E2C00503EA5 /* DMSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSettingViewController.h; sourceTree = "<group>"; };
@@ -261,8 +276,10 @@
 			children = (
 				DD8316181AD6A3D800A4FA4D /* DMSoloViewController.h */,
 				DD8316191AD6A3D800A4FA4D /* DMSoloViewController.m */,
-				DDB350B01AD91B9E00B34D98 /* DMTimingViewController.h */,
-				DDB350B11AD91B9E00B34D98 /* DMTimingViewController.m */,
+				DDB350C51AD95CF700B34D98 /* Infinite */,
+				DDB350C61AD95CF700B34D98 /* Moving */,
+				DDB350C71AD95CF700B34D98 /* Timing */,
+				DDB350C11AD9559200B34D98 /* View */,
 			);
 			path = SoloModel;
 			sourceTree = "<group>";
@@ -279,6 +296,7 @@
 		DDB0AF261AD179F20035F2FA /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				DDB350BA1AD9227A00B34D98 /* ASProgressPopUpView */,
 				DD477CEF1AD6B507003C6AD0 /* DWBubbleMenuButton */,
 				DD73340A1AD563DE0047980D /* SoundManager */,
 				DD7333E61AD55BC60047980D /* RQShineLabel */,
@@ -564,6 +582,53 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		DDB350BA1AD9227A00B34D98 /* ASProgressPopUpView */ = {
+			isa = PBXGroup;
+			children = (
+				DDB350BB1AD9227A00B34D98 /* ASPopUpView.h */,
+				DDB350BC1AD9227A00B34D98 /* ASPopUpView.m */,
+				DDB350BD1AD9227A00B34D98 /* ASProgressPopUpView.h */,
+				DDB350BE1AD9227A00B34D98 /* ASProgressPopUpView.m */,
+			);
+			path = ASProgressPopUpView;
+			sourceTree = "<group>";
+		};
+		DDB350C11AD9559200B34D98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDB350C21AD955B800B34D98 /* DMWaveView.h */,
+				DDB350C31AD955B800B34D98 /* DMWaveView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DDB350C51AD95CF700B34D98 /* Infinite */ = {
+			isa = PBXGroup;
+			children = (
+				DDB350B71AD91D8C00B34D98 /* DMInfiniteViewController.h */,
+				DDB350B81AD91D8C00B34D98 /* DMInfiniteViewController.m */,
+			);
+			path = Infinite;
+			sourceTree = "<group>";
+		};
+		DDB350C61AD95CF700B34D98 /* Moving */ = {
+			isa = PBXGroup;
+			children = (
+				DDB350B41AD91D7600B34D98 /* DMMovingViewController.h */,
+				DDB350B51AD91D7600B34D98 /* DMMovingViewController.m */,
+			);
+			path = Moving;
+			sourceTree = "<group>";
+		};
+		DDB350C71AD95CF700B34D98 /* Timing */ = {
+			isa = PBXGroup;
+			children = (
+				DDB350B01AD91B9E00B34D98 /* DMTimingViewController.h */,
+				DDB350B11AD91B9E00B34D98 /* DMTimingViewController.m */,
+			);
+			path = Timing;
+			sourceTree = "<group>";
+		};
 		DDB67FB71AD22A9500503EA5 /* Generals */ = {
 			isa = PBXGroup;
 			children = (
@@ -770,16 +835,21 @@
 				DDB0AF561AD17A700035F2FA /* YALFoldingTabBar.m in Sources */,
 				DDB67FC21AD2327000503EA5 /* SevenSwitch.m in Sources */,
 				DDB0AF511AD17A700035F2FA /* CAAnimation+YALTabBarViewAnimations.m in Sources */,
+				DDB350BF1AD9227A00B34D98 /* ASPopUpView.m in Sources */,
 				DD83161A1AD6A3D800A4FA4D /* DMSoloViewController.m in Sources */,
 				DD7334131AD565240047980D /* DMRoundNode.m in Sources */,
 				DD73340D1AD563FC0047980D /* SoundManager.m in Sources */,
 				DD7334191AD566760047980D /* DMGameView.m in Sources */,
 				DDB67FD71AD23E9400503EA5 /* UIImage+Additions.m in Sources */,
+				DDB350B91AD91D8C00B34D98 /* DMInfiniteViewController.m in Sources */,
 				DDB67FD41AD23E2C00503EA5 /* DMSettingBaseCell.m in Sources */,
 				DDB0AF551AD17A700035F2FA /* YALTabBarItem.m in Sources */,
+				DDB350C41AD955B800B34D98 /* DMWaveView.m in Sources */,
 				DDB67FE71AD27A0A00503EA5 /* DMSettingHandler.m in Sources */,
 				DDB28D651AD126A6006FB0F9 /* AppDelegate.m in Sources */,
+				DDB350C01AD9227A00B34D98 /* ASProgressPopUpView.m in Sources */,
 				DD7333E91AD55C130047980D /* RQShineLabel.m in Sources */,
+				DDB350B61AD91D7600B34D98 /* DMMovingViewController.m in Sources */,
 				DDB0AF521AD17A700035F2FA /* CATransaction+TransactionWithAnimationsAndCompletion.m in Sources */,
 				DD7333ED1AD563200047980D /* DMIntroViewController.m in Sources */,
 				DD7334161AD5656D0047980D /* DMDotSprite.m in Sources */,

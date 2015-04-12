@@ -10,6 +10,11 @@
 #import "UIImage+Additions.h"
 #import "DWBubbleMenuButton.h"
 
+#import "DMTimingViewController.h"
+#import "DMMovingViewController.h"
+#import "DMInfiniteViewController.h"
+
+
 // button title
 #define DMSoloGameTimingButtonTitle   @"Timing"
 #define DMSoloGameMovingButtonTitle   @"Moving"
@@ -32,11 +37,20 @@ typedef NS_ENUM(NSInteger, DMSoloGameType)
 
 @interface DMSoloViewController () <DWBubbleMenuViewDelegate>
 
+/**
+ *  大标题提示
+ */
 @property (nonatomic, strong) UILabel *tipLabel;
+
 
 @property (nonatomic, strong) DWBubbleMenuButton *menuBtn;
 
 @property (nonatomic, strong) NSArray *subBtnTipLabelArray;
+
+/**
+ *  选择的单机游戏模式
+ */
+@property (nonatomic, assign) DMSoloGameType selectedType;
 
 @end
 
@@ -197,20 +211,9 @@ typedef NS_ENUM(NSInteger, DMSoloGameType)
 
 - (void)modeBtnPressed:(UIButton *)btn
 {
-    DMSoloGameType type = btn.tag;
-    if (type == DMSoloGameTimingType)
-    {
-        
-    }
-    else if (type == DMSoloGameMovingType)
-    {
-        
-    }
-    else if (type == DMSoloGameInfiniteType)
-    {
-        
-    }
+    self.selectedType = (DMSoloGameType)btn.tag;
 }
+
 
 #pragma mark - DWBubbleMenuViewDelegate
 - (void)bubbleMenuButtonWillExpand:(DWBubbleMenuButton *)expandableView
@@ -250,7 +253,30 @@ typedef NS_ENUM(NSInteger, DMSoloGameType)
 
 - (void)bubbleMenuButtonDidCollapse:(DWBubbleMenuButton *)expandableView
 {
-
+    switch (self.selectedType)
+    {
+        case DMSoloGameTimingType:
+        {
+            DMTimingViewController *timingVC = [[DMTimingViewController alloc] init];
+            [self.navigationController pushViewController:timingVC animated:YES];
+            break;
+        }
+        case DMSoloGameMovingType:
+        {
+            DMMovingViewController *movingVC = [[DMMovingViewController alloc] init];
+            [self.navigationController pushViewController:movingVC animated:YES];
+            break;
+        }
+        case DMSoloGameInfiniteType:
+        {
+            DMInfiniteViewController *infiniteVC = [[DMInfiniteViewController alloc] init];
+            [self.navigationController pushViewController:infiniteVC animated:YES];
+            break;
+        }
+        default:
+            break;
+    }
+    
 }
 
 

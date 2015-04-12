@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DMGameView : UIView
+@class DMGameView;
+@protocol DMGameViewDelegate <NSObject>
 
+/**
+ *  完成一次消除过程的回调
+ *
+ *  @param score 该次消除的得分
+ */
+- (void)didFinishOnceDisappearWithScore:(NSInteger)score;
+
+@end
+
+@interface DMGameView : UIView
 
 /**
  *  能否进行游戏
@@ -22,7 +33,12 @@
 @property (nonatomic, assign) BOOL canDrawLine;
 
 
-- (void)startGame;
+/**
+ *  委托
+ */
+@property (nonatomic, weak) id<DMGameViewDelegate> delegate;
 
+
+- (void)startGame;
 
 @end

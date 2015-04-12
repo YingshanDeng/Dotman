@@ -66,5 +66,14 @@
 #define ShowingYellow  RGBA(0.902,0.851,0.2391,1)
 
 
+/**
+ *  单人游戏模式相关
+ */
+// 定时60秒
+#define DM_Solo_Timing_Game_Duration   60.0f
+
+// 移动30次
+#define DM_Solo_Moving_Game_Number     30
+
 
 #endif

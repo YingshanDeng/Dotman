@@ -293,7 +293,7 @@
     
     NSArray *colorArray = @[ShowingBlue, ShowingGreen, ShowingRed, ShowingOrange, ShowingPurple, ShowingYellow];
     self.dotColor = [colorArray_1 objectAtIndex:index];
-    //    self.dotColor = [colorArray objectAtIndex:1];
+//        self.dotColor = [colorArray_1 objectAtIndex:2];
 }
 
 

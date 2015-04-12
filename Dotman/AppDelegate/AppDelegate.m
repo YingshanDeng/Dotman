@@ -14,6 +14,8 @@
 #import "DMSoloViewController.h"
 #import "DMBattleViewController.h"
 
+#import "SoundManager.h"
+
 @interface AppDelegate ()
 
 @end
@@ -44,6 +46,9 @@
 
     [self setupFoldingTabBarController];
 
+    // 预加载声音资源
+    [self preLoadingSoundEffect];
+    
     self.window = [[UIWindow alloc] initWithFrame:ScreenRect];
     self.window.rootViewController = self.tabBarViewController;
     [self.window makeKeyAndVisible];
@@ -74,7 +79,7 @@
 }
 
 
-#pragma mark -
+#pragma mark - Folding Tab Bar
 - (void)setupFoldingTabBarController
 {
     //prepare leftBarItems
@@ -112,8 +117,15 @@
     self.tabBarViewController.tabBarViewHeight = YALTabBarViewDefaultHeight;
     self.tabBarViewController.tabBarView.tabBarViewEdgeInsets = YALTabBarViewHDefaultEdgeInsets;
     self.tabBarViewController.tabBarView.tabBarItemsEdgeInsets = YALTabBarViewItemsDefaultEdgeInsets;
-    
-    
+}
+
+#pragma mark - 预加载声音
+- (void)preLoadingSoundEffect
+{
+    // 加载音效
+    [SoundManager sharedManager].allowsBackgroundMusic = YES;
+    [[SoundManager sharedManager] prepareToPlay];
+    [SoundManager sharedManager].soundVolume = 1.0f;
 }
 
 

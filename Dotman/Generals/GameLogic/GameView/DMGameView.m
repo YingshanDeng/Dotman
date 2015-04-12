@@ -9,7 +9,7 @@
 #import "DMGameView.h"
 #import "DMDotSprite.h"
 #import "UIImage+Additions.h"
-
+#import "DMSettingHandler.h"
 #import "SoundManager.h"
 
 
@@ -64,12 +64,14 @@
     if (self)
     {
         self.backgroundColor = [UIColor colorWithRed:223.0/255 green:239.0/255 blue:239.0/255 alpha:1.0];
-        
+
         [self setupDots];
         [self initProperties];
     }
     return self;
 }
+
+
 
 - (void)startGame
 {
@@ -307,9 +309,13 @@
 {
     // 用于去除重复元素
     NSSet *dotSet = [NSSet setWithArray:_selectedStack];
-    //TODO: 这里可用于计分
-    NSLog(@"count = %lu",(unsigned long)dotSet.count);
     
+    // 计分
+    NSLog(@"count = %@",@(dotSet.count));
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishOnceDisappearWithScore:)])
+    {
+        [self.delegate didFinishOnceDisappearWithScore:dotSet.count];
+    }
     
     
     // 选中的dot至少要有一个
@@ -612,6 +618,10 @@
 // 播放音效
 - (void)playEffectSound
 {
+    BOOL flag = [[DMSettingHandler defaultSettingHandle] supportSoundEffect];
+    if (!flag) {
+        return;
+    }
     NSInteger nCount = _selectedStack.count;
     NSInteger soundIndex = nCount;
     if (nCount == 0)
@@ -629,6 +639,10 @@
 // 震动效果 -- 出现回环，消除同种颜色
 - (void)playVibrateEffect
 {
+    BOOL flag = [[DMSettingHandler defaultSettingHandle] supportVibrateEffect];
+    if (!flag) {
+        return;
+    }
     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
 }
 
