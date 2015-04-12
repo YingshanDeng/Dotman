@@ -59,6 +59,13 @@
 		DDB67FE21AD2789400503EA5 /* DMSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FE11AD2789400503EA5 /* DMSwitchCell.m */; };
 		DDB67FE71AD27A0A00503EA5 /* DMSettingHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FE61AD27A0A00503EA5 /* DMSettingHandler.m */; };
 		DDB67FEC1AD2C15600503EA5 /* DMDropDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FEB1AD2C15600503EA5 /* DMDropDownCell.m */; };
+		DDCC78661ADA14FE0062B45A /* SphereMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCC78651ADA14FE0062B45A /* SphereMenu.m */; };
+		DDCC786C1ADA15690062B45A /* MultiplePulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCC78691ADA15690062B45A /* MultiplePulsingHaloLayer.m */; };
+		DDCC786D1ADA15690062B45A /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCC786B1ADA15690062B45A /* PulsingHaloLayer.m */; };
+		DDCC78731ADA19E70062B45A /* icon-email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCC786F1ADA19E70062B45A /* icon-email@2x.png */; };
+		DDCC78741ADA19E70062B45A /* icon-facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCC78701ADA19E70062B45A /* icon-facebook@2x.png */; };
+		DDCC78751ADA19E70062B45A /* icon-twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCC78711ADA19E70062B45A /* icon-twitter@2x.png */; };
+		DDCC78761ADA19E70062B45A /* start@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCC78721ADA19E70062B45A /* start@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +173,16 @@
 		DDB67FE61AD27A0A00503EA5 /* DMSettingHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSettingHandler.m; sourceTree = "<group>"; };
 		DDB67FEA1AD2C15600503EA5 /* DMDropDownCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMDropDownCell.h; sourceTree = "<group>"; };
 		DDB67FEB1AD2C15600503EA5 /* DMDropDownCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMDropDownCell.m; sourceTree = "<group>"; };
+		DDCC78641ADA14FE0062B45A /* SphereMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SphereMenu.h; sourceTree = "<group>"; };
+		DDCC78651ADA14FE0062B45A /* SphereMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SphereMenu.m; sourceTree = "<group>"; };
+		DDCC78681ADA15690062B45A /* MultiplePulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplePulsingHaloLayer.h; sourceTree = "<group>"; };
+		DDCC78691ADA15690062B45A /* MultiplePulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplePulsingHaloLayer.m; sourceTree = "<group>"; };
+		DDCC786A1ADA15690062B45A /* PulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulsingHaloLayer.h; sourceTree = "<group>"; };
+		DDCC786B1ADA15690062B45A /* PulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulsingHaloLayer.m; sourceTree = "<group>"; };
+		DDCC786F1ADA19E70062B45A /* icon-email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-email@2x.png"; sourceTree = "<group>"; };
+		DDCC78701ADA19E70062B45A /* icon-facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-facebook@2x.png"; sourceTree = "<group>"; };
+		DDCC78711ADA19E70062B45A /* icon-twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-twitter@2x.png"; sourceTree = "<group>"; };
+		DDCC78721ADA19E70062B45A /* start@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +313,8 @@
 		DDB0AF261AD179F20035F2FA /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				DDCC78671ADA15690062B45A /* PulsingHalo */,
+				DDCC78631ADA14FE0062B45A /* SphereMenu */,
 				DDB350BA1AD9227A00B34D98 /* ASProgressPopUpView */,
 				DD477CEF1AD6B507003C6AD0 /* DWBubbleMenuButton */,
 				DD73340A1AD563DE0047980D /* SoundManager */,
@@ -490,6 +509,7 @@
 		DDB28D361AD1246B006FB0F9 /* Dotman */ = {
 			isa = PBXGroup;
 			children = (
+				DDCC786E1ADA19C40062B45A /* tmp */,
 				DDB67FCB1AD23DF400503EA5 /* Sections */,
 				DDB67FB71AD22A9500503EA5 /* Generals */,
 				DDB0AF261AD179F20035F2FA /* Vendors */,
@@ -710,6 +730,37 @@
 			path = Handler;
 			sourceTree = "<group>";
 		};
+		DDCC78631ADA14FE0062B45A /* SphereMenu */ = {
+			isa = PBXGroup;
+			children = (
+				DDCC78641ADA14FE0062B45A /* SphereMenu.h */,
+				DDCC78651ADA14FE0062B45A /* SphereMenu.m */,
+			);
+			path = SphereMenu;
+			sourceTree = "<group>";
+		};
+		DDCC78671ADA15690062B45A /* PulsingHalo */ = {
+			isa = PBXGroup;
+			children = (
+				DDCC78681ADA15690062B45A /* MultiplePulsingHaloLayer.h */,
+				DDCC78691ADA15690062B45A /* MultiplePulsingHaloLayer.m */,
+				DDCC786A1ADA15690062B45A /* PulsingHaloLayer.h */,
+				DDCC786B1ADA15690062B45A /* PulsingHaloLayer.m */,
+			);
+			path = PulsingHalo;
+			sourceTree = "<group>";
+		};
+		DDCC786E1ADA19C40062B45A /* tmp */ = {
+			isa = PBXGroup;
+			children = (
+				DDCC786F1ADA19E70062B45A /* icon-email@2x.png */,
+				DDCC78701ADA19E70062B45A /* icon-facebook@2x.png */,
+				DDCC78711ADA19E70062B45A /* icon-twitter@2x.png */,
+				DDCC78721ADA19E70062B45A /* start@2x.png */,
+			);
+			path = tmp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -790,10 +841,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCC78761ADA19E70062B45A /* start@2x.png in Resources */,
 				DD7334031AD563C50047980D /* 3.caf in Resources */,
 				DD7334021AD563C50047980D /* 2.caf in Resources */,
 				DD7334081AD563C50047980D /* 8.caf in Resources */,
+				DDCC78741ADA19E70062B45A /* icon-facebook@2x.png in Resources */,
 				DD7334051AD563C50047980D /* 5.caf in Resources */,
+				DDCC78731ADA19E70062B45A /* icon-email@2x.png in Resources */,
 				DD7334011AD563C50047980D /* 13.caf in Resources */,
 				DD7334071AD563C50047980D /* 7.caf in Resources */,
 				DD7334091AD563C50047980D /* 9.caf in Resources */,
@@ -801,6 +855,7 @@
 				DD7333FD1AD563C50047980D /* 1.caf in Resources */,
 				DDB67FDA1AD2704300503EA5 /* Proxima Nova.otf in Resources */,
 				DDB28D911AD12BA8006FB0F9 /* Code Pro LC.otf in Resources */,
+				DDCC78751ADA19E70062B45A /* icon-twitter@2x.png in Resources */,
 				DD7334001AD563C50047980D /* 12.caf in Resources */,
 				DD7333FE1AD563C50047980D /* 10.caf in Resources */,
 				DD7334041AD563C50047980D /* 4.caf in Resources */,
@@ -843,14 +898,17 @@
 				DDB67FD71AD23E9400503EA5 /* UIImage+Additions.m in Sources */,
 				DDB350B91AD91D8C00B34D98 /* DMInfiniteViewController.m in Sources */,
 				DDB67FD41AD23E2C00503EA5 /* DMSettingBaseCell.m in Sources */,
+				DDCC78661ADA14FE0062B45A /* SphereMenu.m in Sources */,
 				DDB0AF551AD17A700035F2FA /* YALTabBarItem.m in Sources */,
 				DDB350C41AD955B800B34D98 /* DMWaveView.m in Sources */,
 				DDB67FE71AD27A0A00503EA5 /* DMSettingHandler.m in Sources */,
 				DDB28D651AD126A6006FB0F9 /* AppDelegate.m in Sources */,
+				DDCC786C1ADA15690062B45A /* MultiplePulsingHaloLayer.m in Sources */,
 				DDB350C01AD9227A00B34D98 /* ASProgressPopUpView.m in Sources */,
 				DD7333E91AD55C130047980D /* RQShineLabel.m in Sources */,
 				DDB350B61AD91D7600B34D98 /* DMMovingViewController.m in Sources */,
 				DDB0AF521AD17A700035F2FA /* CATransaction+TransactionWithAnimationsAndCompletion.m in Sources */,
+				DDCC786D1ADA15690062B45A /* PulsingHaloLayer.m in Sources */,
 				DD7333ED1AD563200047980D /* DMIntroViewController.m in Sources */,
 				DD7334161AD5656D0047980D /* DMDotSprite.m in Sources */,
 				DDB0AF531AD17A700035F2FA /* YALAnimatingTabBarConstants.m in Sources */,

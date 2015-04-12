@@ -8,7 +8,9 @@
 
 #import "DMSoloViewController.h"
 #import "UIImage+Additions.h"
-#import "DWBubbleMenuButton.h"
+#import "SphereMenu.h"
+
+#import "MultiplePulsingHaloLayer.h"
 
 #import "DMTimingViewController.h"
 #import "DMMovingViewController.h"
@@ -35,17 +37,21 @@ typedef NS_ENUM(NSInteger, DMSoloGameType)
 };
 
 
-@interface DMSoloViewController () <DWBubbleMenuViewDelegate>
-
+@interface DMSoloViewController () <SphereMenuDelegate>
 /**
  *  大标题提示
  */
 @property (nonatomic, strong) UILabel *tipLabel;
 
+/**
+ *  Menu Button
+ */
+@property (nonatomic, strong) SphereMenu *menuBtn;
 
-@property (nonatomic, strong) DWBubbleMenuButton *menuBtn;
-
-@property (nonatomic, strong) NSArray *subBtnTipLabelArray;
+/**
+ *  MultiplePulsingHaloLayer
+ */
+@property (nonatomic, strong) MultiplePulsingHaloLayer *haloLayer;
 
 /**
  *  选择的单机游戏模式
@@ -55,9 +61,7 @@ typedef NS_ENUM(NSInteger, DMSoloGameType)
 @end
 
 @implementation DMSoloViewController
-{
-    DWBubbleMenuButton *menutButton;
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -79,17 +83,17 @@ typedef NS_ENUM(NSInteger, DMSoloGameType)
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    [self setupHaloLayer];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
     
-    // 如果 menu btn 打开，则将其关闭
-    if (!self.menuBtn.isCollapsed)
-    {
-        [self.menuBtn dismissButtons];
-    }
+    [self.menuBtn collapseSphereMenu];
+    ç
+    [self.haloLayer removeFromSuperlayer];
 }
 
 
@@ -102,10 +106,6 @@ typedef NS_ENUM(NSInteger, DMSoloGameType)
     tipLabelFrame.size.height = self.view.bounds.size.height * 0.1f;
     [self.tipLabel setFrame:tipLabelFrame];
 
-    CGRect menuBtnFrame = self.menuBtn.frame;
-    menuBtnFrame.origin.x = self.view.bounds.size.width * 0.1f;
-    menuBtnFrame.origin.y = tipLabelFrame.origin.y + tipLabelFrame.size.height + self.view.bounds.size.height * 0.02f;
-    [self.menuBtn setFrame:menuBtnFrame];
 }
 
 
@@ -137,122 +137,44 @@ typedef NS_ENUM(NSInteger, DMSoloGameType)
 
 - (void)setupMenuButton
 {
-    CGRect rect = CGRectMake(0, 0, 60, 60);
-    self.menuBtn = [[DWBubbleMenuButton alloc] initWithFrame:rect expansionDirection:DirectionDown];
-    self.menuBtn.homeButtonView = [self createMenuButtonViewWithSize:rect.size];
+    UIImage *image1 = [UIImage imageNamed:@"icon-twitter"];
+    UIImage *image2 = [UIImage imageNamed:@"icon-email"];
+    UIImage *image3 = [UIImage imageNamed:@"icon-facebook"];
+    NSArray *images = @[image1, image2, image3];
+    
+    NSArray *subMenuLabelTextArray = @[DMSoloGameTimingButtonTitle, DMSoloGameMovingButtonTitle, DMSoloGameInfiniteButtonTitle];
+    
+    CGPoint startPoint = CGPointMake(CGRectGetWidth(self.view.bounds) / 2, self.view.bounds.size.height * 0.5);
+    self.menuBtn = [[SphereMenu alloc] initWithSize:CGSizeMake(60, 60) withCenterPoint:startPoint withStartBtnColor:DMTabBarViewController_TabBarView_TabBarColor withStartBtnTitle:@"Tap" withSubMenuImages:images withSubMenuLabelTexts:subMenuLabelTextArray];
+    
+    self.menuBtn.angle = 1.1f;
+    self.menuBtn.sphereDamping = 0.4;
+    self.menuBtn.sphereLength = 100;
     self.menuBtn.delegate = self;
-    CGSize btnSize = CGSizeMake(rect.size.width  * 0.85, rect.size.height * 0.85);
-    UIButton *timingBtn = [self generateBtnWithSize:btnSize withType:DMSoloGameTimingType];
-    UIButton *movingBtn = [self generateBtnWithSize:btnSize withType:DMSoloGameMovingType];
-    UIButton *infiniteBtn = [self generateBtnWithSize:btnSize withType:DMSoloGameInfiniteType];
-    [self.menuBtn addButtons:@[timingBtn, movingBtn, infiniteBtn]];
     [self.view addSubview:self.menuBtn];
-}
-
-
-- (void)setupMenuSubBtnTipLabel
-{
-    NSArray *btnArray = self.menuBtn.buttons;
-    NSArray *tipLabelStringArray = @[DMSoloGameTimingButtonTitle, DMSoloGameMovingButtonTitle, DMSoloGameInfiniteButtonTitle];
-    NSMutableArray *tmpArray = [NSMutableArray arrayWithCapacity:3];
-    NSInteger index = 0;
-    for (UIButton *btn in btnArray)
-    {
-        CGRect btnFrame = btn.frame;
-        CGFloat x = CGRectGetMaxX(self.menuBtn.frame) + DMSoloViewController_SubViews_Margins - 10;
-        CGFloat y = CGRectGetMaxY(self.menuBtn.frame) + (index + 1) * self.menuBtn.buttonSpacing + index * btnFrame.size.height;
-        CGFloat width = ScreenRect.size.width - x - DMSoloViewController_SubViews_Margins;
-        CGFloat height = btnFrame.size.height;
-        CGRect btnTipFrame = CGRectMake(x, y, width, height);
-        
-        UILabel *btnTipLabel = [self createMenuSubBtnTipLabelWithFrame:btnTipFrame withText:tipLabelStringArray[index]];
-        [self.view addSubview:btnTipLabel];
-        
-        index ++;
-        [tmpArray addObject:btnTipLabel];
-    }
-    self.subBtnTipLabelArray = [tmpArray copy];
-}
-
-// 生成 menu 的 sub btn
-- (UIButton *)generateBtnWithSize:(CGSize)size withType:(DMSoloGameType)type
-{
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setBounds:(CGRect){0, 0, size.width, size.height}];
-    [btn setBackgroundImage:[UIImage imageWithColor:DMTabBarViewController_TabBarView_TabBarColor] forState:UIControlStateNormal];
-    [btn setTag:type];
-    
-    NSString *title = [NSString stringWithFormat:@"%@", @(type)];
-    NSMutableAttributedString *titleAttributeString = [[NSMutableAttributedString alloc] initWithString:title];
-    [titleAttributeString addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue" size:25] range:NSMakeRange(0, 1)];
-    [titleAttributeString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, 1)];
-    [btn setAttributedTitle:titleAttributeString forState:UIControlStateNormal];
-    
-    [btn addTarget:self action:@selector(modeBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [btn.layer setMasksToBounds:YES];
-    [btn.layer setCornerRadius:btn.frame.size.height / 2];
-    return btn;
-}
-
-
-
-- (UILabel *)createMenuButtonViewWithSize:(CGSize)size
-{
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.f, 0.f, size.width, size.height)];
-    label.backgroundColor = DMTabBarViewController_TabBarView_TabBarColor;
-    label.text = @"Tap";
-    label.textColor = [UIColor whiteColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.layer.cornerRadius = label.frame.size.height / 2.f;
-    label.clipsToBounds = YES;
-    return label;
-}
-
-
-- (void)modeBtnPressed:(UIButton *)btn
-{
-    self.selectedType = (DMSoloGameType)btn.tag;
-}
-
-
-#pragma mark - DWBubbleMenuViewDelegate
-- (void)bubbleMenuButtonWillExpand:(DWBubbleMenuButton *)expandableView
-{
-    // 创建 sub btn labels
-    if (self.subBtnTipLabelArray == nil)
-    {
-        [self setupMenuSubBtnTipLabel];
-    }
-
-    NSInteger index = 0;
-    for (UILabel *label in self.subBtnTipLabelArray)
-    {
-        // label 显示动画
-        [self showMenuSubBtnLabelAnimation:label withDelay:(index + 1) * 0.2];
-        index ++;
-    }
     
 }
 
-
-- (void)bubbleMenuButtonDidExpand:(DWBubbleMenuButton *)expandableView
+- (void)setupHaloLayer
 {
-
+    self.haloLayer = [[MultiplePulsingHaloLayer alloc] initWithHaloLayerNum:3 andStartInterval:1];
+    self.haloLayer.animationRepeatCount = 1;
+    self.haloLayer.position = self.menuBtn.center;
+    self.haloLayer.haloLayerColor = DMTabBarViewController_TabBarView_TabBarColor.CGColor;
+    self.haloLayer.radius = YALTabBarViewDefaultHeight * 1.5;
+    self.haloLayer.useTimingFunction = NO;
+    [self.haloLayer buildSublayers];
+    [self.view.layer insertSublayer:self.haloLayer below:self.menuBtn.layer];
 }
 
-- (void)bubbleMenuButtonWillCollapse:(DWBubbleMenuButton *)expandableView
-{
-    NSInteger index = 0;
-    for (UILabel *label in self.subBtnTipLabelArray)
-    {
-        // label 隐藏动画
-        [self hideMenuSubBtnLabelAnimation:label withDelay:fabsf(index - 2) * 0.2];
-        index ++;
-    }
-}
 
-- (void)bubbleMenuButtonDidCollapse:(DWBubbleMenuButton *)expandableView
+
+#pragma mark - SphereMenuDelegate
+
+
+- (void)sphereMenuDidCollapse:(SphereMenu *)sphereMenu withSelected:(int)index
 {
+    self.selectedType = (DMSoloGameType)index;
     switch (self.selectedType)
     {
         case DMSoloGameTimingType:
@@ -276,41 +198,15 @@ typedef NS_ENUM(NSInteger, DMSoloGameType)
         default:
             break;
     }
+
+}
+
+- (void)sphereMenuDidExpand:(SphereMenu *)sphereMenu
+{
     
 }
 
 
-#pragma mark -
-// 生成 menu button 的 sub button 的 tip Label
-- (UILabel *)createMenuSubBtnTipLabelWithFrame:(CGRect)frame withText:(NSString *)text
-{
-    UILabel *label = [[UILabel alloc] initWithFrame:frame];
-    [label setTextAlignment:NSTextAlignmentLeft];
-    [label setAdjustsFontSizeToFitWidth:YES];
-    [label setFont:[UIFont fontWithName:@"HelveticaNeue-UltraLight" size:25.0]];
-    [label setTextColor:[UIColor whiteColor]];
-    [label setText:text];
-    label.alpha = 0.0f;
-    return label;
-}
-
-- (void)showMenuSubBtnLabelAnimation:(UILabel *)label withDelay:(NSTimeInterval)delay
-{
-    [UIView animateWithDuration:0.2 delay:delay options:UIViewAnimationOptionCurveLinear animations:^{
-        label.alpha = 1.0f;
-    } completion:^(BOOL finished) {
-        
-    }];
-}
-
-- (void)hideMenuSubBtnLabelAnimation:(UILabel *)label withDelay:(NSTimeInterval)delay
-{
-    [UIView animateWithDuration:0.2 delay:delay options:UIViewAnimationOptionCurveLinear animations:^{
-        label.alpha = 0.0f;
-    } completion:^(BOOL finished) {
-        
-    }];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

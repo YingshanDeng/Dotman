@@ -157,7 +157,7 @@
     CGFloat cur = progress * DM_Solo_Timing_Game_Duration;
     NSInteger second = floor(cur);
     NSInteger microSecond = floor((cur - second) * 100);
-    NSLog(@"%02ld--%02ld", (long)second, (long)microSecond);
+//    NSLog(@"%02ld--%02ld", (long)second, (long)microSecond);
     return [NSString stringWithFormat:@"%02ld.%02ld s", (long)second, (long)microSecond];
 }
 
