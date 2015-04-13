@@ -54,7 +54,6 @@ typedef NS_ENUM(NSInteger, DMSettingViewControllerCellMarkType)
     [super viewDidLoad];
     self.view.backgroundColor = DMTabBarViewController_TabBarView_BackgroundColor;
     
-    [self setupSettingData];
     [self setupNavigationItemTitle];
 }
 
@@ -62,7 +61,8 @@ typedef NS_ENUM(NSInteger, DMSettingViewControllerCellMarkType)
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+
+    [self setupSettingData];
     [self setupTableView];
     [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
 }

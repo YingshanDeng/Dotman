@@ -48,7 +48,6 @@
 		DDB350B91AD91D8C00B34D98 /* DMInfiniteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB350B81AD91D8C00B34D98 /* DMInfiniteViewController.m */; };
 		DDB350BF1AD9227A00B34D98 /* ASPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB350BC1AD9227A00B34D98 /* ASPopUpView.m */; };
 		DDB350C01AD9227A00B34D98 /* ASProgressPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB350BE1AD9227A00B34D98 /* ASProgressPopUpView.m */; };
-		DDB350C41AD955B800B34D98 /* DMWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB350C31AD955B800B34D98 /* DMWaveView.m */; };
 		DDB67FC21AD2327000503EA5 /* SevenSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FC11AD2327000503EA5 /* SevenSwitch.m */; };
 		DDB67FD31AD23E2C00503EA5 /* DMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FCF1AD23E2C00503EA5 /* DMSettingViewController.m */; };
 		DDB67FD41AD23E2C00503EA5 /* DMSettingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FD21AD23E2C00503EA5 /* DMSettingBaseCell.m */; };
@@ -66,6 +65,9 @@
 		DDCC78741ADA19E70062B45A /* icon-facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCC78701ADA19E70062B45A /* icon-facebook@2x.png */; };
 		DDCC78751ADA19E70062B45A /* icon-twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCC78711ADA19E70062B45A /* icon-twitter@2x.png */; };
 		DDCC78761ADA19E70062B45A /* start@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCC78721ADA19E70062B45A /* start@2x.png */; };
+		DDF5BA921ADA62EC0032F60F /* JTNumberScrollAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF5BA911ADA62EC0032F60F /* JTNumberScrollAnimatedView.m */; };
+		DDF5BA961ADA6DB60032F60F /* DMWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF5BA951ADA6DB60032F60F /* DMWaveView.m */; };
+		DDF5BA9A1ADA6DFE0032F60F /* DMHamburgerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF5BA991ADA6DFE0032F60F /* DMHamburgerButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,8 +156,6 @@
 		DDB350BC1AD9227A00B34D98 /* ASPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPopUpView.m; sourceTree = "<group>"; };
 		DDB350BD1AD9227A00B34D98 /* ASProgressPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASProgressPopUpView.h; sourceTree = "<group>"; };
 		DDB350BE1AD9227A00B34D98 /* ASProgressPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASProgressPopUpView.m; sourceTree = "<group>"; };
-		DDB350C21AD955B800B34D98 /* DMWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMWaveView.h; sourceTree = "<group>"; };
-		DDB350C31AD955B800B34D98 /* DMWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMWaveView.m; sourceTree = "<group>"; };
 		DDB67FC01AD2327000503EA5 /* SevenSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevenSwitch.h; sourceTree = "<group>"; };
 		DDB67FC11AD2327000503EA5 /* SevenSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevenSwitch.m; sourceTree = "<group>"; };
 		DDB67FCE1AD23E2C00503EA5 /* DMSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSettingViewController.h; sourceTree = "<group>"; };
@@ -183,6 +183,12 @@
 		DDCC78701ADA19E70062B45A /* icon-facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-facebook@2x.png"; sourceTree = "<group>"; };
 		DDCC78711ADA19E70062B45A /* icon-twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-twitter@2x.png"; sourceTree = "<group>"; };
 		DDCC78721ADA19E70062B45A /* start@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start@2x.png"; sourceTree = "<group>"; };
+		DDF5BA901ADA62EC0032F60F /* JTNumberScrollAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNumberScrollAnimatedView.h; sourceTree = "<group>"; };
+		DDF5BA911ADA62EC0032F60F /* JTNumberScrollAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNumberScrollAnimatedView.m; sourceTree = "<group>"; };
+		DDF5BA941ADA6DB60032F60F /* DMWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMWaveView.h; sourceTree = "<group>"; };
+		DDF5BA951ADA6DB60032F60F /* DMWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMWaveView.m; sourceTree = "<group>"; };
+		DDF5BA981ADA6DFE0032F60F /* DMHamburgerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMHamburgerButton.h; sourceTree = "<group>"; };
+		DDF5BA991ADA6DFE0032F60F /* DMHamburgerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMHamburgerButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +319,7 @@
 		DDB0AF261AD179F20035F2FA /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				DDF5BA311ADA62B80032F60F /* JTNumberScrollAnimatedView */,
 				DDCC78671ADA15690062B45A /* PulsingHalo */,
 				DDCC78631ADA14FE0062B45A /* SphereMenu */,
 				DDB350BA1AD9227A00B34D98 /* ASProgressPopUpView */,
@@ -616,8 +623,8 @@
 		DDB350C11AD9559200B34D98 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DDB350C21AD955B800B34D98 /* DMWaveView.h */,
-				DDB350C31AD955B800B34D98 /* DMWaveView.m */,
+				DDF5BA971ADA6DD80032F60F /* HamburgerButton */,
+				DDF5BA931ADA6D6D0032F60F /* WaveView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -761,6 +768,33 @@
 			path = tmp;
 			sourceTree = "<group>";
 		};
+		DDF5BA311ADA62B80032F60F /* JTNumberScrollAnimatedView */ = {
+			isa = PBXGroup;
+			children = (
+				DDF5BA901ADA62EC0032F60F /* JTNumberScrollAnimatedView.h */,
+				DDF5BA911ADA62EC0032F60F /* JTNumberScrollAnimatedView.m */,
+			);
+			path = JTNumberScrollAnimatedView;
+			sourceTree = "<group>";
+		};
+		DDF5BA931ADA6D6D0032F60F /* WaveView */ = {
+			isa = PBXGroup;
+			children = (
+				DDF5BA941ADA6DB60032F60F /* DMWaveView.h */,
+				DDF5BA951ADA6DB60032F60F /* DMWaveView.m */,
+			);
+			path = WaveView;
+			sourceTree = "<group>";
+		};
+		DDF5BA971ADA6DD80032F60F /* HamburgerButton */ = {
+			isa = PBXGroup;
+			children = (
+				DDF5BA981ADA6DFE0032F60F /* DMHamburgerButton.h */,
+				DDF5BA991ADA6DFE0032F60F /* DMHamburgerButton.m */,
+			);
+			path = HamburgerButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -881,6 +915,7 @@
 			files = (
 				DDB0AF541AD17A700035F2FA /* YALFoldingTabBarController.m in Sources */,
 				DDB67FEC1AD2C15600503EA5 /* DMDropDownCell.m in Sources */,
+				DDF5BA961ADA6DB60032F60F /* DMWaveView.m in Sources */,
 				DDB28D3A1AD1246B006FB0F9 /* main.m in Sources */,
 				DDB67FDF1AD2782B00503EA5 /* DMPlayNameCell.m in Sources */,
 				DDB0AF501AD17A700035F2FA /* YALSpringAnimation.m in Sources */,
@@ -900,12 +935,13 @@
 				DDB67FD41AD23E2C00503EA5 /* DMSettingBaseCell.m in Sources */,
 				DDCC78661ADA14FE0062B45A /* SphereMenu.m in Sources */,
 				DDB0AF551AD17A700035F2FA /* YALTabBarItem.m in Sources */,
-				DDB350C41AD955B800B34D98 /* DMWaveView.m in Sources */,
 				DDB67FE71AD27A0A00503EA5 /* DMSettingHandler.m in Sources */,
 				DDB28D651AD126A6006FB0F9 /* AppDelegate.m in Sources */,
 				DDCC786C1ADA15690062B45A /* MultiplePulsingHaloLayer.m in Sources */,
 				DDB350C01AD9227A00B34D98 /* ASProgressPopUpView.m in Sources */,
 				DD7333E91AD55C130047980D /* RQShineLabel.m in Sources */,
+				DDF5BA921ADA62EC0032F60F /* JTNumberScrollAnimatedView.m in Sources */,
+				DDF5BA9A1ADA6DFE0032F60F /* DMHamburgerButton.m in Sources */,
 				DDB350B61AD91D7600B34D98 /* DMMovingViewController.m in Sources */,
 				DDB0AF521AD17A700035F2FA /* CATransaction+TransactionWithAnimationsAndCompletion.m in Sources */,
 				DDCC786D1ADA15690062B45A /* PulsingHaloLayer.m in Sources */,

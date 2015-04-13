@@ -34,6 +34,8 @@
 
     DMSoloViewController *soloVC = [[DMSoloViewController alloc] init];
     UINavigationController *navi_2 = [[UINavigationController alloc] initWithRootViewController:soloVC];
+    // 禁用 navigation controller 自带的 从频幕边缘 右划触发pop的手势
+    navi_2.interactivePopGestureRecognizer.enabled = NO;
     
     DMBattleViewController *battleVC = [[DMBattleViewController alloc] init];
     UINavigationController *navi_3 = [[UINavigationController alloc] initWithRootViewController:battleVC];

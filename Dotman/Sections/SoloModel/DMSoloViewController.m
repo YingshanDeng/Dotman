@@ -157,7 +157,8 @@ typedef NS_ENUM(NSInteger, DMSoloGameType)
 - (void)setupHaloLayer
 {
     self.haloLayer = [[MultiplePulsingHaloLayer alloc] initWithHaloLayerNum:3 andStartInterval:1];
-    self.haloLayer.animationRepeatCount = 1;
+//    self.haloLayer.animationRepeatCount = 1;
+    self.haloLayer.pulseInterval = 3.0f; // 间隔3.0秒执行一次
     self.haloLayer.position = self.menuBtn.center;
     self.haloLayer.haloLayerColor = DMTabBarViewController_TabBarView_TabBarColor.CGColor;
     self.haloLayer.radius = YALTabBarViewDefaultHeight * 1.5;

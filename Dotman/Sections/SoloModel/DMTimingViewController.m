@@ -11,6 +11,9 @@
 #import "AppDelegate.h"
 #import "DMGameView.h"
 
+#import "DMHamburgerButton.h"
+#import "JTNumberScrollAnimatedView.h"
+
 
 @interface DMTimingViewController () <ASProgressPopUpViewDataSource, DMGameViewDelegate>
 
@@ -30,6 +33,16 @@
  */
 @property (nonatomic, strong) DMGameView *gameView;
 
+/**
+ *  navigation item left bar button item
+ */
+@property (nonatomic, strong) DMHamburgerButton *menuBtn;
+
+/**
+ *  navigation item right bar button item
+ */
+@property (nonatomic, strong) JTNumberScrollAnimatedView *scoreView;
+
 
 @end
 
@@ -39,12 +52,85 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self.view setBackgroundColor:[UIColor whiteColor]];
+    
+
+    [self setupCustomNavigationItem];
     
     [self setupGameView];
     [self setupTimerView];
     
+}
+
+/**
+ *  Navigation Item自定义
+ */
+- (void)setupCustomNavigationItem
+{
+    // 隐藏导航栏的 back item
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.backBarButtonItem = nil;
+
+    [self setupNavigationItemLeftBarButtonItem];
+    [self setupNavigationItemRightBarButtonItem];
+}
+
+- (void)setupNavigationItemLeftBarButtonItem
+{
+    self.menuBtn = [[DMHamburgerButton alloc] initWithFrame:CGRectZero];
+    [self.menuBtn addTarget:self action:@selector(menuBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.menuBtn setTransform:CGAffineTransformMakeScale(0.47, 0.47)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.menuBtn];
+}
+
+- (void)setupNavigationItemRightBarButtonItem
+{
+    CGFloat naviHeight = self.navigationController.navigationBar.frame.size.height;
+
+    // score label
+    
+    UIFont *labelFont = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:25];
+    NSAttributedString *scoreAttrString = [[NSAttributedString alloc] initWithString:@"Score" attributes:@{NSFontAttributeName : labelFont, NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    CGSize labelSize = [scoreAttrString boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
+    CGRect labelFrame = CGRectMake(0, 0, labelSize.width, naviHeight);
+    UILabel *scoreLabel = [[UILabel alloc] initWithFrame:labelFrame];
+    [scoreLabel setAttributedText:scoreAttrString];
+    [scoreLabel setAdjustsFontSizeToFitWidth:YES];
+    [scoreLabel setTextAlignment:NSTextAlignmentRight];
+    
+    
+    // score view
+    NSString *formatString = @"000000"; // 六位数显示
+    UIFont *scoreViewFont = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:24]; //HelveticaNeue-Light
+    NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:formatString attributes:@{NSFontAttributeName : scoreViewFont, NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    CGRect rect = [attrString boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil];
+    // 加 10 宽度使数字之间不会太紧密
+    CGSize scoreViewSize = CGSizeMake(rect.size.width + 10, naviHeight);
+
+    // Score 和 数字之间的间隔
+    CGFloat interval = 8.0f;
+    
+    CGRect scoreViewFrame = CGRectMake(labelSize.width + interval, 0, scoreViewSize.width, naviHeight);
+    self.scoreView = [[JTNumberScrollAnimatedView alloc] initWithFrame:scoreViewFrame];
+    self.scoreView.textColor = [UIColor whiteColor];
+    self.scoreView.font = scoreViewFont;
+    self.scoreView.value = @(18923);
+    self.scoreView.minLength = 6;
+    self.scoreView.duration = 1.0f;
+    [self.scoreView startAnimation];
+
+    
+    // content view
+    UIView *contentView = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, CGSizeMake(labelSize.width + scoreViewSize.width + interval, naviHeight)}];
+    [contentView addSubview:scoreLabel];
+    [contentView addSubview:self.scoreView];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:contentView];
+}
+
+
+- (void)menuBtnAction:(UIButton *)btn
+{
+    self.menuBtn.showMenu = !self.menuBtn.showMenu;
 }
 
 - (void)viewWillAppear:(BOOL)animated
