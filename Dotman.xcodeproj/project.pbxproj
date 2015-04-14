@@ -52,7 +52,6 @@
 		DDB67FD31AD23E2C00503EA5 /* DMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FCF1AD23E2C00503EA5 /* DMSettingViewController.m */; };
 		DDB67FD41AD23E2C00503EA5 /* DMSettingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FD21AD23E2C00503EA5 /* DMSettingBaseCell.m */; };
 		DDB67FD71AD23E9400503EA5 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FD61AD23E9400503EA5 /* UIImage+Additions.m */; };
-		DDB67FD91AD241BD00503EA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB67FD81AD241BD00503EA5 /* Images.xcassets */; };
 		DDB67FDA1AD2704300503EA5 /* Proxima Nova.otf in Resources */ = {isa = PBXBuildFile; fileRef = DDB28D901AD12BA8006FB0F9 /* Proxima Nova.otf */; };
 		DDB67FDF1AD2782B00503EA5 /* DMPlayNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FDE1AD2782B00503EA5 /* DMPlayNameCell.m */; };
 		DDB67FE21AD2789400503EA5 /* DMSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB67FE11AD2789400503EA5 /* DMSwitchCell.m */; };
@@ -65,6 +64,7 @@
 		DDCC78741ADA19E70062B45A /* icon-facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCC78701ADA19E70062B45A /* icon-facebook@2x.png */; };
 		DDCC78751ADA19E70062B45A /* icon-twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCC78711ADA19E70062B45A /* icon-twitter@2x.png */; };
 		DDCC78761ADA19E70062B45A /* start@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCC78721ADA19E70062B45A /* start@2x.png */; };
+		DDCDA2DC1ADD4C32008CD67A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDCDA2DB1ADD4C32008CD67A /* Images.xcassets */; };
 		DDF5BA921ADA62EC0032F60F /* JTNumberScrollAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF5BA911ADA62EC0032F60F /* JTNumberScrollAnimatedView.m */; };
 		DDF5BA961ADA6DB60032F60F /* DMWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF5BA951ADA6DB60032F60F /* DMWaveView.m */; };
 		DDF5BA9A1ADA6DFE0032F60F /* DMHamburgerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF5BA991ADA6DFE0032F60F /* DMHamburgerButton.m */; };
@@ -164,7 +164,6 @@
 		DDB67FD21AD23E2C00503EA5 /* DMSettingBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSettingBaseCell.m; sourceTree = "<group>"; };
 		DDB67FD51AD23E9400503EA5 /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
 		DDB67FD61AD23E9400503EA5 /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
-		DDB67FD81AD241BD00503EA5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DDB67FDD1AD2782B00503EA5 /* DMPlayNameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMPlayNameCell.h; sourceTree = "<group>"; };
 		DDB67FDE1AD2782B00503EA5 /* DMPlayNameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMPlayNameCell.m; sourceTree = "<group>"; };
 		DDB67FE01AD2789400503EA5 /* DMSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSwitchCell.h; sourceTree = "<group>"; };
@@ -183,6 +182,7 @@
 		DDCC78701ADA19E70062B45A /* icon-facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-facebook@2x.png"; sourceTree = "<group>"; };
 		DDCC78711ADA19E70062B45A /* icon-twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-twitter@2x.png"; sourceTree = "<group>"; };
 		DDCC78721ADA19E70062B45A /* start@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start@2x.png"; sourceTree = "<group>"; };
+		DDCDA2DB1ADD4C32008CD67A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DDF5BA901ADA62EC0032F60F /* JTNumberScrollAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNumberScrollAnimatedView.h; sourceTree = "<group>"; };
 		DDF5BA911ADA62EC0032F60F /* JTNumberScrollAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNumberScrollAnimatedView.m; sourceTree = "<group>"; };
 		DDF5BA941ADA6DB60032F60F /* DMWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMWaveView.h; sourceTree = "<group>"; };
@@ -516,6 +516,7 @@
 		DDB28D361AD1246B006FB0F9 /* Dotman */ = {
 			isa = PBXGroup;
 			children = (
+				DDCDA2DB1ADD4C32008CD67A /* Images.xcassets */,
 				DDCC786E1ADA19C40062B45A /* tmp */,
 				DDB67FCB1AD23DF400503EA5 /* Sections */,
 				DDB67FB71AD22A9500503EA5 /* Generals */,
@@ -525,7 +526,6 @@
 				DDB28D611AD12624006FB0F9 /* Macros */,
 				DDB28D5E1AD12612006FB0F9 /* Models */,
 				DDB28D461AD1246B006FB0F9 /* LaunchScreen.xib */,
-				DDB67FD81AD241BD00503EA5 /* Images.xcassets */,
 				DDB28D371AD1246B006FB0F9 /* Supporting Files */,
 			);
 			path = Dotman;
@@ -884,6 +884,7 @@
 				DDCC78731ADA19E70062B45A /* icon-email@2x.png in Resources */,
 				DD7334011AD563C50047980D /* 13.caf in Resources */,
 				DD7334071AD563C50047980D /* 7.caf in Resources */,
+				DDCDA2DC1ADD4C32008CD67A /* Images.xcassets in Resources */,
 				DD7334091AD563C50047980D /* 9.caf in Resources */,
 				DD7333FF1AD563C50047980D /* 11.caf in Resources */,
 				DD7333FD1AD563C50047980D /* 1.caf in Resources */,
@@ -893,7 +894,6 @@
 				DD7334001AD563C50047980D /* 12.caf in Resources */,
 				DD7333FE1AD563C50047980D /* 10.caf in Resources */,
 				DD7334041AD563C50047980D /* 4.caf in Resources */,
-				DDB67FD91AD241BD00503EA5 /* Images.xcassets in Resources */,
 				DD7334061AD563C50047980D /* 6.caf in Resources */,
 				DDB28D481AD1246B006FB0F9 /* LaunchScreen.xib in Resources */,
 			);
