@@ -96,6 +96,27 @@
     }
 }
 
+- (void)restartGame
+{
+    //TODO: 重启游戏暂时用这个处理
+    [self playabilityAdjust];
+}
+
+- (void)resumeGame
+{
+    self.canPlaying = YES;
+}
+
+- (void)pauseGame
+{
+    self.canPlaying = NO;
+}
+
+- (void)stopGame
+{
+    
+}
+
 #pragma mark -
 - (void)setupDots
 {

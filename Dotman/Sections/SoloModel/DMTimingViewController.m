@@ -204,6 +204,7 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
  */
 - (void)pauseGame
 {
+    [self.gameView pauseGame];
     [self pauseProgress];
 }
 
@@ -212,6 +213,7 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
  */
 - (void)resumeGame
 {
+    [self.gameView resumeGame];
     [self resumeProgress];
 }
 
@@ -220,6 +222,7 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
  */
 - (void)stopGame
 {
+
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -228,7 +231,10 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
  */
 - (void)restartGame
 {
-    
+    [self.gameView restartGame];
+    self.currentScore = 0;
+    [self updateScore:self.currentScore];
+    [self restartProgress];
 }
 
 
@@ -251,7 +257,6 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
     
     CGFloat btnHeight = 50.0f;
 
-    
     
     UIButton *resumeBtn = [self dropDownButtonWithTitle:@"Resume"];
     [resumeBtn setTag:DMSoloGameDropDownButtonResumeType];
@@ -420,6 +425,16 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
 {
     self.pauseFlag = NO;
     [self progress];
+}
+
+// 重启定时器
+- (void)restartProgress
+{
+    self.timerProgressView.progress = 0;
+    self.pauseFlag = NO;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self progress];
+    });
 }
 
 - (void)progress

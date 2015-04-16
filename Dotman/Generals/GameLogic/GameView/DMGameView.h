@@ -38,7 +38,30 @@
  */
 @property (nonatomic, weak) id<DMGameViewDelegate> delegate;
 
-
+/**
+ *  开始游戏
+ */
 - (void)startGame;
+
+/**
+ *  暂停游戏
+ */
+- (void)pauseGame;
+
+/**
+ *  恢复游戏
+ */
+- (void)resumeGame;
+
+/**
+ *  重启游戏
+ */
+- (void)restartGame;
+
+/**
+ *  停止游戏
+ */
+- (void)stopGame;
+
 
 @end
