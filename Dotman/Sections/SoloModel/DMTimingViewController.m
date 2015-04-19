@@ -247,9 +247,13 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
 {
     if (self.gameOverView == nil)
     {
-        self.gameOverView = [[DMGameOverView alloc]initWithFrame:self.gameView.bounds withBlurView:self.gameView withScore:200];
+        self.gameOverView = [[DMGameOverView alloc]initWithFrame:self.gameView.bounds withBlurView:self.gameView withScore:self.currentScore];
         self.gameOverView.delegate = self;
         [self.view addSubview:self.gameOverView];
+    }
+    else
+    {
+        [self.gameOverView updateScore:self.currentScore];
     }
 }
 

@@ -70,7 +70,7 @@
  *  单人游戏模式相关
  */
 // 定时60秒
-#define DM_Solo_Timing_Game_Duration   60.0f
+#define DM_Solo_Timing_Game_Duration   10.0f
 
 // 移动30次
 #define DM_Solo_Moving_Game_Number     30

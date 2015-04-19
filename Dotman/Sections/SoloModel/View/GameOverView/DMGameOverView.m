@@ -23,6 +23,8 @@ typedef NS_ENUM(NSInteger, DMGameOverViewButtonType)
 
 @property (nonatomic, strong) UIView *contentView;
 
+@property (nonatomic, strong) UILabel *scoreLabel;
+
 @end
 
 @implementation DMGameOverView
@@ -94,6 +96,12 @@ typedef NS_ENUM(NSInteger, DMGameOverViewButtonType)
     }];
 }
 
+- (void)updateScore:(NSInteger)score
+{
+    NSString *scoreString = [NSString stringWithFormat:@"Your Score:%@",@(score)];
+    [self.scoreLabel setText:scoreString];
+}
+
 #pragma mark -
 - (void)setupCoverViewWithFrame:(CGRect)frame
 {
@@ -155,19 +163,19 @@ typedef NS_ENUM(NSInteger, DMGameOverViewButtonType)
 
     NSString *scoreString = [NSString stringWithFormat:@"Your Score:%@",@(score)];
     CGRect scoreFrame = CGRectMake(0, CGRectGetMaxY(tipLabel.frame) - 5, CGRectGetWidth(self.contentView.frame), 30);
-    UILabel *scoreLabel = [[UILabel alloc] initWithFrame:scoreFrame];
-    scoreLabel.textAlignment = NSTextAlignmentCenter;
-    scoreLabel.adjustsFontSizeToFitWidth = YES;
-    scoreLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:20.0f];
-    scoreLabel.textColor = [UIColor blackColor];
-    scoreLabel.text = scoreString;
-    [self.contentView addSubview:scoreLabel];
+    self.scoreLabel = [[UILabel alloc] initWithFrame:scoreFrame];
+    self.scoreLabel.textAlignment = NSTextAlignmentCenter;
+    self.scoreLabel.adjustsFontSizeToFitWidth = YES;
+    self.scoreLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:20.0f];
+    self.scoreLabel.textColor = [UIColor blackColor];
+    self.scoreLabel.text = scoreString;
+    [self.contentView addSubview:self.scoreLabel];
     
     
     CGFloat interval = 8.0;
     UIButton *againBtn = [self generateGameOverViewBtnWithTitle:@"Play Again" withType:DMGameOverViewButtonAgainType];
     
-    CGRect againBtnFrame = CGRectMake(interval, CGRectGetMaxY(scoreLabel.frame) + interval, CGRectGetWidth(self.contentView.frame) - interval * 2, 40);
+    CGRect againBtnFrame = CGRectMake(interval, CGRectGetMaxY(self.scoreLabel.frame) + interval, CGRectGetWidth(self.contentView.frame) - interval * 2, 40);
     [againBtn setFrame:againBtnFrame];
     [self.contentView addSubview:againBtn];
     
