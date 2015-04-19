@@ -63,5 +63,9 @@
  */
 - (void)stopGameWithCompletion:(void (^)(void))block;
 
+/**
+ *  游戏结束
+ */
+- (void)gameOver;
 
 @end

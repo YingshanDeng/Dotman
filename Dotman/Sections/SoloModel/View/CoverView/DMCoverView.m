@@ -29,7 +29,7 @@
 }
 
 
-- (void)fadeInToShow
+- (void)fadeInToShowWithBlock:(void (^)(void))block
 {
     self.alpha = 0.0f;
     [UIView animateWithDuration:0.3f
@@ -38,18 +38,23 @@
                      animations:^{
                          self.alpha = _coverViewOpacity;
                      }
-                     completion:nil];
+                     completion:^(BOOL finished) {
+                         if (block) {
+                             block();
+                         }
+                     }];
 }
 
 
-- (void)fadeOutToHide
+- (void)fadeOutToHideWithBlock:(void (^)(void))block
 {
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
         self.alpha = 0.0f;
     } completion:^(BOOL finished) {
-
-        [self removeFromSuperview];
-
+        [self setHidden:YES];
+        if (block) {
+            block();
+        }
     }];
 }
 

@@ -128,6 +128,11 @@
     }
 }
 
+- (void)gameOver
+{
+    self.canPlaying = NO;
+}
+
 #pragma mark -
 - (void)setupDots
 {

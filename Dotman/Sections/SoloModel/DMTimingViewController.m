@@ -14,7 +14,7 @@
 #import "DMCoverView.h"
 #import "DMHamburgerButton.h"
 #import "JTNumberScrollAnimatedView.h"
-
+#import "DMGameOverView.h"
 
 /**
  *  下拉按键的类型
@@ -27,7 +27,7 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
 };
 
 
-@interface DMTimingViewController () <ASProgressPopUpViewDataSource, DMGameViewDelegate>
+@interface DMTimingViewController () <ASProgressPopUpViewDataSource, DMGameViewDelegate, DMGameOverViewDelegate>
 
 /**
  *  定时器视图
@@ -70,6 +70,12 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
  */
 @property (nonatomic, strong) DMCoverView *coverView;
 
+/**
+ *  游戏结束视图
+ */
+@property (nonatomic, strong) DMGameOverView *gameOverView;
+
+
 @end
 
 
@@ -86,7 +92,6 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
     
     [self setupGameView];
     [self setupTimerView];
-    
     [self setupDropDownView];
 
     
@@ -106,8 +111,10 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
     self.currentScore = 0;
     
     [self.gameView startGame];
-    [self startProgress];
-
+    // 由于游戏开始的掉落动画，所以延时0.5s后，才开始计时
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self startProgress];
+    });
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -203,6 +210,12 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
         [self resumeGame]; // 恢复游戏
     }
     self.menuBtn.showMenu = !self.menuBtn.showMenu;
+    
+    //TODO: 此处用于防止连续点击，待重构
+    self.menuBtn.enabled = NO;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.menuBtn.enabled = YES;
+    });
 }
 
 
@@ -213,15 +226,31 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
     if (self.coverView == nil)
     {
         self.coverView = [[DMCoverView alloc] initCoverViewWithFrame:self.gameView.bounds withType:DMCoverViewShadowType withBlurView:nil];
+        [self.view insertSubview:self.coverView belowSubview:self.dropView];
     }
-    [self.view insertSubview:self.coverView belowSubview:self.dropView];
-    [self.coverView fadeInToShow];
+    self.coverView.hidden = NO;
+    [self.coverView fadeInToShowWithBlock:^{
+        
+    }];
 }
 
 // 移除阴影覆盖层
 - (void)removeShadowCoverView
 {
-    [self.coverView fadeOutToHide];
+    [self.coverView fadeOutToHideWithBlock:^{
+        
+    }];
+}
+
+#pragma mark - 游戏结束视图
+- (void)setupGameOverview
+{
+    if (self.gameOverView == nil)
+    {
+        self.gameOverView = [[DMGameOverView alloc]initWithFrame:self.gameView.bounds withBlurView:self.gameView withScore:200];
+        self.gameOverView.delegate = self;
+        [self.view addSubview:self.gameOverView];
+    }
 }
 
 #pragma mark - 游戏控制
@@ -248,12 +277,9 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
  */
 - (void)stopGame
 {
-    CGFloat delay = 0.5;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.gameView stopGameWithCompletion:^{
-            [self.navigationController popViewControllerAnimated:YES];
-        }];
-    });
+    [self.gameView stopGameWithCompletion:^{
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
 }
 
 /**
@@ -272,7 +298,12 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
  */
 - (void)gameOver
 {
- 
+    self.menuBtn.enabled = NO;
+    [self.gameView gameOver];
+    [self setupGameOverview];
+    [self.gameOverView showGameOverViewWithBlock:^{
+        
+    }];
 }
 
 // 设置当前的分数
@@ -347,7 +378,7 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
 
 - (void)dropDownBtnAction:(UIButton *)btn
 {
-    
+    [self removeShadowCoverView];
     [self hideDropDownView];
     self.menuBtn.showMenu = !self.menuBtn.showMenu;
     
@@ -366,7 +397,11 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
         }
         case DMSoloGameDropDownButtonExitType:
         {
-            [self stopGame];
+            // 为了让下拉视图弹回去，给了一个延时
+            CGFloat delay = 0.5;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self stopGame];
+            });
             break;
         }
         default:
@@ -521,6 +556,25 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
 {
     self.currentScore += score;
     [self updateScore:self.currentScore];
+}
+
+
+#pragma mark - DMGameOverViewDelegate
+- (void)didGameOverViewSelectPlayAgain:(DMGameOverView *)gameOverView
+{
+    self.menuBtn.enabled = YES;
+    __weak __typeof(&*self)weakSelf = self;
+    [self.gameOverView hideGameOverViewWithBlock:^{
+        [weakSelf restartGame];
+    }];
+}
+
+- (void)didGameOverViewSelectExit:(DMGameOverView *)gameOverView
+{
+    __weak __typeof(&*self)weakSelf = self;
+    [self.gameOverView hideGameOverViewWithBlock:^{
+        [weakSelf stopGame];
+    }];
 }
 
 #pragma mark - Other

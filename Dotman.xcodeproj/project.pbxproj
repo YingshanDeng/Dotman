@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		DD1916571AE34C7C00509DCB /* DMCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1916561AE34C7C00509DCB /* DMCoverView.m */; };
 		DD19165A1AE3533F00509DCB /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1916591AE3533F00509DCB /* UIImage+ImageEffects.m */; };
+		DD1916611AE3592700509DCB /* SCLAlertViewStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1916601AE3592700509DCB /* SCLAlertViewStyleKit.m */; };
+		DD1916651AE359A600509DCB /* DMGameOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1916641AE359A600509DCB /* DMGameOverView.m */; };
 		DD477CF21AD6B507003C6AD0 /* DWBubbleMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DD477CF11AD6B507003C6AD0 /* DWBubbleMenuButton.m */; };
 		DD7333E91AD55C130047980D /* RQShineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7333E81AD55C130047980D /* RQShineLabel.m */; };
 		DD7333ED1AD563200047980D /* DMIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7333EC1AD563200047980D /* DMIntroViewController.m */; };
@@ -87,6 +89,10 @@
 		DD1916561AE34C7C00509DCB /* DMCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMCoverView.m; sourceTree = "<group>"; };
 		DD1916581AE3533F00509DCB /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		DD1916591AE3533F00509DCB /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		DD19165F1AE3592700509DCB /* SCLAlertViewStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertViewStyleKit.h; sourceTree = "<group>"; };
+		DD1916601AE3592700509DCB /* SCLAlertViewStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertViewStyleKit.m; sourceTree = "<group>"; };
+		DD1916631AE359A600509DCB /* DMGameOverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMGameOverView.h; sourceTree = "<group>"; };
+		DD1916641AE359A600509DCB /* DMGameOverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGameOverView.m; sourceTree = "<group>"; };
 		DD477CF01AD6B507003C6AD0 /* DWBubbleMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWBubbleMenuButton.h; sourceTree = "<group>"; };
 		DD477CF11AD6B507003C6AD0 /* DWBubbleMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWBubbleMenuButton.m; sourceTree = "<group>"; };
 		DD7333E71AD55C130047980D /* RQShineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RQShineLabel.h; sourceTree = "<group>"; };
@@ -222,6 +228,24 @@
 				DD1916561AE34C7C00509DCB /* DMCoverView.m */,
 			);
 			path = CoverView;
+			sourceTree = "<group>";
+		};
+		DD19165E1AE3590600509DCB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				DD19165F1AE3592700509DCB /* SCLAlertViewStyleKit.h */,
+				DD1916601AE3592700509DCB /* SCLAlertViewStyleKit.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		DD1916621AE3597400509DCB /* GameOverView */ = {
+			isa = PBXGroup;
+			children = (
+				DD1916631AE359A600509DCB /* DMGameOverView.h */,
+				DD1916641AE359A600509DCB /* DMGameOverView.m */,
+			);
+			path = GameOverView;
 			sourceTree = "<group>";
 		};
 		DD477CEF1AD6B507003C6AD0 /* DWBubbleMenuButton */ = {
@@ -638,6 +662,7 @@
 		DDB350C11AD9559200B34D98 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD1916621AE3597400509DCB /* GameOverView */,
 				DD1916541AE34C2400509DCB /* CoverView */,
 				DDF5BA971ADA6DD80032F60F /* HamburgerButton */,
 				DDF5BA931ADA6D6D0032F60F /* WaveView */,
@@ -675,6 +700,7 @@
 		DDB67FB71AD22A9500503EA5 /* Generals */ = {
 			isa = PBXGroup;
 			children = (
+				DD19165E1AE3590600509DCB /* Helper */,
 				DD73340E1AD5648A0047980D /* GameLogic */,
 				DDB67FC91AD23D8100503EA5 /* Categories */,
 			);
@@ -954,6 +980,7 @@
 				DDCC78661ADA14FE0062B45A /* SphereMenu.m in Sources */,
 				DDB0AF551AD17A700035F2FA /* YALTabBarItem.m in Sources */,
 				DDB67FE71AD27A0A00503EA5 /* DMSettingHandler.m in Sources */,
+				DD1916611AE3592700509DCB /* SCLAlertViewStyleKit.m in Sources */,
 				DDB28D651AD126A6006FB0F9 /* AppDelegate.m in Sources */,
 				DDCC786C1ADA15690062B45A /* MultiplePulsingHaloLayer.m in Sources */,
 				DDB350C01AD9227A00B34D98 /* ASProgressPopUpView.m in Sources */,
@@ -968,6 +995,7 @@
 				DDB0AF531AD17A700035F2FA /* YALAnimatingTabBarConstants.m in Sources */,
 				DDB67FD31AD23E2C00503EA5 /* DMSettingViewController.m in Sources */,
 				DD1916571AE34C7C00509DCB /* DMCoverView.m in Sources */,
+				DD1916651AE359A600509DCB /* DMGameOverView.m in Sources */,
 				DD83161E1AD6A3FE00A4FA4D /* DMBattleViewController.m in Sources */,
 				DD477CF21AD6B507003C6AD0 /* DWBubbleMenuButton.m in Sources */,
 				DD19165A1AE3533F00509DCB /* UIImage+ImageEffects.m in Sources */,

@@ -18,8 +18,8 @@ typedef NS_ENUM(NSInteger, DMCoverViewType)
 
 - (id)initCoverViewWithFrame:(CGRect)frame withType:(DMCoverViewType)type withBlurView:(UIView *)view;
 
-- (void)fadeInToShow;
+- (void)fadeInToShowWithBlock:(void (^)(void))block;
 
-- (void)fadeOutToHide;
+- (void)fadeOutToHideWithBlock:(void (^)(void))block;
 
 @end
