@@ -11,9 +11,10 @@
 #import "AppDelegate.h"
 #import "DMGameView.h"
 #import "UIImage+Additions.h"
-
+#import "DMCoverView.h"
 #import "DMHamburgerButton.h"
 #import "JTNumberScrollAnimatedView.h"
+
 
 /**
  *  下拉按键的类型
@@ -59,8 +60,15 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
 @property (nonatomic, assign) NSInteger currentScore;
 
 
-
+/**
+ *  下拉视图（包含恢复，重启，退出三个button）
+ */
 @property (nonatomic, strong) UIView *dropView;
+
+/**
+ *  阴影覆盖层
+ */
+@property (nonatomic, strong) DMCoverView *coverView;
 
 @end
 
@@ -184,19 +192,37 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
 {
     if (!self.menuBtn.showMenu)
     {
+        [self addShadowCoverView];
         [self showDropDownView];
         [self pauseGame]; // 暂停游戏
     }
     else
     {
+        [self removeShadowCoverView];
         [self hideDropDownView];
         [self resumeGame]; // 恢复游戏
     }
-
     self.menuBtn.showMenu = !self.menuBtn.showMenu;
 }
 
 
+#pragma mark - 阴影覆盖层
+// 添加阴影覆盖层
+- (void)addShadowCoverView
+{
+    if (self.coverView == nil)
+    {
+        self.coverView = [[DMCoverView alloc] initCoverViewWithFrame:self.gameView.bounds withType:DMCoverViewShadowType withBlurView:nil];
+    }
+    [self.view insertSubview:self.coverView belowSubview:self.dropView];
+    [self.coverView fadeInToShow];
+}
+
+// 移除阴影覆盖层
+- (void)removeShadowCoverView
+{
+    [self.coverView fadeOutToHide];
+}
 
 #pragma mark - 游戏控制
 /**
@@ -222,8 +248,12 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
  */
 - (void)stopGame
 {
-
-    [self.navigationController popViewControllerAnimated:YES];
+    CGFloat delay = 0.5;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.gameView stopGameWithCompletion:^{
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+    });
 }
 
 /**
@@ -237,6 +267,13 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
     [self restartProgress];
 }
 
+/**
+ *  游戏结束
+ */
+- (void)gameOver
+{
+ 
+}
 
 // 设置当前的分数
 - (void)updateScore:(NSInteger)score
@@ -455,6 +492,8 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
         else if (progress == 1.0)
         {
             self.pauseFlag = YES;
+            // 游戏结束
+            [self gameOver];
         }
     }
 }

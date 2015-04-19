@@ -61,7 +61,7 @@
 /**
  *  停止游戏
  */
-- (void)stopGame;
+- (void)stopGameWithCompletion:(void (^)(void))block;
 
 
 @end

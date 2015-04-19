@@ -112,9 +112,20 @@
     self.canPlaying = NO;
 }
 
-- (void)stopGame
+- (void)stopGameWithCompletion:(void (^)(void))block
 {
-    
+    self.canPlaying = NO;
+    NSInteger index = 0;
+    for (DMDotSprite *dotSprite in _dotsArray)
+    {
+        index ++;
+        [dotSprite runStopGameAnimationWithBlock:^{
+            if (index == DMGameView_Number_Of_Dots_X * DMGameView_Number_Of_Dots_Y)
+            {
+                block();
+            }
+        }];
+    }
 }
 
 #pragma mark -

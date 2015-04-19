@@ -257,6 +257,27 @@
 }
 
 
+- (void)runStopGameAnimationWithBlock:(void (^)(void))block
+{
+    [UIView animateWithDuration:0.12 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        
+        [self setTransform:CGAffineTransformMakeScale(1.2, 1.2)];
+        
+    } completion:^(BOOL finished) {
+        
+        [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+            
+            [self setTransform:CGAffineTransformMakeScale(0.01, 0.01)];
+            
+        } completion:^(BOOL finished) {
+            self.hidden = YES;
+            self.transform = CGAffineTransformIdentity;
+            
+            block();
+        }];
+    }];
+}
+
 #pragma mark - Private Method
 
 /**
@@ -316,7 +337,7 @@
     CGPoint pos = CGPointZero;
     
     pos = CGPointMake(offsetX + (interval + DMShowingDotRadius) * self.coordinate.x + offset
-                      , -_superViewFrame.origin.y - self.bounds.size.height / 2 - (interval + DMShowingDotRadius) * fabsf(self.coordinate.y));
+                      , -_superViewFrame.origin.y - self.bounds.size.height / 2 - (interval + DMShowingDotRadius) * fabs(self.coordinate.y));
     
     self.originPosition = pos;
     
@@ -324,7 +345,7 @@
     CGFloat offsetY = (_superViewFrame.size.height - _superViewFrame.size.width) / 2;
     
     pos = CGPointMake(offsetX + (interval + DMShowingDotRadius) * self.coordinate.x + offset,
-                      offsetY + (interval + DMShowingDotRadius) * fabsf(self.coordinate.y - 5) + offset + interval);
+                      offsetY + (interval + DMShowingDotRadius) * fabs(self.coordinate.y - 5) + offset + interval);
     self.showingPosition = pos;
 }
 

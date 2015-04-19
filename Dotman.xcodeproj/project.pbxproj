@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD1916571AE34C7C00509DCB /* DMCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1916561AE34C7C00509DCB /* DMCoverView.m */; };
+		DD19165A1AE3533F00509DCB /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1916591AE3533F00509DCB /* UIImage+ImageEffects.m */; };
 		DD477CF21AD6B507003C6AD0 /* DWBubbleMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DD477CF11AD6B507003C6AD0 /* DWBubbleMenuButton.m */; };
-		DD5BD2361ADFF15800E77116 /* SCLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5BD22C1ADFF15800E77116 /* SCLAlertView.m */; };
-		DD5BD2371ADFF15800E77116 /* SCLAlertViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5BD22E1ADFF15800E77116 /* SCLAlertViewResponder.m */; };
-		DD5BD2381ADFF15800E77116 /* SCLAlertViewStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5BD2301ADFF15800E77116 /* SCLAlertViewStyleKit.m */; };
-		DD5BD2391ADFF15800E77116 /* SCLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5BD2321ADFF15800E77116 /* SCLButton.m */; };
-		DD5BD23A1ADFF15800E77116 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5BD2351ADFF15800E77116 /* UIImage+ImageEffects.m */; };
 		DD7333E91AD55C130047980D /* RQShineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7333E81AD55C130047980D /* RQShineLabel.m */; };
 		DD7333ED1AD563200047980D /* DMIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7333EC1AD563200047980D /* DMIntroViewController.m */; };
 		DD7333FD1AD563C50047980D /* 1.caf in Resources */ = {isa = PBXBuildFile; fileRef = DD7333F01AD563C50047980D /* 1.caf */; };
@@ -86,19 +83,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD1916551AE34C7C00509DCB /* DMCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMCoverView.h; sourceTree = "<group>"; };
+		DD1916561AE34C7C00509DCB /* DMCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMCoverView.m; sourceTree = "<group>"; };
+		DD1916581AE3533F00509DCB /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		DD1916591AE3533F00509DCB /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		DD477CF01AD6B507003C6AD0 /* DWBubbleMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWBubbleMenuButton.h; sourceTree = "<group>"; };
 		DD477CF11AD6B507003C6AD0 /* DWBubbleMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWBubbleMenuButton.m; sourceTree = "<group>"; };
-		DD5BD22B1ADFF15800E77116 /* SCLAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertView.h; sourceTree = "<group>"; };
-		DD5BD22C1ADFF15800E77116 /* SCLAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertView.m; sourceTree = "<group>"; };
-		DD5BD22D1ADFF15800E77116 /* SCLAlertViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertViewResponder.h; sourceTree = "<group>"; };
-		DD5BD22E1ADFF15800E77116 /* SCLAlertViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertViewResponder.m; sourceTree = "<group>"; };
-		DD5BD22F1ADFF15800E77116 /* SCLAlertViewStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertViewStyleKit.h; sourceTree = "<group>"; };
-		DD5BD2301ADFF15800E77116 /* SCLAlertViewStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertViewStyleKit.m; sourceTree = "<group>"; };
-		DD5BD2311ADFF15800E77116 /* SCLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLButton.h; sourceTree = "<group>"; };
-		DD5BD2321ADFF15800E77116 /* SCLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLButton.m; sourceTree = "<group>"; };
-		DD5BD2331ADFF15800E77116 /* SCLMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLMacros.h; sourceTree = "<group>"; };
-		DD5BD2341ADFF15800E77116 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		DD5BD2351ADFF15800E77116 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		DD7333E71AD55C130047980D /* RQShineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RQShineLabel.h; sourceTree = "<group>"; };
 		DD7333E81AD55C130047980D /* RQShineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RQShineLabel.m; sourceTree = "<group>"; };
 		DD7333EB1AD563200047980D /* DMIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMIntroViewController.h; sourceTree = "<group>"; };
@@ -225,6 +215,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD1916541AE34C2400509DCB /* CoverView */ = {
+			isa = PBXGroup;
+			children = (
+				DD1916551AE34C7C00509DCB /* DMCoverView.h */,
+				DD1916561AE34C7C00509DCB /* DMCoverView.m */,
+			);
+			path = CoverView;
+			sourceTree = "<group>";
+		};
 		DD477CEF1AD6B507003C6AD0 /* DWBubbleMenuButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,24 +231,6 @@
 				DD477CF11AD6B507003C6AD0 /* DWBubbleMenuButton.m */,
 			);
 			path = DWBubbleMenuButton;
-			sourceTree = "<group>";
-		};
-		DD5BD22A1ADFF15800E77116 /* SCLAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				DD5BD22B1ADFF15800E77116 /* SCLAlertView.h */,
-				DD5BD22C1ADFF15800E77116 /* SCLAlertView.m */,
-				DD5BD22D1ADFF15800E77116 /* SCLAlertViewResponder.h */,
-				DD5BD22E1ADFF15800E77116 /* SCLAlertViewResponder.m */,
-				DD5BD22F1ADFF15800E77116 /* SCLAlertViewStyleKit.h */,
-				DD5BD2301ADFF15800E77116 /* SCLAlertViewStyleKit.m */,
-				DD5BD2311ADFF15800E77116 /* SCLButton.h */,
-				DD5BD2321ADFF15800E77116 /* SCLButton.m */,
-				DD5BD2331ADFF15800E77116 /* SCLMacros.h */,
-				DD5BD2341ADFF15800E77116 /* UIImage+ImageEffects.h */,
-				DD5BD2351ADFF15800E77116 /* UIImage+ImageEffects.m */,
-			);
-			path = SCLAlertView;
 			sourceTree = "<group>";
 		};
 		DD7333E61AD55BC60047980D /* RQShineLabel */ = {
@@ -353,7 +334,6 @@
 		DDB0AF261AD179F20035F2FA /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				DD5BD22A1ADFF15800E77116 /* SCLAlertView */,
 				DDF5BA311ADA62B80032F60F /* JTNumberScrollAnimatedView */,
 				DDCC78671ADA15690062B45A /* PulsingHalo */,
 				DDCC78631ADA14FE0062B45A /* SphereMenu */,
@@ -658,6 +638,7 @@
 		DDB350C11AD9559200B34D98 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD1916541AE34C2400509DCB /* CoverView */,
 				DDF5BA971ADA6DD80032F60F /* HamburgerButton */,
 				DDF5BA931ADA6D6D0032F60F /* WaveView */,
 			);
@@ -712,6 +693,8 @@
 		DDB67FC91AD23D8100503EA5 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				DD1916581AE3533F00509DCB /* UIImage+ImageEffects.h */,
+				DD1916591AE3533F00509DCB /* UIImage+ImageEffects.m */,
 				DDB67FD51AD23E9400503EA5 /* UIImage+Additions.h */,
 				DDB67FD61AD23E9400503EA5 /* UIImage+Additions.m */,
 			);
@@ -949,10 +932,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDB0AF541AD17A700035F2FA /* YALFoldingTabBarController.m in Sources */,
-				DD5BD2371ADFF15800E77116 /* SCLAlertViewResponder.m in Sources */,
 				DDB67FEC1AD2C15600503EA5 /* DMDropDownCell.m in Sources */,
 				DDF5BA961ADA6DB60032F60F /* DMWaveView.m in Sources */,
-				DD5BD23A1ADFF15800E77116 /* UIImage+ImageEffects.m in Sources */,
 				DDB28D3A1AD1246B006FB0F9 /* main.m in Sources */,
 				DDB67FDF1AD2782B00503EA5 /* DMPlayNameCell.m in Sources */,
 				DDB0AF501AD17A700035F2FA /* YALSpringAnimation.m in Sources */,
@@ -972,7 +953,6 @@
 				DDB67FD41AD23E2C00503EA5 /* DMSettingBaseCell.m in Sources */,
 				DDCC78661ADA14FE0062B45A /* SphereMenu.m in Sources */,
 				DDB0AF551AD17A700035F2FA /* YALTabBarItem.m in Sources */,
-				DD5BD2381ADFF15800E77116 /* SCLAlertViewStyleKit.m in Sources */,
 				DDB67FE71AD27A0A00503EA5 /* DMSettingHandler.m in Sources */,
 				DDB28D651AD126A6006FB0F9 /* AppDelegate.m in Sources */,
 				DDCC786C1ADA15690062B45A /* MultiplePulsingHaloLayer.m in Sources */,
@@ -981,16 +961,16 @@
 				DDF5BA921ADA62EC0032F60F /* JTNumberScrollAnimatedView.m in Sources */,
 				DDF5BA9A1ADA6DFE0032F60F /* DMHamburgerButton.m in Sources */,
 				DDB350B61AD91D7600B34D98 /* DMMovingViewController.m in Sources */,
-				DD5BD2361ADFF15800E77116 /* SCLAlertView.m in Sources */,
 				DDB0AF521AD17A700035F2FA /* CATransaction+TransactionWithAnimationsAndCompletion.m in Sources */,
 				DDCC786D1ADA15690062B45A /* PulsingHaloLayer.m in Sources */,
-				DD5BD2391ADFF15800E77116 /* SCLButton.m in Sources */,
 				DD7333ED1AD563200047980D /* DMIntroViewController.m in Sources */,
 				DD7334161AD5656D0047980D /* DMDotSprite.m in Sources */,
 				DDB0AF531AD17A700035F2FA /* YALAnimatingTabBarConstants.m in Sources */,
 				DDB67FD31AD23E2C00503EA5 /* DMSettingViewController.m in Sources */,
+				DD1916571AE34C7C00509DCB /* DMCoverView.m in Sources */,
 				DD83161E1AD6A3FE00A4FA4D /* DMBattleViewController.m in Sources */,
 				DD477CF21AD6B507003C6AD0 /* DWBubbleMenuButton.m in Sources */,
+				DD19165A1AE3533F00509DCB /* UIImage+ImageEffects.m in Sources */,
 				DDB350B21AD91B9E00B34D98 /* DMTimingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

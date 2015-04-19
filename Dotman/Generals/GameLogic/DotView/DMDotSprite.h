@@ -100,4 +100,10 @@
 - (void)runPlayabilityAdjustAnimationWithDelay:(int)delay withBlock:(void (^)(int index))block;
 
 
+/**
+ *  游戏停止时的动画
+ */
+- (void)runStopGameAnimationWithBlock:(void (^)(void))block;
+
+
 @end

@@ -94,8 +94,6 @@
  */
 
 #import "UIImage+ImageEffects.h"
-#import "SCLMacros.h"
-
 @import Accelerate;
 #import <float.h>
 
