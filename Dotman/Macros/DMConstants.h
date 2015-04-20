@@ -73,7 +73,18 @@
 #define DM_Solo_Timing_Game_Duration   10.0f
 
 // 移动30次
-#define DM_Solo_Moving_Game_Number     30
+#define DM_Solo_Moving_Game_Number     5
 
+
+
+/**
+ *  下拉按键的类型
+ */
+typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
+{
+    DMSoloGameDropDownButtonResumeType = 0,
+    DMSoloGameDropDownButtonRestartType,
+    DMSoloGameDropDownButtonExitType
+};
 
 #endif

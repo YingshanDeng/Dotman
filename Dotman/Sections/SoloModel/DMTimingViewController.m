@@ -16,15 +16,6 @@
 #import "JTNumberScrollAnimatedView.h"
 #import "DMGameOverView.h"
 
-/**
- *  下拉按键的类型
- */
-typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
-{
-    DMSoloGameDropDownButtonResumeType = 0,
-    DMSoloGameDropDownButtonRestartType,
-    DMSoloGameDropDownButtonExitType
-};
 
 
 @interface DMTimingViewController () <ASProgressPopUpViewDataSource, DMGameViewDelegate, DMGameOverViewDelegate>
@@ -93,8 +84,6 @@ typedef NS_ENUM(NSInteger, DMSoloGameDropDownButtonType)
     [self setupGameView];
     [self setupTimerView];
     [self setupDropDownView];
-
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
