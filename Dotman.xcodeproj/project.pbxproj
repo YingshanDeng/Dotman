@@ -1113,6 +1113,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Junhan Li (WAQ7345F7M)";
 				GCC_PREFIX_HEADER = "Dotman/Dotman-Prefix.pch";
 				INFOPLIST_FILE = Dotman/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

@@ -68,13 +68,13 @@
 - (void)pauseWateWave
 {
     [self.displayLink invalidate];
+    self.displayLink = nil;
 }
 
 - (void)resumeWaterWave
 {
     self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(handleDisplayLink:)];
     [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-
 }
 
 - (void)startWaterWave

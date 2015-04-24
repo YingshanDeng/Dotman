@@ -231,7 +231,8 @@
 {
     if (self.gameOverView == nil)
     {
-        self.gameOverView = [[DMGameOverView alloc]initWithFrame:self.gameView.bounds withBlurView:self.gameView withScore:self.currentScore];
+//        self.gameOverView = [[DMGameOverView alloc]initWithFrame:self.gameView.bounds withBlurView:self.gameView withScore:self.currentScore];
+        self.gameOverView = [[DMGameOverView alloc]initWithFrame:self.gameView.bounds withBlurView:nil withScore:self.currentScore];
         self.gameOverView.delegate = self;
         [self.view addSubview:self.gameOverView];
     }
@@ -276,7 +277,10 @@
 - (void)restartGame
 {
     [self.gameView restartGame];
+    CGFloat lowestWaveHeight = self.gameView.frame.size.height - 10;
+    self.waveView.waveHeight = lowestWaveHeight;
     [self.waveView resumeWaterWave];
+    self.movingNumber = DM_Solo_Moving_Game_Number;
     self.currentScore = 0;
     [self updateScore:self.currentScore];
 }

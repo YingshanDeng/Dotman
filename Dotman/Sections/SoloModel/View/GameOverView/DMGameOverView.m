@@ -105,7 +105,14 @@ typedef NS_ENUM(NSInteger, DMGameOverViewButtonType)
 #pragma mark -
 - (void)setupCoverViewWithFrame:(CGRect)frame
 {
-    self.coverView = [[DMCoverView alloc] initCoverViewWithFrame:frame withType:DMCoverViewBlurType withBlurView:_blurView];
+    if (_blurView)
+    {
+        self.coverView = [[DMCoverView alloc] initCoverViewWithFrame:frame withType:DMCoverViewBlurType withBlurView:_blurView];
+    }
+    else
+    {
+        self.coverView = [[DMCoverView alloc] initCoverViewWithFrame:frame withType:DMCoverViewShadowType withBlurView:_blurView];
+    }
     [self addSubview:self.coverView];
 }
 

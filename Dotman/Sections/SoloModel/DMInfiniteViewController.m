@@ -9,14 +9,20 @@
 #import "DMInfiniteViewController.h"
 #import "DMGameView.h"
 #import "AppDelegate.h"
-
+#import "UIImage+Additions.h"
 #import "DMHamburgerButton.h"
 #import "JTNumberScrollAnimatedView.h"
+#import "DMCoverView.h"
+#import "DMGameOverView.h"
 
 @interface DMInfiniteViewController () <DMGameViewDelegate>
 
 @property (nonatomic, strong) DMGameView *gameView;
 
+/**
+ *  下拉视图（包含恢复，重启，退出三个button）
+ */
+@property (nonatomic, strong) UIView *dropView;
 
 
 /**
@@ -34,6 +40,16 @@
  */
 @property (nonatomic, assign) NSInteger currentScore;
 
+/**
+ *  阴影覆盖层
+ */
+@property (nonatomic, strong) DMCoverView *coverView;
+
+/**
+ *  游戏结束视图
+ */
+@property (nonatomic, strong) DMGameOverView *gameOverView;
+
 
 @end
 
@@ -42,11 +58,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [self.view setBackgroundColor:[UIColor colorWithRed:0.310 green:1.000 blue:0.308 alpha:1.000]];
+    [self.view setBackgroundColor:[UIColor colorWithRed:223.0/255 green:239.0/255 blue:239.0/255 alpha:1.0]];
     
     [self setupCustomNavigationItem];
     [self setupGameView];
+    [self setupDropDownView];
 }
 
 
@@ -78,6 +94,67 @@
     [super viewDidDisappear:animated];
     
 }
+#pragma mark - 游戏控制
+/**
+ *  暂停游戏
+ */
+- (void)pauseGame
+{
+    [self.gameView pauseGame];
+}
+
+/**
+ *  恢复游戏
+ */
+- (void)resumeGame
+{
+    [self.gameView resumeGame];
+}
+
+/**
+ *  停止游戏
+ */
+- (void)stopGame
+{
+    [self.gameView stopGameWithCompletion:^{
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+}
+
+/**
+ *  重启游戏
+ */
+- (void)restartGame
+{
+    [self.gameView restartGame];
+    self.currentScore = 0;
+    [self updateScore:self.currentScore];
+}
+
+/**
+ *  游戏结束
+ */
+- (void)gameOver
+{
+    self.menuBtn.enabled = NO;
+    [self.gameView gameOver];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self setupGameOverview];
+//        [self.gameOverView showGameOverViewWithBlock:^{
+        
+//        }];
+    });
+    
+}
+
+// 设置当前的分数
+- (void)updateScore:(NSInteger)score
+{
+    self.scoreView.value = @(score);
+    [self.scoreView startAnimation];
+}
+
 
 #pragma mark - Navigation Item
 /**
@@ -147,18 +224,26 @@
 
 - (void)menuBtnAction:(UIButton *)btn
 {
+    if (!self.menuBtn.showMenu)
+    {
+        [self addShadowCoverView];
+        [self showDropDownView];
+        [self pauseGame]; // 暂停游戏
+    }
+    else
+    {
+        [self removeShadowCoverView];
+        [self hideDropDownView];
+        [self resumeGame]; // 恢复游戏
+    }
     self.menuBtn.showMenu = !self.menuBtn.showMenu;
+    
+    //TODO: 此处用于防止连续点击，待重构
+    self.menuBtn.enabled = NO;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.menuBtn.enabled = YES;
+    });
 }
-
-
-// 设置当前的分数
-- (void)updateScore:(NSInteger)score
-{
-    self.scoreView.value = @(score);
-    [self.scoreView startAnimation];
-}
-
-
 
 #pragma mark - 游戏界面相关
 - (void)setupGameView
@@ -172,6 +257,159 @@
     [self.gameView setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:self.gameView];
 }
+
+#pragma mark - 下拉框
+- (void)setupDropDownView
+{
+    CGRect dropFrame = CGRectMake(0, - 180, self.view.bounds.size.width, 180);
+    self.dropView = [[UIView alloc] initWithFrame:dropFrame];
+    [self.dropView setBackgroundColor:DMTabBarViewController_TabBarView_TabBarColor];
+    [self.view addSubview:self.dropView];
+    
+    
+    CGFloat btnHeight = 50.0f;
+    
+    
+    UIButton *resumeBtn = [self dropDownButtonWithTitle:@"Resume"];
+    [resumeBtn setTag:DMSoloGameDropDownButtonResumeType];
+    CGRect resumeBtnFrame = CGRectMake(0, 29, self.dropView.frame.size.width, btnHeight);
+    [resumeBtn setFrame:resumeBtnFrame];
+    [self.dropView addSubview:resumeBtn];
+    
+    UIImageView *lineBreakView_2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 79, self.dropView.frame.size.width, 0.5)];
+    [lineBreakView_2 setBackgroundColor:[UIColor colorWithWhite:1.000 alpha:0.600]];
+    [self.dropView addSubview:lineBreakView_2];
+    
+    UIButton *restartBtn = [self dropDownButtonWithTitle:@"Restart"];
+    [restartBtn setTag:DMSoloGameDropDownButtonRestartType];
+    CGRect restartBtnFrame = CGRectMake(0, 80.5, self.dropView.frame.size.width, btnHeight);
+    [restartBtn setFrame:restartBtnFrame];
+    [self.dropView addSubview:restartBtn];
+    
+    UIImageView *lineBreakView_1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 129.5, self.dropView.frame.size.width, 0.5)];
+    [lineBreakView_1 setBackgroundColor:[UIColor colorWithWhite:1.000 alpha:0.600]];
+    [self.dropView addSubview:lineBreakView_1];
+    
+    UIButton *exitBtn = [self dropDownButtonWithTitle:@"Exit"];
+    [exitBtn setTag:DMSoloGameDropDownButtonExitType];
+    CGRect exitBtnFrame = CGRectMake(0, 130, self.dropView.frame.size.width, btnHeight);
+    [exitBtn setFrame:exitBtnFrame];
+    [self.dropView addSubview:exitBtn];
+    
+    
+}
+
+- (UIButton *)dropDownButtonWithTitle:(NSString *)btnTitle
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    UIColor *btnNormalColor = DMTabBarViewController_TabBarView_TabBarColor;
+    UIColor *btnHighlightedColor = [UIColor colorWithRed:0.297 green:0.878 blue:0.744 alpha:1.000];
+    
+    [btn setBackgroundImage:[UIImage imageWithColor:btnNormalColor] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageWithColor:btnHighlightedColor] forState:UIControlStateHighlighted];
+    
+    
+    UIFont *font = [UIFont fontWithName:DMFont_Detail_Type size:20.0f];
+    NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:btnTitle attributes:@{NSFontAttributeName : font, NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [btn setAttributedTitle:attrString forState:UIControlStateNormal];
+    
+    [btn addTarget:self action:@selector(dropDownBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    return btn;
+}
+
+
+- (void)dropDownBtnAction:(UIButton *)btn
+{
+    [self removeShadowCoverView];
+    [self hideDropDownView];
+    self.menuBtn.showMenu = !self.menuBtn.showMenu;
+    
+    DMSoloGameDropDownButtonType type = (DMSoloGameDropDownButtonType)btn.tag;
+    switch (type)
+    {
+        case DMSoloGameDropDownButtonResumeType:
+        {
+            [self resumeGame];
+            break;
+        }
+        case DMSoloGameDropDownButtonRestartType:
+        {
+            [self restartGame];
+            break;
+        }
+        case DMSoloGameDropDownButtonExitType:
+        {
+            // 为了让下拉视图弹回去，给了一个延时
+            CGFloat delay = 0.5;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self stopGame];
+            });
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+
+- (void)showDropDownView
+{
+    [UIView animateWithDuration:0.5
+                          delay:0
+         usingSpringWithDamping:0.8
+          initialSpringVelocity:!self.menuBtn.showMenu ? 0.0 : 0.6
+                        options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                         
+                         CGRect frame = self.dropView.frame;
+                         frame.origin.y = -30;
+                         [self.dropView setFrame:frame];
+                         
+                     } completion:nil];
+}
+
+- (void)hideDropDownView
+{
+    [UIView animateWithDuration:0.5
+                          delay:0
+         usingSpringWithDamping:0.8
+          initialSpringVelocity:!self.menuBtn.showMenu ? 0.0 : 0.6
+                        options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                         
+                         CGRect frame = self.dropView.frame;
+                         frame.origin.y = -180;
+                         [self.dropView setFrame:frame];
+                         
+                     } completion:nil];
+}
+
+
+#pragma mark - 阴影覆盖层
+// 添加阴影覆盖层
+- (void)addShadowCoverView
+{
+    if (self.coverView == nil)
+    {
+        self.coverView = [[DMCoverView alloc] initCoverViewWithFrame:self.gameView.bounds withType:DMCoverViewShadowType withBlurView:nil];
+        [self.view insertSubview:self.coverView belowSubview:self.dropView];
+    }
+    self.coverView.hidden = NO;
+    [self.coverView fadeInToShowWithBlock:^{
+        
+    }];
+}
+
+// 移除阴影覆盖层
+- (void)removeShadowCoverView
+{
+    [self.coverView fadeOutToHideWithBlock:^{
+        
+    }];
+}
+
 
 #pragma mark - DMGameViewDelegate
 - (void)didFinishOnceDisappearWithScore:(NSInteger)score

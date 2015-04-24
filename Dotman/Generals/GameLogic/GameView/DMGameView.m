@@ -131,6 +131,8 @@
 - (void)gameOver
 {
     self.canPlaying = NO;
+    [_selectedStack removeAllObjects];
+    [self setNeedsDisplay];
 }
 
 #pragma mark -
@@ -240,7 +242,7 @@
             
             
             DMDotSprite *lastDot = [_selectedStack lastObject];
-            int absValue = abs(dot.coordinate.x - lastDot.coordinate.x) + abs(dot.coordinate.y - lastDot.coordinate.y);
+            int absValue = abs((int)dot.coordinate.x - (int)lastDot.coordinate.x) + abs((int)dot.coordinate.y - (int)lastDot.coordinate.y);
             if (absValue == 1)
             {
                 if (dot.animating == NO)
