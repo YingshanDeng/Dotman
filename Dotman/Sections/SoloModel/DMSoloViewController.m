@@ -136,15 +136,15 @@ typedef NS_ENUM(NSInteger, DMSoloGameType)
 
 - (void)setupMenuButton
 {
-    UIImage *image1 = [UIImage imageNamed:@"icon-twitter"];
-    UIImage *image2 = [UIImage imageNamed:@"icon-email"];
-    UIImage *image3 = [UIImage imageNamed:@"icon-facebook"];
+    UIImage *image1 = [UIImage imageNamed:@"timing"];
+    UIImage *image2 = [UIImage imageNamed:@"moving"];
+    UIImage *image3 = [UIImage imageNamed:@"infinite"];
     NSArray *images = @[image1, image2, image3];
     
     NSArray *subMenuLabelTextArray = @[DMSoloGameTimingButtonTitle, DMSoloGameMovingButtonTitle, DMSoloGameInfiniteButtonTitle];
     
     CGPoint startPoint = CGPointMake(CGRectGetWidth(self.view.bounds) / 2, self.view.bounds.size.height * 0.5);
-    self.menuBtn = [[SphereMenu alloc] initWithSize:CGSizeMake(60, 60) withCenterPoint:startPoint withStartBtnColor:DMTabBarViewController_TabBarView_TabBarColor withStartBtnTitle:@"Tap" withSubMenuImages:images withSubMenuLabelTexts:subMenuLabelTextArray];
+    self.menuBtn = [[SphereMenu alloc] initWithSize:CGSizeMake(62, 62) withCenterPoint:startPoint withStartBtnColor:DMTabBarViewController_TabBarView_TabBarColor withStartBtnTitle:@"Tap" withSubMenuImages:images withSubMenuLabelTexts:subMenuLabelTextArray];
     
     self.menuBtn.angle = 1.1f;
     self.menuBtn.sphereDamping = 0.4;

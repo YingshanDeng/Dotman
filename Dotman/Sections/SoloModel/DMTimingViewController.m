@@ -231,19 +231,14 @@
     }];
 }
 
+
 #pragma mark - 游戏结束视图
 - (void)setupGameOverview
 {
-    if (self.gameOverView == nil)
-    {
-        self.gameOverView = [[DMGameOverView alloc]initWithFrame:self.gameView.bounds withBlurView:self.gameView withScore:self.currentScore];
-        self.gameOverView.delegate = self;
-        [self.view addSubview:self.gameOverView];
-    }
-    else
-    {
-        [self.gameOverView updateScore:self.currentScore];
-    }
+    self.gameOverView = [[DMGameOverView alloc]initWithFrame:self.gameView.bounds withBlurView:self.gameView withScore:self.currentScore];
+    self.gameOverView.delegate = self;
+    [self.view addSubview:self.gameOverView];
+    [self.gameOverView updateScore:self.currentScore];
 }
 
 #pragma mark - 游戏控制

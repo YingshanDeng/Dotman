@@ -98,6 +98,13 @@
 
 - (void)restartGame
 {
+    if (_selectedStack.count) {
+        [_selectedStack removeAllObjects];
+        [self setNeedsDisplay];
+    }
+    if (_isLoop) {
+        [self removeCoverLayer];
+    }
     //TODO: 重启游戏暂时用这个处理
     [self playabilityAdjust];
 }
@@ -114,6 +121,14 @@
 
 - (void)stopGameWithCompletion:(void (^)(void))block
 {
+    if (_selectedStack.count) {
+        [_selectedStack removeAllObjects];
+        [self setNeedsDisplay];
+    }
+    if (_isLoop) {
+        [self removeCoverLayer];
+    }
+    
     self.canPlaying = NO;
     NSInteger index = 0;
     for (DMDotSprite *dotSprite in _dotsArray)
@@ -131,8 +146,6 @@
 - (void)gameOver
 {
     self.canPlaying = NO;
-    [_selectedStack removeAllObjects];
-    [self setNeedsDisplay];
 }
 
 #pragma mark -

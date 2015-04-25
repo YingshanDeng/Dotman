@@ -13,6 +13,7 @@
 #import "DMSettingViewController.h"
 #import "DMSoloViewController.h"
 #import "DMBattleViewController.h"
+#import "DMStatisticViewController.h"
 
 #import "SoundManager.h"
 
@@ -37,9 +38,11 @@
     // 禁用 navigation controller 自带的 从频幕边缘 右划触发pop的手势
     navi_2.interactivePopGestureRecognizer.enabled = NO;
     
-    DMBattleViewController *battleVC = [[DMBattleViewController alloc] init];
-    UINavigationController *navi_3 = [[UINavigationController alloc] initWithRootViewController:battleVC];
+//    DMBattleViewController *battleVC = [[DMBattleViewController alloc] init];
+//    UINavigationController *navi_3 = [[UINavigationController alloc] initWithRootViewController:battleVC];
 
+    DMStatisticViewController *statisticVC = [[DMStatisticViewController alloc] init];
+    UINavigationController *navi_3 = [[UINavigationController alloc] initWithRootViewController:statisticVC];
     
     DMSettingViewController *settingVC = [[DMSettingViewController alloc] init];
     UINavigationController *navi_4 = [[UINavigationController alloc] initWithRootViewController:settingVC];
@@ -96,9 +99,9 @@
     self.tabBarViewController.leftBarItems = @[item1, item2];
     
     //prepare rightBarItems
-    YALTabBarItem *item3 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"chats_icon"]
-                                                      leftItemImage:[UIImage imageNamed:@"search_icon"]
-                                                     rightItemImage:[UIImage imageNamed:@"new_chat_icon"]];
+    YALTabBarItem *item3 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"search_icon"]
+                                                      leftItemImage:nil
+                                                     rightItemImage:nil];
     
     
     YALTabBarItem *item4 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"settings_icon"]

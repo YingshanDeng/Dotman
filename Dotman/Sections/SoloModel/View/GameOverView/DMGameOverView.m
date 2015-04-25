@@ -96,6 +96,14 @@ typedef NS_ENUM(NSInteger, DMGameOverViewButtonType)
     }];
 }
 
+//- (void)resetBlurCoverView:(UIView *)blur
+//{
+//    if (!blur) {
+//        return;
+//    }
+//    self.coverView = [[DMCoverView alloc] initCoverViewWithFrame:self.frame withType:DMCoverViewBlurType withBlurView:blur];
+//}
+
 - (void)updateScore:(NSInteger)score
 {
     NSString *scoreString = [NSString stringWithFormat:@"Your Score:%@",@(score)];

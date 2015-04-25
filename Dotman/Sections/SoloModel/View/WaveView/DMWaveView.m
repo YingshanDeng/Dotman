@@ -67,18 +67,17 @@
 
 - (void)pauseWateWave
 {
-    [self.displayLink invalidate];
-    self.displayLink = nil;
+    self.displayLink.paused = YES;
 }
 
 - (void)resumeWaterWave
 {
-    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(handleDisplayLink:)];
-    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    self.displayLink.paused = NO;
 }
 
 - (void)startWaterWave
 {
+    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(handleDisplayLink:)];
     [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
@@ -106,8 +105,6 @@
     self.shapeLayer.strokeColor = [[UIColor colorWithRed:86/255.0f green:202/255.0f blue:139/255.0f alpha:1] CGColor];
     
     [self.layer addSublayer:self.shapeLayer];
-    
-    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(handleDisplayLink:)];
 }
 
 - (CGPathRef)waterWavePath

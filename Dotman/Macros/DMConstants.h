@@ -22,7 +22,7 @@
 /**
  *  默认情况下 tab bar 选中 index
  */
-#define DMTabBarViewController_Default_Selected_Index 1
+#define DMTabBarViewController_Default_Selected_Index 0
 
 
 /**

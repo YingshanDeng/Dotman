@@ -25,6 +25,8 @@
 
 - (id)initWithFrame:(CGRect)frame withBlurView:(UIView *)blurView withScore:(NSInteger)score;
 
+//- (void)resetBlurCoverView:(UIView *)blur;
+
 - (void)updateScore:(NSInteger)score;
 
 - (void)showGameOverViewWithBlock:(void (^)(void))block;
