@@ -32,7 +32,6 @@
 		DD7334161AD5656D0047980D /* DMDotSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7334151AD5656D0047980D /* DMDotSprite.m */; };
 		DD7334191AD566760047980D /* DMGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7334181AD566760047980D /* DMGameView.m */; };
 		DD83161A1AD6A3D800A4FA4D /* DMSoloViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8316191AD6A3D800A4FA4D /* DMSoloViewController.m */; };
-		DD83161E1AD6A3FE00A4FA4D /* DMBattleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD83161D1AD6A3FE00A4FA4D /* DMBattleViewController.m */; };
 		DD98D00C1AEB2B7F0029324A /* DMStatisticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD98D00B1AEB2B7F0029324A /* DMStatisticViewController.m */; };
 		DD98D02C1AEB2BE80029324A /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DD98D00F1AEB2BE80029324A /* PNBar.m */; };
 		DD98D02D1AEB2BE80029324A /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = DD98D0111AEB2BE80029324A /* PNBarChart.m */; };
@@ -138,8 +137,6 @@
 		DD7334181AD566760047980D /* DMGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGameView.m; sourceTree = "<group>"; };
 		DD8316181AD6A3D800A4FA4D /* DMSoloViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSoloViewController.h; sourceTree = "<group>"; };
 		DD8316191AD6A3D800A4FA4D /* DMSoloViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSoloViewController.m; sourceTree = "<group>"; };
-		DD83161C1AD6A3FE00A4FA4D /* DMBattleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMBattleViewController.h; sourceTree = "<group>"; };
-		DD83161D1AD6A3FE00A4FA4D /* DMBattleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMBattleViewController.m; sourceTree = "<group>"; };
 		DD98D00A1AEB2B7F0029324A /* DMStatisticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMStatisticViewController.h; sourceTree = "<group>"; };
 		DD98D00B1AEB2B7F0029324A /* DMStatisticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMStatisticViewController.m; sourceTree = "<group>"; };
 		DD98D00E1AEB2BE80029324A /* PNBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBar.h; sourceTree = "<group>"; };
@@ -394,15 +391,6 @@
 				DDB350C11AD9559200B34D98 /* View */,
 			);
 			path = SoloModel;
-			sourceTree = "<group>";
-		};
-		DD83161B1AD6A3EC00A4FA4D /* BattleModel */ = {
-			isa = PBXGroup;
-			children = (
-				DD83161C1AD6A3FE00A4FA4D /* DMBattleViewController.h */,
-				DD83161D1AD6A3FE00A4FA4D /* DMBattleViewController.m */,
-			);
-			path = BattleModel;
 			sourceTree = "<group>";
 		};
 		DD98D0091AEB2B3E0029324A /* Statistics */ = {
@@ -830,7 +818,6 @@
 			isa = PBXGroup;
 			children = (
 				DD98D0091AEB2B3E0029324A /* Statistics */,
-				DD83161B1AD6A3EC00A4FA4D /* BattleModel */,
 				DD8316171AD69FE100A4FA4D /* SoloModel */,
 				DD7333EA1AD562F90047980D /* Intro */,
 				DDB67FCC1AD23E2C00503EA5 /* Setting */,
@@ -1109,7 +1096,6 @@
 				DDB67FD31AD23E2C00503EA5 /* DMSettingViewController.m in Sources */,
 				DD1916571AE34C7C00509DCB /* DMCoverView.m in Sources */,
 				DD1916651AE359A600509DCB /* DMGameOverView.m in Sources */,
-				DD83161E1AD6A3FE00A4FA4D /* DMBattleViewController.m in Sources */,
 				DD98D0321AEB2BE80029324A /* PNLineChart.m in Sources */,
 				DD98D0381AEB2BE80029324A /* PNScatterChartData.m in Sources */,
 				DD477CF21AD6B507003C6AD0 /* DWBubbleMenuButton.m in Sources */,

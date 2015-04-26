@@ -542,6 +542,9 @@
 #pragma mark - DMGameViewDelegate
 - (void)didFinishOnceDisappearWithScore:(NSInteger)score
 {
+    if (self.pauseFlag) {
+        return;
+    }
     self.currentScore += score;
     [self updateScore:self.currentScore];
 }

@@ -12,7 +12,6 @@
 #import "DMIntroViewController.h"
 #import "DMSettingViewController.h"
 #import "DMSoloViewController.h"
-#import "DMBattleViewController.h"
 #import "DMStatisticViewController.h"
 
 #import "SoundManager.h"
