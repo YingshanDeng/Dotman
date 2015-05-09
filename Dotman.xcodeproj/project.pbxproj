@@ -32,6 +32,7 @@
 		DD7334161AD5656D0047980D /* DMDotSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7334151AD5656D0047980D /* DMDotSprite.m */; };
 		DD7334191AD566760047980D /* DMGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7334181AD566760047980D /* DMGameView.m */; };
 		DD83161A1AD6A3D800A4FA4D /* DMSoloViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8316191AD6A3D800A4FA4D /* DMSoloViewController.m */; };
+		DD832F1B1AFC4B3E000CE195 /* DMStatisticHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DD832F1A1AFC4B3E000CE195 /* DMStatisticHandler.m */; };
 		DD98D00C1AEB2B7F0029324A /* DMStatisticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD98D00B1AEB2B7F0029324A /* DMStatisticViewController.m */; };
 		DD98D02C1AEB2BE80029324A /* PNBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DD98D00F1AEB2BE80029324A /* PNBar.m */; };
 		DD98D02D1AEB2BE80029324A /* PNBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = DD98D0111AEB2BE80029324A /* PNBarChart.m */; };
@@ -79,10 +80,6 @@
 		DDCC78661ADA14FE0062B45A /* SphereMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCC78651ADA14FE0062B45A /* SphereMenu.m */; };
 		DDCC786C1ADA15690062B45A /* MultiplePulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCC78691ADA15690062B45A /* MultiplePulsingHaloLayer.m */; };
 		DDCC786D1ADA15690062B45A /* PulsingHaloLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCC786B1ADA15690062B45A /* PulsingHaloLayer.m */; };
-		DDCC78731ADA19E70062B45A /* icon-email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCC786F1ADA19E70062B45A /* icon-email@2x.png */; };
-		DDCC78741ADA19E70062B45A /* icon-facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCC78701ADA19E70062B45A /* icon-facebook@2x.png */; };
-		DDCC78751ADA19E70062B45A /* icon-twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCC78711ADA19E70062B45A /* icon-twitter@2x.png */; };
-		DDCC78761ADA19E70062B45A /* start@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCC78721ADA19E70062B45A /* start@2x.png */; };
 		DDCDA2DC1ADD4C32008CD67A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDCDA2DB1ADD4C32008CD67A /* Images.xcassets */; };
 		DDF5BA921ADA62EC0032F60F /* JTNumberScrollAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF5BA911ADA62EC0032F60F /* JTNumberScrollAnimatedView.m */; };
 		DDF5BA961ADA6DB60032F60F /* DMWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF5BA951ADA6DB60032F60F /* DMWaveView.m */; };
@@ -137,6 +134,8 @@
 		DD7334181AD566760047980D /* DMGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMGameView.m; sourceTree = "<group>"; };
 		DD8316181AD6A3D800A4FA4D /* DMSoloViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSoloViewController.h; sourceTree = "<group>"; };
 		DD8316191AD6A3D800A4FA4D /* DMSoloViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMSoloViewController.m; sourceTree = "<group>"; };
+		DD832F191AFC4B3E000CE195 /* DMStatisticHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMStatisticHandler.h; sourceTree = "<group>"; };
+		DD832F1A1AFC4B3E000CE195 /* DMStatisticHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMStatisticHandler.m; sourceTree = "<group>"; };
 		DD98D00A1AEB2B7F0029324A /* DMStatisticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMStatisticViewController.h; sourceTree = "<group>"; };
 		DD98D00B1AEB2B7F0029324A /* DMStatisticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMStatisticViewController.m; sourceTree = "<group>"; };
 		DD98D00E1AEB2BE80029324A /* PNBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNBar.h; sourceTree = "<group>"; };
@@ -237,10 +236,6 @@
 		DDCC78691ADA15690062B45A /* MultiplePulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplePulsingHaloLayer.m; sourceTree = "<group>"; };
 		DDCC786A1ADA15690062B45A /* PulsingHaloLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PulsingHaloLayer.h; sourceTree = "<group>"; };
 		DDCC786B1ADA15690062B45A /* PulsingHaloLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PulsingHaloLayer.m; sourceTree = "<group>"; };
-		DDCC786F1ADA19E70062B45A /* icon-email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-email@2x.png"; sourceTree = "<group>"; };
-		DDCC78701ADA19E70062B45A /* icon-facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-facebook@2x.png"; sourceTree = "<group>"; };
-		DDCC78711ADA19E70062B45A /* icon-twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-twitter@2x.png"; sourceTree = "<group>"; };
-		DDCC78721ADA19E70062B45A /* start@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start@2x.png"; sourceTree = "<group>"; };
 		DDCDA2DB1ADD4C32008CD67A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DDF5BA901ADA62EC0032F60F /* JTNumberScrollAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNumberScrollAnimatedView.h; sourceTree = "<group>"; };
 		DDF5BA911ADA62EC0032F60F /* JTNumberScrollAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNumberScrollAnimatedView.m; sourceTree = "<group>"; };
@@ -393,9 +388,19 @@
 			path = SoloModel;
 			sourceTree = "<group>";
 		};
+		DD832F181AFC4B16000CE195 /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				DD832F191AFC4B3E000CE195 /* DMStatisticHandler.h */,
+				DD832F1A1AFC4B3E000CE195 /* DMStatisticHandler.m */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
 		DD98D0091AEB2B3E0029324A /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				DD832F181AFC4B16000CE195 /* Handler */,
 				DD98D00A1AEB2B7F0029324A /* DMStatisticViewController.h */,
 				DD98D00B1AEB2B7F0029324A /* DMStatisticViewController.m */,
 			);
@@ -643,7 +648,6 @@
 			isa = PBXGroup;
 			children = (
 				DDCDA2DB1ADD4C32008CD67A /* Images.xcassets */,
-				DDCC786E1ADA19C40062B45A /* tmp */,
 				DDB67FCB1AD23DF400503EA5 /* Sections */,
 				DDB67FB71AD22A9500503EA5 /* Generals */,
 				DDB0AF261AD179F20035F2FA /* Vendors */,
@@ -888,17 +892,6 @@
 			path = PulsingHalo;
 			sourceTree = "<group>";
 		};
-		DDCC786E1ADA19C40062B45A /* tmp */ = {
-			isa = PBXGroup;
-			children = (
-				DDCC786F1ADA19E70062B45A /* icon-email@2x.png */,
-				DDCC78701ADA19E70062B45A /* icon-facebook@2x.png */,
-				DDCC78711ADA19E70062B45A /* icon-twitter@2x.png */,
-				DDCC78721ADA19E70062B45A /* start@2x.png */,
-			);
-			path = tmp;
-			sourceTree = "<group>";
-		};
 		DDF5BA311ADA62B80032F60F /* JTNumberScrollAnimatedView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1006,13 +999,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDCC78761ADA19E70062B45A /* start@2x.png in Resources */,
 				DD7334031AD563C50047980D /* 3.caf in Resources */,
 				DD7334021AD563C50047980D /* 2.caf in Resources */,
 				DD7334081AD563C50047980D /* 8.caf in Resources */,
-				DDCC78741ADA19E70062B45A /* icon-facebook@2x.png in Resources */,
 				DD7334051AD563C50047980D /* 5.caf in Resources */,
-				DDCC78731ADA19E70062B45A /* icon-email@2x.png in Resources */,
 				DD7334011AD563C50047980D /* 13.caf in Resources */,
 				DD7334071AD563C50047980D /* 7.caf in Resources */,
 				DDCDA2DC1ADD4C32008CD67A /* Images.xcassets in Resources */,
@@ -1021,7 +1011,6 @@
 				DD7333FD1AD563C50047980D /* 1.caf in Resources */,
 				DDB67FDA1AD2704300503EA5 /* Proxima Nova.otf in Resources */,
 				DDB28D911AD12BA8006FB0F9 /* Code Pro LC.otf in Resources */,
-				DDCC78751ADA19E70062B45A /* icon-twitter@2x.png in Resources */,
 				DD7334001AD563C50047980D /* 12.caf in Resources */,
 				DD7333FE1AD563C50047980D /* 10.caf in Resources */,
 				DD7334041AD563C50047980D /* 4.caf in Resources */,
@@ -1102,6 +1091,7 @@
 				DD19165A1AE3533F00509DCB /* UIImage+ImageEffects.m in Sources */,
 				DD98D0331AEB2BE80029324A /* PNLineChartData.m in Sources */,
 				DDB350B21AD91B9E00B34D98 /* DMTimingViewController.m in Sources */,
+				DD832F1B1AFC4B3E000CE195 /* DMStatisticHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -312,7 +312,6 @@
     
     
     CGFloat btnHeight = 50.0f;
-
     
     UIButton *resumeBtn = [self dropDownButtonWithTitle:@"Resume"];
     [resumeBtn setTag:DMSoloGameDropDownButtonResumeType];

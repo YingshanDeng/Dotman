@@ -317,7 +317,7 @@
 
 #pragma mark - Game Logic
 
-// 更加触摸位置坐标获取dot
+// 根据触摸位置坐标获取dot
 - (DMDotSprite *)getCurrentSelectDotWithCurrentPostion:(CGPoint)pos
 {
     if (_dotsArray.count)

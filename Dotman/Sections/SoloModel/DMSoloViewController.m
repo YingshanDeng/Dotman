@@ -16,6 +16,7 @@
 #import "DMMovingViewController.h"
 #import "DMInfiniteViewController.h"
 
+#import "DMStatisticHandler.h"
 
 // button title
 #define DMSoloGameTimingButtonTitle   @"Timing"
@@ -179,18 +180,21 @@ typedef NS_ENUM(NSInteger, DMSoloGameType)
     {
         case DMSoloGameTimingType:
         {
+            [[DMStatisticHandler defaultStatisticHandler] increasePlayCount:DMPlayTimingMode];
             DMTimingViewController *timingVC = [[DMTimingViewController alloc] init];
             [self.navigationController pushViewController:timingVC animated:YES];
             break;
         }
         case DMSoloGameMovingType:
         {
+            [[DMStatisticHandler defaultStatisticHandler] increasePlayCount:DMPlayMovingMode];
             DMMovingViewController *movingVC = [[DMMovingViewController alloc] init];
             [self.navigationController pushViewController:movingVC animated:YES];
             break;
         }
         case DMSoloGameInfiniteType:
         {
+            [[DMStatisticHandler defaultStatisticHandler] increasePlayCount:DMPlayInfiniteMode];
             DMInfiniteViewController *infiniteVC = [[DMInfiniteViewController alloc] init];
             [self.navigationController pushViewController:infiniteVC animated:YES];
             break;

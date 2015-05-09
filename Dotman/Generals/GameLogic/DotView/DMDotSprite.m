@@ -341,9 +341,7 @@
     
     self.originPosition = pos;
     
-    
     CGFloat offsetY = (_superViewFrame.size.height - _superViewFrame.size.width) / 2;
-    
     pos = CGPointMake(offsetX + (interval + DMShowingDotRadius) * self.coordinate.x + offset,
                       offsetY + (interval + DMShowingDotRadius) * fabs(self.coordinate.y - 5) + offset + interval);
     self.showingPosition = pos;
